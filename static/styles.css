@@ -4,24 +4,82 @@
 
 /* Subtle, professional animation utilities */
 @keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
-	from { opacity: 0; transform: translateY(8px); }
-	to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeOut {
-	from { opacity: 1; }
-	to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Gradient background animation for hero */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Gentle float for background orbs */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @layer utilities {
-	.animate-fade-in { animation: fadeIn 600ms ease-out both; }
-	.animate-fade-in-up { animation: fadeInUp 600ms ease-out both; }
-	.animate-fade-out { animation: fadeOut 500ms ease-in forwards; }
-	.hover-lift { transition: transform 200ms ease, box-shadow 200ms ease; }
-	.hover-lift:hover { transform: translateY(-2px); }
+  .animate-fade-in {
+    animation: fadeIn 600ms ease-out both;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 600ms ease-out both;
+  }
+  .animate-fade-out {
+    animation: fadeOut 500ms ease-in forwards;
+  }
+  .animated-gradient {
+    background: linear-gradient(120deg, #f0fdf4, #dcfce7, #f0fdf4);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease-in-out infinite;
+  }
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: float 10s ease-in-out infinite;
+  }
+  .hover-lift {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
 }

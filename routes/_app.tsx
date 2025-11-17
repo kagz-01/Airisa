@@ -26,7 +26,7 @@ export default function App({ Component, url }: PageProps) {
           content="Climate strategy, carbon markets, and ESG implementation across African markets."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/AGC.png" />
+        <meta property="og:image" content="/images/agc-logo.png" />
         <meta property="og:image:alt" content="Airisa Green logo" />
         <meta property="og:url" content={url?.href ?? "/"} />
         {/* Twitter */}
@@ -39,7 +39,7 @@ export default function App({ Component, url }: PageProps) {
           name="twitter:description"
           content="Climate strategy, carbon markets, and ESG implementation across African markets."
         />
-        <meta name="twitter:image" content="/images/AGC.png" />
+        <meta name="twitter:image" content="/images/agc-logo.png" />
       </head>
       <body class="min-h-full flex flex-col bg-white text-slate-900">
         <Navbar />

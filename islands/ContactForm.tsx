@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -74,7 +74,9 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label class="block text-sm font-medium text-slate-700">Company (optional)</label>
+        <label class="block text-sm font-medium text-slate-700">
+          Company (optional)
+        </label>
         <input
           class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           type="text"
@@ -105,7 +107,9 @@ export default function ContactForm() {
           <p
             role="status"
             aria-live="polite"
-            class={`text-sm text-slate-600 transition-opacity duration-500 ${statusVisible ? "opacity-100" : "opacity-0"}`}
+            class={`text-sm text-slate-600 transition-opacity duration-500 ${
+              statusVisible ? "opacity-100" : "opacity-0"
+            }`}
           >
             {status}
           </p>

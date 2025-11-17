@@ -14,7 +14,10 @@ export default function ECard() {
           name="description"
           content="Scan to view Evelyn’s smart card, save contact, or get in touch."
         />
-        <meta property="og:title" content="Digital Business Card — Airisa Green" />
+        <meta
+          property="og:title"
+          content="Digital Business Card — Airisa Green"
+        />
         <meta
           property="og:description"
           content="Scan to view Evelyn’s smart card, save contact, or get in touch."
@@ -27,7 +30,7 @@ export default function ECard() {
         <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md border border-green-200">
           <div class="text-center">
             <img
-              src="/images/evelyn.jpg"
+              src="/images/evelyn.png"
               alt="Portrait of Evelyn Gathua"
               class="w-24 h-24 rounded-full object-cover mx-auto shadow-lg"
             />
@@ -36,7 +39,9 @@ export default function ECard() {
             <div class="text-green-600 font-semibold mt-2">
               Founder & Sustainability Consultant
             </div>
-            <div class="text-gray-500 text-sm mt-1">Airisa Green Consulting</div>
+            <div class="text-gray-500 text-sm mt-1">
+              Airisa Green Consulting
+            </div>
 
             <div class="mt-6 bg-gray-50 rounded-lg p-4">
               <div class="text-center mb-4">
@@ -47,12 +52,14 @@ export default function ECard() {
                     class="mx-auto border rounded-lg"
                   />
                   <img
-                    src="/images/AGC.png"
+                    src="/images/agc-logo.png"
                     alt="Airisa logo"
                     class="w-10 h-10 rounded bg-white p-1 shadow absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                   />
                 </div>
-                <p class="text-xs text-gray-500 mt-2">Scan to open smart card</p>
+                <p class="text-xs text-gray-500 mt-2">
+                  Scan to open smart card
+                </p>
               </div>
 
               <div class="grid grid-cols-2 gap-2 text-sm mt-4">

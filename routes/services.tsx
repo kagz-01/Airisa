@@ -5,63 +5,69 @@ export default function Services() {
   return (
     <div class="container mx-auto px-6 py-12">
       <Head>
-        <title>Services — ESG, Carbon, Compliance | Airisa Green</title>
+        <title>Services — Consulting & Advisory | Airisa Green</title>
         <meta
           name="description"
-          content="ESG strategy & reporting, carbon project development, sustainability audits, and climate action planning."
+          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
         <meta
           property="og:title"
-          content="Services — ESG, Carbon, Compliance | Airisa Green"
+          content="Services — Consulting & Advisory | Airisa Green"
         />
         <meta
           property="og:description"
-          content="ESG strategy & reporting, carbon project development, sustainability audits, and climate action planning."
+          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
-        <meta property="og:image" content="/images/AGC.png" />
+        <meta property="og:image" content="/images/agc-logo.png" />
         <meta
           name="twitter:title"
-          content="Services — ESG, Carbon, Compliance | Airisa Green"
+          content="Services — Consulting & Advisory | Airisa Green"
         />
         <meta
           name="twitter:description"
-          content="ESG strategy & reporting, carbon project development, sustainability audits, and climate action planning."
+          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
-        <meta name="twitter:image" content="/images/AGC.png" />
+        <meta name="twitter:image" content="/images/agc-logo.png" />
       </Head>
-      <h1 class="text-3xl font-bold">Services</h1>
+
+      <h1 class="text-3xl font-bold">Consulting & Advisory Services</h1>
       <p class="mt-3 text-slate-600">
-        Practical consulting services focused on sustainability, compliance, and
-        operational efficiency.
-      </p>
-      <p class="mt-2 text-sm">
-        <a
-          href="https://www.linkedin.com/company/airisa-green-consulting/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-green-600 hover:text-green-700 font-medium"
-        >
-          Follow Airisa on LinkedIn
-        </a>
-        for service updates and insights.
+        Design, policy, finance, and safeguards support across mobility and
+        environmental programs.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <ServiceCard
-          title="Environmental Impact Assessment (EIA)"
-          desc="Complete EIA services including stakeholder engagement and mitigation planning."
+          title="Research"
+          desc="Feasibility & baseline studies, market research & surveys."
         />
         <ServiceCard
-          title="ESG Strategy & Reporting"
-          desc="ESG frameworks and investor-facing reports."
+          title="Project Management"
+          desc="Support from design through implementation for mobility & environment projects."
         />
         <ServiceCard
-          title="Sustainability Audits"
-          desc="Identify efficiency and waste reduction opportunities."
+          title="MEAL"
+          desc="Monitoring, Evaluation, Accountability & Learning systems and delivery."
         />
         <ServiceCard
-          title="Climate Action Planning"
-          desc="Roadmaps for carbon reduction and adaptation."
+          title="ESIA & Audits"
+          desc="Environmental and Social Impact Assessments (ESIA) & Environmental Audits (EA)."
+        />
+        <ServiceCard
+          title="ESG Strategy"
+          desc="Materiality, governance, and investor-grade ESG strategy development."
+        />
+        <ServiceCard
+          title="Gender & Inclusion"
+          desc="Advisory for gender-responsive and inclusive mobility planning."
+        />
+        <ServiceCard
+          title="Stakeholder & Capacity"
+          desc="Stakeholder engagement and technical capacity building."
+        />
+        <ServiceCard
+          title="Business Development"
+          desc="Bid development and consulting support for program delivery."
         />
       </div>
     </div>

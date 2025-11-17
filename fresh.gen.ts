@@ -9,12 +9,13 @@ import * as $api_ai from "./routes/api/ai.ts";
 import * as $api_contact from "./routes/api/contact.ts";
 import * as $api_qr from "./routes/api/qr.ts";
 import * as $api_vcard from "./routes/api/vcard.ts";
-import * as $case_studies from "./routes/case-studies.tsx";
 import * as $contact from "./routes/contact.tsx";
 import * as $ecard from "./routes/ecard.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $industries from "./routes/industries.tsx";
+import * as $programs from "./routes/programs.tsx";
 import * as $services from "./routes/services.tsx";
+import * as $team from "./routes/team.tsx";
 import * as $testimonials from "./routes/testimonials.tsx";
 import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
@@ -29,12 +30,13 @@ const manifest = {
     "./routes/api/contact.ts": $api_contact,
     "./routes/api/qr.ts": $api_qr,
     "./routes/api/vcard.ts": $api_vcard,
-    "./routes/case-studies.tsx": $case_studies,
     "./routes/contact.tsx": $contact,
     "./routes/ecard.tsx": $ecard,
     "./routes/index.tsx": $index,
     "./routes/industries.tsx": $industries,
+    "./routes/programs.tsx": $programs,
     "./routes/services.tsx": $services,
+    "./routes/team.tsx": $team,
     "./routes/testimonials.tsx": $testimonials,
   },
   islands: {

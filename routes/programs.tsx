@@ -1,4 +1,4 @@
-const studies = [
+const programs = [
   {
     title: "Carbon Reduction for a Logistics Firm",
     summary:
@@ -16,16 +16,16 @@ const studies = [
   },
 ];
 
-export default function CaseStudies() {
+export default function Programs() {
   return (
     <div class="container mx-auto px-6 py-12">
-      <h1 class="text-3xl font-bold">Case Studies</h1>
+      <h1 class="text-3xl font-bold">Programs</h1>
       <p class="mt-3 text-slate-600">
-        Selected projects demonstrating measurable impact.
+        Selected initiatives and engagements demonstrating measurable impact.
       </p>
 
       <div class="mt-6 space-y-4">
-        {studies.map((s) => (
+        {programs.map((s) => (
           <div class="border rounded p-6 bg-white shadow-sm">
             <div class="font-semibold">{s.title}</div>
             <div class="text-slate-600 mt-2">{s.summary}</div>

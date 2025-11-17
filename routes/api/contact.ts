@@ -17,7 +17,9 @@ function renderEmail(data: Required<Omit<ContactPayload, "website">>) {
     <tbody>
       <tr><td style="padding:4px 8px;font-weight:600;">Name</td><td style="padding:4px 8px;">${name}</td></tr>
       <tr><td style="padding:4px 8px;font-weight:600;">Email</td><td style="padding:4px 8px;">${email}</td></tr>
-      <tr><td style="padding:4px 8px;font-weight:600;">Company</td><td style="padding:4px 8px;">${company || "—"}</td></tr>
+      <tr><td style="padding:4px 8px;font-weight:600;">Company</td><td style="padding:4px 8px;">${
+    company || "—"
+  }</td></tr>
       <tr><td style="padding:4px 8px;font-weight:600;">Message</td><td style="padding:4px 8px;white-space:pre-wrap;">${message}</td></tr>
     </tbody>
   </table>
@@ -41,18 +43,24 @@ export const handler: Handlers = {
 
     // Honeypot: if filled, treat as spam
     if (website) {
-      return new Response(JSON.stringify({ success: true, message: "Message received." }), {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ success: true, message: "Message received." }),
+        {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
     }
 
     // Basic validation
     if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "Missing required fields" }), {
-        status: 422,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
+        {
+          status: 422,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
     }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       return new Response(JSON.stringify({ error: "Invalid email format" }), {
@@ -64,7 +72,9 @@ export const handler: Handlers = {
     const resendKey = Deno.env.get("DENO_RESEND_API_KEY");
     const formspreeEndpoint = Deno.env.get("FORMSPREE_ENDPOINT");
     if (!resendKey) {
-      console.warn("[contact] Missing DENO_RESEND_API_KEY environment variable.");
+      console.warn(
+        "[contact] Missing DENO_RESEND_API_KEY environment variable.",
+      );
     }
 
     const toAddress = "e.gathua@airisagreenconsulting.com"; // destination
@@ -91,7 +101,11 @@ export const handler: Handlers = {
           }),
         });
         if (!sendRes.ok) {
-          console.error("Resend API error", sendRes.status, await sendRes.text());
+          console.error(
+            "Resend API error",
+            sendRes.status,
+            await sendRes.text(),
+          );
         } else {
           emailSent = true;
         }
@@ -122,7 +136,13 @@ export const handler: Handlers = {
     }
 
     // Optionally: persist to a database / log aggregator here
-    console.log("[contact] submission", { name, email, company, message, emailSent });
+    console.log("[contact] submission", {
+      name,
+      email,
+      company,
+      message,
+      emailSent,
+    });
 
     return new Response(
       JSON.stringify({
