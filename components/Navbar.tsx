@@ -19,10 +19,10 @@ export default function Navbar() {
           </a>
           <a href="/team" class="hover:text-green-600 transition">Team</a>
           <a
-            href="/contact"
+            href="/partner"
             class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition shadow-sm hover-lift"
           >
-            Get Started
+            Partner With Us
           </a>
         </nav>
 

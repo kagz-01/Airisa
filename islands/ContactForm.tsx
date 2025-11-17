@@ -51,6 +51,21 @@ export default function ContactForm() {
     };
   }, [statusVisible, status]);
 
+  // Prefill message from query param `topic`
+  useEffect(() => {
+    try {
+      const href = globalThis?.location?.href as string | undefined;
+      if (!href) return;
+      const url = new URL(href);
+      const topic = url.searchParams.get("topic");
+      if (topic && !message) {
+        setMessage(`Inquiry about: ${topic}`);
+      }
+    } catch (_) {
+      // no-op for SSR or invalid URL
+    }
+  }, []);
+
   return (
     <form onSubmit={onSubmit} class="grid gap-4 max-w-xl">
       <div>

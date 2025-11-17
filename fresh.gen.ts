@@ -13,6 +13,7 @@ import * as $contact from "./routes/contact.tsx";
 import * as $ecard from "./routes/ecard.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $industries from "./routes/industries.tsx";
+import * as $partner from "./routes/partner.tsx";
 import * as $programs from "./routes/programs.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $team from "./routes/team.tsx";
@@ -34,6 +35,7 @@ const manifest = {
     "./routes/ecard.tsx": $ecard,
     "./routes/index.tsx": $index,
     "./routes/industries.tsx": $industries,
+    "./routes/partner.tsx": $partner,
     "./routes/programs.tsx": $programs,
     "./routes/services.tsx": $services,
     "./routes/team.tsx": $team,

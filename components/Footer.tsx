@@ -54,9 +54,9 @@ export default function Footer() {
             <li>
               <a
                 class="text-emerald-100 hover:text-white transition-colors"
-                href="/contact"
+                href="/partner"
               >
-                Contact
+                Partner With Us
               </a>
             </li>
           </ul>
