@@ -25,13 +25,19 @@ export default function Programs() {
           name="description"
           content="Social Impact Programs and Capacity Building — community pilots, advocacy, trainings, and knowledge leadership translating policy into practice."
         />
-        <meta property="og:title" content="Programs — Social Impact & Capacity | Airisa Green" />
+        <meta
+          property="og:title"
+          content="Programs — Social Impact & Capacity | Airisa Green"
+        />
         <meta
           property="og:description"
           content="Community-level pilots, advocacy, and capacity building that translate policy into practice with measurable benefits."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta name="twitter:title" content="Programs — Social Impact & Capacity | Airisa Green" />
+        <meta
+          name="twitter:title"
+          content="Programs — Social Impact & Capacity | Airisa Green"
+        />
         <meta
           name="twitter:description"
           content="Community-level pilots, advocacy, and capacity building that translate policy into practice with measurable benefits."
@@ -42,9 +48,15 @@ export default function Programs() {
       <section class="relative overflow-hidden py-14 md:py-20">
         <div class="absolute inset-0 -z-10 animated-gradient" />
         <div class="container mx-auto px-6 text-center">
-          <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-900 animate-fade-in-up">Programs</h1>
-          <p class="mt-3 text-slate-700 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: "80ms" }}>
-            Community‑level pilots, advocacy, and knowledge leadership that turn policy into practice and deliver measurable benefits.
+          <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-900 animate-fade-in-up">
+            Programs
+          </h1>
+          <p
+            class="mt-3 text-slate-700 max-w-3xl mx-auto animate-fade-in-up"
+            style={{ animationDelay: "80ms" }}
+          >
+            Community‑level pilots, advocacy, and knowledge leadership that turn
+            policy into practice and deliver measurable benefits.
           </p>
         </div>
       </section>
@@ -54,8 +66,12 @@ export default function Programs() {
           <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
             B. Social Impact Programs
           </div>
-          <p class="mt-2 text-slate-600 animate-fade-in-up" style={{ animationDelay: "40ms" }}>
-            Community‑level pilots and advocacy that translate policy into practice with measurable benefits
+          <p
+            class="mt-2 text-slate-600 animate-fade-in-up"
+            style={{ animationDelay: "40ms" }}
+          >
+            Community‑level pilots and advocacy that translate policy into
+            practice with measurable benefits
           </p>
 
           <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -65,11 +81,15 @@ export default function Programs() {
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="mt-1 inline-block w-2 h-2 rounded-full bg-emerald-500">
+                  </span>
                   <p class="text-slate-800 text-sm leading-relaxed">{item}</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-emerald-50 text-sm">
-                  <a href={`/partner?topic=${encodeURIComponent(item)}`} class="text-emerald-700 hover:text-emerald-800 font-medium">
+                  <a
+                    href={`/partner?topic=${encodeURIComponent(item)}`}
+                    class="text-emerald-700 hover:text-emerald-800 font-medium"
+                  >
                     Enquire about this program →
                   </a>
                 </div>
@@ -91,11 +111,15 @@ export default function Programs() {
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="mt-1 inline-block w-2 h-2 rounded-full bg-emerald-500">
+                  </span>
                   <p class="text-slate-800 text-sm leading-relaxed">{item}</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-emerald-50 text-sm">
-                  <a href={`/partner?topic=${encodeURIComponent(item)}`} class="text-emerald-700 hover:text-emerald-800 font-medium">
+                  <a
+                    href={`/partner?topic=${encodeURIComponent(item)}`}
+                    class="text-emerald-700 hover:text-emerald-800 font-medium"
+                  >
                     Enquire about this program →
                   </a>
                 </div>

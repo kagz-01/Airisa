@@ -33,7 +33,9 @@ export default function Partner() {
             class="mt-3 text-slate-700 animate-fade-in"
             style={{ animationDelay: "80ms" }}
           >
-            We welcome collaborators, funders, and mission-aligned partners to co-create transformative transport and environment solutions across Africa.
+            We welcome collaborators, funders, and mission-aligned partners to
+            co-create transformative transport and environment solutions across
+            Africa.
           </p>
         </div>
 
