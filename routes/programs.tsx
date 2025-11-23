@@ -1,12 +1,31 @@
 import { Head } from "$fresh/runtime.ts";
 
-const socialImpactPrograms = [
-  "Community-based sustainable mobility education and awareness campaigns",
-  "Youth and women training in green mobility careers",
-  "Grassroots pilots for inclusive and safe mobility access",
-  "Participatory transport research and co-design workshops",
-  "Localization of climate resilience tools for urban transport",
-  "Advocacy and coalition-building for inclusive mobility policies",
+const namedPrograms = [
+  {
+    title: "Mama Mwendo",
+    pillar: "Gender & Inclusion",
+    desc: "Strengthens women’s participation and leadership in mobility and climate sectors through curated learning, mentorship, and professional growth — building a community shaping inclusive transport futures.",
+  },
+  {
+    title: "Sauti za Barabarani",
+    pillar: "Inclusive Mobility",
+    desc: "Brings communities and decision-makers together to reimagine mobility systems. Surfaces lived experiences, amplifies marginalized voices, and embeds equity & safety in transport planning.",
+  },
+  {
+    title: "Sustainable Mobility Literacy & Adoption (SMLAP)",
+    pillar: "Sustainable Mobility",
+    desc: "Promotes awareness and adoption of electric, active, and low‑carbon transport options — equipping communities with foundational knowledge for informed choices and safer practices.",
+  },
+  {
+    title: "Resilient Transport Labs",
+    pillar: "Climate Action",
+    desc: "Enables counties and cities to explore climate risks affecting mobility and identify adaptation pathways — fostering resilience mindset and long-term planning for climate‑smart systems.",
+  },
+  {
+    title: "Community Climate Champions (C3)",
+    pillar: "Climate Action",
+    desc: "Nurtures local leadership in climate action through awareness, engagement, and community-driven initiatives that inspire environmental stewardship.",
+  },
 ];
 
 const capacityBuilding = [
@@ -64,33 +83,30 @@ export default function Programs() {
       <section class="py-10">
         <div class="container mx-auto px-6">
           <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
-            B. Social Impact Programs
+            Core Programs
           </div>
-          <p
-            class="mt-2 text-slate-600 animate-fade-in-up"
-            style={{ animationDelay: "40ms" }}
-          >
-            Community‑level pilots and advocacy that translate policy into
-            practice with measurable benefits
+          <p class="mt-2 text-slate-600 animate-fade-in-up" style={{ animationDelay: "40ms" }}>
+            Named initiatives built around Sustainable Mobility, Gender & Inclusion, and Climate Action.
           </p>
-
           <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {socialImpactPrograms.map((item, i) => (
+            {namedPrograms.map((p, i) => (
               <div
                 class="bg-white rounded-xl p-5 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:shadow-md hover:-translate-y-1"
-                style={{ animationDelay: `${i * 60}ms` }}
+                style={{ animationDelay: `${i * 70}ms` }}
               >
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-block w-2 h-2 rounded-full bg-emerald-500">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="font-semibold text-emerald-900 text-sm md:text-base">{p.title}</div>
+                  <span class="px-2 py-1 rounded-md bg-emerald-50 border border-emerald-100 text-emerald-700 text-[11px] font-medium">
+                    {p.pillar}
                   </span>
-                  <p class="text-slate-800 text-sm leading-relaxed">{item}</p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-emerald-50 text-sm">
-                  <a
-                    href={`/partner?topic=${encodeURIComponent(item)}`}
-                    class="text-emerald-700 hover:text-emerald-800 font-medium"
-                  >
-                    Enquire about this program →
+                <p class="mt-3 text-slate-700 text-sm leading-relaxed">{p.desc}</p>
+                <div class="mt-4 pt-3 border-t border-emerald-50 text-xs flex flex-wrap gap-3">
+                  <a href={`/partner?topic=${encodeURIComponent(p.title)}`} class="text-emerald-700 hover:text-emerald-800 font-medium">
+                    Partner →
+                  </a>
+                  <a href={`/partner?topic=${encodeURIComponent(p.title + ' enquiry')}`} class="text-emerald-700 hover:text-emerald-800 font-medium">
+                    Enquire →
                   </a>
                 </div>
               </div>
@@ -101,9 +117,7 @@ export default function Programs() {
 
       <section class="py-8">
         <div class="container mx-auto px-6">
-          <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
-            C. Capacity Building & Knowledge Leadership
-          </div>
+          <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">Capacity Building & Knowledge Leadership</div>
           <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {capacityBuilding.map((item, i) => (
               <div

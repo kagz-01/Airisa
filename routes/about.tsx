@@ -53,30 +53,24 @@ export default function About() {
         </div>
       </section>
 
-      {/* Company Background */}
+      {/* Executive Summary & Model */}
       <section class="py-14 bg-gradient-to-b from-white to-emerald-50/40">
         <div class="container mx-auto px-6 max-w-4xl">
           <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
-            Background
+            Executive Summary
           </div>
           <h2 class="mt-4 text-2xl md:text-3xl font-bold text-gray-900 animate-fade-in-up">
-            Catalyzing Transformative Mobility
+            Catalyzing Transformative Mobility & Climate Action
           </h2>
           <div class="mt-5 space-y-5 text-slate-700 leading-relaxed">
             <p class="animate-fade-in-up" style={{ animationDelay: "40ms" }}>
-              Airisa Green Consulting unites sustainability consultancy with
-              impact program implementation bridging the gap between policy
-              ambition and on‑the‑ground delivery across emerging markets.
+              Airisa Green Consulting is a registered social enterprise working at the intersection of sustainable mobility, gender & inclusion, and climate action across emerging markets.
             </p>
             <p class="animate-fade-in-up" style={{ animationDelay: "80ms" }}>
-              We work alongside governments, development partners, and private
-              sector actors to design data-driven, gender‑inclusive solutions
-              that accelerate equitable, low‑carbon transport systems.
+              We operate a hybrid model—combining professional consulting for governments, development partners, and private sector clients with impact-driven programs that empower communities, inform policy, and foster inclusive, low‑carbon transport systems.
             </p>
             <p class="animate-fade-in-up" style={{ animationDelay: "120ms" }}>
-              Our approach blends research excellence, community co‑creation,
-              and strategic partnerships to drive measurable environmental and
-              social outcomes.
+              Our delivery approach blends research excellence, community co‑creation, and strategic partnerships to translate policy ambition into measurable environmental and social outcomes.
             </p>
           </div>
         </div>
