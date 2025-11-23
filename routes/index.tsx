@@ -85,7 +85,8 @@ export default function Home() {
               class="mt-3 text-lg text-gray-600 animate-fade-in-up"
               style={{ animationDelay: "60ms" }}
             >
-              Our work is guided by three pillars that shape how we deliver value and impact.
+              Our work is guided by three pillars that shape how we deliver
+              value and impact.
             </p>
           </div>
 
@@ -93,7 +94,9 @@ export default function Home() {
             <div class="bg-white rounded-xl p-6 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md">
               <div class="text-sm font-semibold text-emerald-700">INSIGHT</div>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                We generate clear, evidence-based understanding of transport and environmental systems helping partners identify gaps, opportunities, and emerging trends that inform better decisions.
+                We generate clear, evidence-based understanding of transport and
+                environmental systems helping partners identify gaps,
+                opportunities, and emerging trends that inform better decisions.
               </p>
               <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc list-inside">
                 <li>Baseline studies & technical assessments</li>
@@ -111,7 +114,10 @@ export default function Home() {
             >
               <div class="text-sm font-semibold text-emerald-700">STRATEGY</div>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                We translate insights into practical, inclusive strategies that support sustainable mobility, climate resilience, and responsible investment—solutions that are realistic, policy-aligned, and ready for implementation.
+                We translate insights into practical, inclusive strategies that
+                support sustainable mobility, climate resilience, and
+                responsible investment—solutions that are realistic,
+                policy-aligned, and ready for implementation.
               </p>
               <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc list-inside">
                 <li>Investment cases & feasibility studies</li>
@@ -127,9 +133,14 @@ export default function Home() {
               class="bg-white rounded-xl p-6 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md"
               style={{ animationDelay: "120ms" }}
             >
-              <div class="text-sm font-semibold text-emerald-700">SUSTAINABILITY</div>
+              <div class="text-sm font-semibold text-emerald-700">
+                SUSTAINABILITY
+              </div>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                We ensure long-term results by embedding environmental, social, and community-focused considerations into every intervention—supporting partners to track progress, strengthen resilience, and deliver measurable, lasting impact.
+                We ensure long-term results by embedding environmental, social,
+                and community-focused considerations into every
+                intervention—supporting partners to track progress, strengthen
+                resilience, and deliver measurable, lasting impact.
               </p>
               <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc list-inside">
                 <li>ESIA frameworks & audits</li>

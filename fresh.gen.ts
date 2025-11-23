@@ -12,12 +12,11 @@ import * as $api_vcard from "./routes/api/vcard.ts";
 import * as $contact from "./routes/contact.tsx";
 import * as $ecard from "./routes/ecard.tsx";
 import * as $index from "./routes/index.tsx";
-import * as $industries from "./routes/industries.tsx";
+import * as $insights from "./routes/insights.tsx";
 import * as $partner from "./routes/partner.tsx";
 import * as $programs from "./routes/programs.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $team from "./routes/team.tsx";
-import * as $testimonials from "./routes/testimonials.tsx";
 import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -34,12 +33,11 @@ const manifest = {
     "./routes/contact.tsx": $contact,
     "./routes/ecard.tsx": $ecard,
     "./routes/index.tsx": $index,
-    "./routes/industries.tsx": $industries,
+    "./routes/insights.tsx": $insights,
     "./routes/partner.tsx": $partner,
     "./routes/programs.tsx": $programs,
     "./routes/services.tsx": $services,
     "./routes/team.tsx": $team,
-    "./routes/testimonials.tsx": $testimonials,
   },
   islands: {
     "./islands/AIChatAssistant.tsx": $AIChatAssistant,

@@ -10,13 +10,19 @@ export default function Services() {
           name="description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
-        <meta property="og:title" content="Services | Airisa Green Consulting" />
+        <meta
+          property="og:title"
+          content="Services | Airisa Green Consulting"
+        />
         <meta
           property="og:description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta name="twitter:title" content="Services | Airisa Green Consulting" />
+        <meta
+          name="twitter:title"
+          content="Services | Airisa Green Consulting"
+        />
         <meta
           name="twitter:description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
@@ -27,12 +33,21 @@ export default function Services() {
       <div class="max-w-3xl">
         <h1 class="text-3xl font-bold">Consulting & Advisory Services</h1>
         <p class="mt-3 text-slate-600 leading-relaxed">
-          Design, policy, finance, and safeguards support across mobility and environmental programs. We combine evidence generation, inclusive strategy, and sustainability integration to move initiatives from concept to measurable impact.
+          Design, policy, finance, and safeguards support across mobility and
+          environmental programs. We combine evidence generation, inclusive
+          strategy, and sustainability integration to move initiatives from
+          concept to measurable impact.
         </p>
         <div class="mt-4 inline-flex gap-2 text-xs font-semibold">
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Insight</span>
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Strategy</span>
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Sustainability</span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+            Insight
+          </span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+            Strategy
+          </span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+            Sustainability
+          </span>
         </div>
       </div>
 
@@ -71,16 +86,28 @@ export default function Services() {
         />
         <ServiceCard
           title="Implementation Blueprints"
-          desc="Practical rollout plans with milestones, risk tracking, and sustainability integration." />
+          desc="Practical rollout plans with milestones, risk tracking, and sustainability integration."
+        />
       </div>
 
       <div class="mt-12 bg-emerald-50 border border-emerald-100 rounded-xl p-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div class="text-sm text-slate-700">
-          Looking to co-create a mobility or climate initiative? Explore our programs or partner directly.
+          Looking to co-create a mobility or climate initiative? Explore our
+          programs or partner directly.
         </div>
         <div class="flex gap-3">
-          <a href="/programs" class="px-4 py-2 rounded-md bg-white border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-sm font-medium">View Programs</a>
-          <a href="/partner" class="px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-medium">Partner With Us</a>
+          <a
+            href="/programs"
+            class="px-4 py-2 rounded-md bg-white border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-sm font-medium"
+          >
+            View Programs
+          </a>
+          <a
+            href="/partner"
+            class="px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-medium"
+          >
+            Partner With Us
+          </a>
         </div>
       </div>
     </div>

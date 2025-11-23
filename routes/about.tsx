@@ -64,13 +64,20 @@ export default function About() {
           </h2>
           <div class="mt-5 space-y-5 text-slate-700 leading-relaxed">
             <p class="animate-fade-in-up" style={{ animationDelay: "40ms" }}>
-              Airisa Green Consulting is a registered social enterprise working at the intersection of sustainable mobility, gender & inclusion, and climate action across emerging markets.
+              Airisa Green Consulting is a registered social enterprise working
+              at the intersection of sustainable mobility, gender & inclusion,
+              and climate action across emerging markets.
             </p>
             <p class="animate-fade-in-up" style={{ animationDelay: "80ms" }}>
-              We operate a hybrid model—combining professional consulting for governments, development partners, and private sector clients with impact-driven programs that empower communities, inform policy, and foster inclusive, low‑carbon transport systems.
+              We operate a hybrid model—combining professional consulting for
+              governments, development partners, and private sector clients with
+              impact-driven programs that empower communities, inform policy,
+              and foster inclusive, low‑carbon transport systems.
             </p>
             <p class="animate-fade-in-up" style={{ animationDelay: "120ms" }}>
-              Our delivery approach blends research excellence, community co‑creation, and strategic partnerships to translate policy ambition into measurable environmental and social outcomes.
+              Our delivery approach blends research excellence, community
+              co‑creation, and strategic partnerships to translate policy
+              ambition into measurable environmental and social outcomes.
             </p>
           </div>
         </div>

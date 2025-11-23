@@ -70,17 +70,19 @@ function Card({ bio, idx }: { bio: Bio; idx: number }) {
     >
       <div class="flex items-start justify-between gap-4">
         <div class="flex gap-4">
-          {bio.image ? (
-            <img
-              src={bio.image}
-              alt={bio.name}
-              class="w-20 h-20 rounded-full object-cover shadow"
-            />
-          ) : (
-            <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
-              {bio.name.split(" ").map((n) => n[0]).join("")}
-            </div>
-          )}
+          {bio.image
+            ? (
+              <img
+                src={bio.image}
+                alt={bio.name}
+                class="w-20 h-20 rounded-full object-cover shadow"
+              />
+            )
+            : (
+              <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
+                {bio.name.split(" ").map((n) => n[0]).join("")}
+              </div>
+            )}
           <div>
             <h3 class="text-lg font-semibold text-emerald-900 group-hover:text-emerald-700 transition-colors">
               {bio.name}
@@ -145,13 +147,19 @@ export default function Team() {
           name="description"
           content="Meet the leadership team driving inclusive, sustainable mobility and climate action across Africa."
         />
-        <meta property="og:title" content="Our Team | Airisa Green Consulting" />
+        <meta
+          property="og:title"
+          content="Our Team | Airisa Green Consulting"
+        />
         <meta
           property="og:description"
           content="Leadership advancing evidence, strategy, and sustainability in African mobility."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta name="twitter:title" content="Our Team | Airisa Green Consulting" />
+        <meta
+          name="twitter:title"
+          content="Our Team | Airisa Green Consulting"
+        />
         <meta
           name="twitter:description"
           content="Leadership advancing evidence, strategy, and sustainability in African mobility."
@@ -162,26 +170,47 @@ export default function Team() {
       <div class="max-w-3xl">
         <h1 class="text-3xl font-bold">Leadership & Impact</h1>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Our founders bring complementary expertise spanning research diagnostics, inclusive strategy formation, sustainability integration, and technology‑enabled delivery. Together they steward a hybrid model — professional consulting plus impact programs — ensuring insights translate into adaptive implementation and measurable change.
+          Our founders bring complementary expertise spanning research
+          diagnostics, inclusive strategy formation, sustainability integration,
+          and technology‑enabled delivery. Together they steward a hybrid model
+          — professional consulting plus impact programs — ensuring insights
+          translate into adaptive implementation and measurable change.
         </p>
         <div class="mt-4 inline-flex gap-2 text-xs font-semibold">
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Insight</span>
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Strategy</span>
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Sustainability</span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+            Insight
+          </span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+            Strategy
+          </span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+            Sustainability
+          </span>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        {team.map((b, i) => <Card bio={b} idx={i} />)}
+        {team.map((b, i) => <Card bio={b} idx={i} key={b.name} />)}
       </div>
 
       <div class="mt-14 bg-emerald-50 border border-emerald-100 rounded-xl p-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div class="text-sm text-slate-700">
-          Interested in collaborating or exploring a program opportunity? Start a conversation with our team.
+          Interested in collaborating or exploring a program opportunity? Start
+          a conversation with our team.
         </div>
         <div class="flex gap-3">
-          <a href="/programs" class="px-4 py-2 rounded-md bg-white border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-sm font-medium">View Programs</a>
-          <a href="/partner" class="px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-medium">Partner With Us</a>
+          <a
+            href="/programs"
+            class="px-4 py-2 rounded-md bg-white border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-sm font-medium"
+          >
+            View Programs
+          </a>
+          <a
+            href="/partner"
+            class="px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-medium"
+          >
+            Partner With Us
+          </a>
         </div>
       </div>
     </div>

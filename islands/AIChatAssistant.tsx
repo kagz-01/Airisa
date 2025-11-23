@@ -1,5 +1,15 @@
 import { useState } from "preact/hooks";
 
+const SUGGESTIONS = [
+  "What is your vision?",
+  "Tell me about Insight pillar",
+  "List your services",
+  "Programs overview",
+  "Tell me about Mama Mwendo",
+  "Team Evelyn",
+  "Partner options",
+];
+
 export default function AIChatAssistant() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<
@@ -40,15 +50,16 @@ export default function AIChatAssistant() {
   }
 
   return (
-    <div class="w-full md:w-96 bg-white rounded-lg shadow p-4">
-      <div class="text-sm font-semibold mb-2">
-        ARIA — Sustainability Assistant
+    <div class="w-full md:w-96 bg-white rounded-xl shadow p-4 border border-emerald-100">
+      <div class="text-sm font-semibold mb-2 flex items-center gap-2">
+        <span class="text-emerald-600">🌿</span>
+        ARIA — Airisa Assistive
       </div>
       <div class="h-48 overflow-auto border rounded p-2 bg-slate-50">
         {messages.length === 0 && (
           <div class="text-xs text-slate-400">
-            Ask a question about services, sustainability, or book a
-            consultation.
+            Ask about vision, pillars, services, programs (SMLAP, Mama Mwendo),
+            team, or partnership.
           </div>
         )}
         {messages.map((m) => (
@@ -67,6 +78,19 @@ export default function AIChatAssistant() {
           </div>
         ))}
       </div>
+      <div class="mt-2 flex flex-wrap gap-2">
+        {SUGGESTIONS.map((s) => (
+          <button
+            type="button"
+            class="text-[11px] px-2 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-100 text-emerald-700"
+            onClick={() => {
+              setInput(s);
+            }}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
       <div class="mt-3 flex gap-2">
         <input
           class="flex-1 border rounded px-3 py-2"
@@ -82,6 +106,10 @@ export default function AIChatAssistant() {
         >
           {loading ? "..." : "Send"}
         </button>
+      </div>
+      <div class="mt-2 text-[10px] text-slate-500">
+        ARIA answers from Airisa's live profile. For pricing or formal
+        proposals, ask to connect with the team.
       </div>
     </div>
   );
