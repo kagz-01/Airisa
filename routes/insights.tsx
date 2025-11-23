@@ -6,6 +6,8 @@ interface Item {
   pillar: "Insight" | "Strategy" | "Sustainability";
   href?: string;
   tag?: string;
+  image?: string;
+  animation?: "zoom-in" | "zoom-out" | "pan" | "blur";
 }
 
 const articles: Item[] = [
@@ -15,6 +17,9 @@ const articles: Item[] = [
       "How multi-source mobility datasets surface accessibility and safety gaps for informal transit users.",
     pillar: "Insight",
     href: "#",
+    image:
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-in",
   },
   {
     title: "Designing Inclusive E-Mobility Programs",
@@ -22,6 +27,9 @@ const articles: Item[] = [
       "Principles for integrating gender-responsive and disability-inclusive perspectives into charging and fleet pilots.",
     pillar: "Strategy",
     href: "#",
+    image:
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80",
+    animation: "pan",
   },
   {
     title: "Operationalizing Sustainability in Last-Mile Logistics",
@@ -29,6 +37,9 @@ const articles: Item[] = [
       "Embedding lifecycle thinking, emissions tracking, and circular inputs in emerging urban delivery models.",
     pillar: "Sustainability",
     href: "#",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-out",
   },
 ];
 
@@ -38,18 +49,27 @@ const researchSnapshots: Item[] = [
     summary:
       "Structured approach to early-stage program scoping: context, actors, enabling policy, data maturity.",
     pillar: "Insight",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+    animation: "blur",
   },
   {
     title: "Risk & Safeguards Matrix",
     summary:
       "Mapping environmental and social vectors to mitigation pathways across transport interventions.",
     pillar: "Sustainability",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-in",
   },
   {
     title: "Adaptive Implementation Ladder",
     summary:
       "Iterative milestone structure aligning feasibility, stakeholder alignment, and sustainability integration.",
     pillar: "Strategy",
+    image:
+      "https://images.unsplash.com/photo-1502086223501-681191e2167a?auto=format&fit=crop&w=800&q=80",
+    animation: "pan",
   },
 ];
 
@@ -59,18 +79,27 @@ const methodologies: Item[] = [
     summary:
       "Combining surveys, sensor feeds, open standards, and participatory mapping for richer transit intelligence.",
     pillar: "Insight",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-out",
   },
   {
     title: "Inclusive Consultation Protocol",
     summary:
       "Sequenced engagement ensuring marginalized commuter voices inform design pivots early.",
     pillar: "Strategy",
+    image:
+      "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80",
+    animation: "blur",
   },
   {
     title: "Sustainability Integration Checklist",
     summary:
       "Lifecycle, circularity, carbon, and equity checkpoints embedded pre- and post-deployment.",
     pillar: "Sustainability",
+    image:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-in",
   },
 ];
 
@@ -84,14 +113,50 @@ function PillarBadge({ pillar }: { pillar: Item["pillar"] }) {
 
 function Card({ item }: { item: Item }) {
   return (
-    <div class="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-      <div class="flex items-start justify-between gap-3">
-        <h3 class="text-base font-semibold group-hover:text-emerald-700 transition-colors">
+    <div class="group rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+      {item.image && (
+        <div class="h-48 overflow-hidden relative">
+          <img
+            src={item.image}
+            alt={item.title}
+            class={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
+              item.animation === "zoom-out"
+                ? "scale-110 group-hover:scale-100"
+                : item.animation === "pan"
+                ? "scale-110 group-hover:translate-x-4"
+                : item.animation === "blur"
+                ? "blur-[2px] scale-105 group-hover:blur-none group-hover:scale-100"
+                : "group-hover:scale-110"
+            }`}
+          />
+          <div class="absolute top-3 right-3">
+            <PillarBadge pillar={item.pillar} />
+          </div>
+        </div>
+      )}
+      <div class="p-5 flex-1 flex flex-col">
+        {!item.image && (
+          <div class="mb-3 flex justify-end">
+            <PillarBadge pillar={item.pillar} />
+          </div>
+        )}
+        <h3 class="text-base font-semibold group-hover:text-emerald-700 transition-colors mb-2">
           {item.href ? <a href={item.href}>{item.title}</a> : item.title}
         </h3>
-        <PillarBadge pillar={item.pillar} />
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">
+          {item.summary}
+        </p>
+        {item.href && (
+          <div class="mt-4 pt-3 border-t border-slate-100">
+            <a
+              href={item.href}
+              class="text-emerald-600 hover:text-emerald-700 text-sm font-medium inline-flex items-center gap-1"
+            >
+              Read Article →
+            </a>
+          </div>
+        )}
       </div>
-      <p class="mt-2 text-sm text-slate-600 leading-relaxed">{item.summary}</p>
     </div>
   );
 }

@@ -61,19 +61,39 @@ export default function AIChatAssistant() {
 
   if (!isOpen) {
     return (
-      <button
-        type="button"
-        onClick={() => setIsOpen(true)}
-        class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-emerald-700 text-white px-4 py-3 rounded-full shadow-lg hover:bg-emerald-800 transition-all transform hover:scale-105"
-      >
-        <span class="text-xl">🌿</span>
-        <span class="font-medium">Chat with Airisa</span>
-      </button>
+      <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 group">
+        {/* Curiosity Callout - Bounces to attract attention */}
+        <div class="bg-white text-slate-800 text-xs font-bold px-3 py-2 rounded-xl shadow-lg border border-emerald-100 animate-bounce mb-1 mr-1 relative origin-bottom-right">
+          👋 Hi! Curious? Ask ARIA!
+          <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-b border-r border-emerald-100 transform rotate-45">
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          class="flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white pl-4 pr-6 py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:from-emerald-700 hover:to-emerald-800 transition-all transform hover:scale-105 ring-4 ring-white/30 backdrop-blur-sm"
+        >
+          <div class="relative flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-inner">
+            {/* Animated Avatar */}
+            <span class="text-2xl animate-[spin_3s_linear_infinite]">🌿</span>
+            <span class="absolute -top-1 -right-1 text-lg animate-pulse">
+              ✨
+            </span>
+          </div>
+          <div class="flex flex-col items-start">
+            <span class="font-bold text-sm tracking-wide">Chat with ARIA</span>
+            <span class="text-[10px] text-emerald-100 font-medium">
+              Your AI Assistant
+            </span>
+          </div>
+        </button>
+      </div>
     );
   }
 
   return (
-    <div class="fixed bottom-6 right-6 z-50 w-[90vw] md:w-80 bg-white rounded-xl shadow-2xl border border-emerald-100 flex flex-col max-h-[500px]">
+    <div class="fixed bottom-6 right-6 z-50 w-[90vw] md:w-80 bg-white rounded-xl shadow-2xl border border-emerald-100 flex flex-col max-h-[500px] animate-fade-in-up">
       {/* Header */}
       <div class="flex items-center justify-between p-3 border-b bg-emerald-50 rounded-t-xl">
         <div class="text-sm font-semibold flex items-center gap-2 text-emerald-900">

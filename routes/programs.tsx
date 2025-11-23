@@ -8,6 +8,7 @@ const namedPrograms = [
       "Strengthens women’s participation and leadership in mobility and climate sectors through curated learning, mentorship, and professional growth — building a community shaping inclusive transport futures.",
     image:
       "https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-in",
   },
   {
     title: "Sauti za Barabarani",
@@ -16,6 +17,7 @@ const namedPrograms = [
       "Brings communities and decision-makers together to reimagine mobility systems. Surfaces lived experiences, amplifies marginalized voices, and embeds equity & safety in transport planning.",
     image:
       "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80",
+    animation: "pan",
   },
   {
     title: "Sustainable Mobility Literacy & Adoption (SMLAP)",
@@ -24,6 +26,7 @@ const namedPrograms = [
       "Promotes awareness and adoption of electric, active, and low‑carbon transport options — equipping communities with foundational knowledge for informed choices and safer practices.",
     image:
       "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-out",
   },
   {
     title: "Resilient Transport Labs",
@@ -31,7 +34,8 @@ const namedPrograms = [
     desc:
       "Enables counties and cities to explore climate risks affecting mobility and identify adaptation pathways — fostering resilience mindset and long-term planning for climate‑smart systems.",
     image:
-      "https://images.unsplash.com/photo-1569002336377-aa27ae75a5d1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
+    animation: "blur",
   },
   {
     title: "Community Climate Champions (C3)",
@@ -40,14 +44,43 @@ const namedPrograms = [
       "Nurtures local leadership in climate action through awareness, engagement, and community-driven initiatives that inspire environmental stewardship.",
     image:
       "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-in",
   },
 ];
 
 const capacityBuilding = [
-  "Curriculum co-creation with academic & industry partners",
-  "Workshops & Trainings",
-  "Mentorship programs",
-  "Speaking and moderation",
+  {
+    title: "Curriculum Co-creation",
+    desc:
+      "Collaborating with academic & industry partners to design relevant educational frameworks.",
+    image:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-in",
+  },
+  {
+    title: "Workshops & Trainings",
+    desc:
+      "Hands-on sessions designed to build practical skills and foster collaborative learning.",
+    image:
+      "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=800&q=80",
+    animation: "pan",
+  },
+  {
+    title: "Mentorship Programs",
+    desc:
+      "Guiding the next generation of leaders through structured mentorship and support.",
+    image:
+      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+    animation: "zoom-out",
+  },
+  {
+    title: "Speaking & Moderation",
+    desc:
+      "Thought leadership and facilitation at key industry conferences and events.",
+    image:
+      "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80",
+    animation: "blur",
+  },
 ];
 
 export default function Programs() {
@@ -117,7 +150,15 @@ export default function Programs() {
                   <img
                     src={p.image}
                     alt={p.title}
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    class={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
+                      p.animation === "zoom-out"
+                        ? "scale-110 hover:scale-100"
+                        : p.animation === "pan"
+                        ? "scale-110 hover:translate-x-4"
+                        : p.animation === "blur"
+                        ? "blur-[2px] scale-105 hover:blur-none hover:scale-100"
+                        : "hover:scale-110"
+                    }`}
                   />
                   <div class="absolute top-3 right-3">
                     <span class="px-2 py-1 rounded-md bg-white/90 backdrop-blur border border-emerald-100 text-emerald-700 text-[11px] font-medium shadow-sm">
@@ -160,24 +201,42 @@ export default function Programs() {
           <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
             Capacity Building & Knowledge Leadership
           </div>
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {capacityBuilding.map((item, i) => (
               <div
-                class="bg-white rounded-xl p-5 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:shadow-md hover:-translate-y-1"
+                class="bg-white rounded-xl overflow-hidden shadow-sm border border-emerald-100 animate-fade-in-up transition hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-block w-2 h-2 rounded-full bg-emerald-500">
-                  </span>
-                  <p class="text-slate-800 text-sm leading-relaxed">{item}</p>
+                <div class="h-40 overflow-hidden relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
+                      item.animation === "zoom-out"
+                        ? "scale-110 hover:scale-100"
+                        : item.animation === "pan"
+                        ? "scale-110 hover:translate-x-4"
+                        : item.animation === "blur"
+                        ? "blur-[2px] scale-105 hover:blur-none hover:scale-100"
+                        : "hover:scale-110"
+                    }`}
+                  />
                 </div>
-                <div class="mt-4 pt-3 border-t border-emerald-50 text-sm">
-                  <a
-                    href={`/partner?topic=${encodeURIComponent(item)}`}
-                    class="text-emerald-700 hover:text-emerald-800 font-medium"
-                  >
-                    Enquire about this program →
-                  </a>
+                <div class="p-5 flex-1 flex flex-col">
+                  <div class="font-semibold text-emerald-900 mb-2">
+                    {item.title}
+                  </div>
+                  <p class="text-slate-700 text-sm leading-relaxed flex-1">
+                    {item.desc}
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-emerald-50 text-sm">
+                    <a
+                      href={`/partner?topic=${encodeURIComponent(item.title)}`}
+                      class="text-emerald-700 hover:text-emerald-800 font-medium text-xs"
+                    >
+                      Enquire →
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

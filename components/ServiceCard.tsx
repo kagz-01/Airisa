@@ -3,31 +3,50 @@ interface ServiceCardProps {
   desc: string;
   image?: string;
   icon?: string;
+  animationEffect?: "zoom-in" | "zoom-out" | "pan" | "blur";
 }
 
 export default function ServiceCard(props: ServiceCardProps) {
+  const getAnimationClass = () => {
+    switch (props.animationEffect) {
+      case "zoom-out":
+        return "scale-110 group-hover:scale-100";
+      case "pan":
+        return "scale-110 group-hover:translate-x-4";
+      case "blur":
+        return "blur-[2px] scale-105 group-hover:blur-none group-hover:scale-100";
+      case "zoom-in":
+      default:
+        return "group-hover:scale-110";
+    }
+  };
+
   return (
     <div class="group border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-xl transition-all duration-300 hover:border-emerald-200 flex flex-col h-full">
-      {props.image ? (
-        <div class="h-48 overflow-hidden relative">
-          <img
-            src={props.image}
-            alt={props.title}
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-          <div class="absolute bottom-3 left-4 text-white font-bold text-lg drop-shadow-md">
-            {props.title}
+      {props.image
+        ? (
+          <div class="h-48 overflow-hidden relative">
+            <img
+              src={props.image}
+              alt={props.title}
+              class={`w-full h-full object-cover transition-all duration-1000 ease-in-out ${getAnimationClass()}`}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+            <div class="absolute bottom-3 left-4 text-white font-bold text-lg drop-shadow-md">
+              {props.title}
+            </div>
           </div>
-        </div>
-      ) : (
-        <div class="p-6 pb-0">
-          <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4 group-hover:bg-emerald-600 group-hover:text-white transition">
-            {props.icon || "🌱"}
+        )
+        : (
+          <div class="p-6 pb-0">
+            <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4 group-hover:bg-emerald-600 group-hover:text-white transition">
+              {props.icon || "🌱"}
+            </div>
+            <div class="font-bold text-gray-900 text-lg mb-2">
+              {props.title}
+            </div>
           </div>
-          <div class="font-bold text-gray-900 text-lg mb-2">{props.title}</div>
-        </div>
-      )}
+        )}
 
       <div class="p-6 pt-4 flex-1 flex flex-col">
         <p class="text-gray-600 leading-relaxed flex-1 text-sm">{props.desc}</p>
