@@ -240,7 +240,23 @@ const general: Fact[] = [
   },
 ];
 
+const visionFact: Fact = {
+  id: "meta_vision",
+  category: "vision",
+  keywords: ["vision", "future", "goal", "aim"],
+  text: `Vision: ${vision}`,
+};
+
+const missionFact: Fact = {
+  id: "meta_mission",
+  category: "mission",
+  keywords: ["mission", "purpose", "objective"],
+  text: `Mission: ${mission}`,
+};
+
 export const ALL_FACTS: Fact[] = [
+  visionFact,
+  missionFact,
   ...pillars,
   ...values,
   ...services,
@@ -332,6 +348,12 @@ export function retrieveFacts(prompt: string, limit = 3): Fact[] {
 
   scored.sort((a, b) => b.score - a.score);
   return scored.slice(0, limit).map((s) => s.fact);
+}
+
+export function retrieveContext(prompt: string): string {
+  const facts = retrieveFacts(prompt, 6);
+  if (facts.length === 0) return "";
+  return facts.map((f) => `- ${f.text}`).join("\n");
 }
 
 export function classifyIntent(prompt: string): string {
