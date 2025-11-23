@@ -39,24 +39,18 @@ export default function Programs() {
   return (
     <div class="bg-white">
       <Head>
-        <title>Programs — Social Impact & Capacity | Airisa Green</title>
+        <title>Programs | Airisa Green Consulting</title>
         <meta
           name="description"
           content="Social Impact Programs and Capacity Building — community pilots, advocacy, trainings, and knowledge leadership translating policy into practice."
         />
-        <meta
-          property="og:title"
-          content="Programs — Social Impact & Capacity | Airisa Green"
-        />
+        <meta property="og:title" content="Programs | Airisa Green Consulting" />
         <meta
           property="og:description"
           content="Community-level pilots, advocacy, and capacity building that translate policy into practice with measurable benefits."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta
-          name="twitter:title"
-          content="Programs — Social Impact & Capacity | Airisa Green"
-        />
+        <meta name="twitter:title" content="Programs | Airisa Green Consulting" />
         <meta
           name="twitter:description"
           content="Community-level pilots, advocacy, and capacity building that translate policy into practice with measurable benefits."

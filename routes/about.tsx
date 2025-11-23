@@ -4,18 +4,18 @@ export default function About() {
   return (
     <div class="bg-white">
       <Head>
-        <title>About — Airisa Green Consulting</title>
+        <title>About | Airisa Green Consulting</title>
         <meta
           name="description"
           content="Airisa Green Consulting is a social enterprise advancing inclusive mobility, climate resilience, and environmental sustainability across Africa."
         />
-        <meta property="og:title" content="About — Airisa Green Consulting" />
+        <meta property="og:title" content="About | Airisa Green Consulting" />
         <meta
           property="og:description"
           content="We operate at the intersection of sustainable mobility, gender & inclusion, and climate action across emerging markets."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta name="twitter:title" content="About — Airisa Green Consulting" />
+        <meta name="twitter:title" content="About | Airisa Green Consulting" />
         <meta
           name="twitter:description"
           content="We operate at the intersection of sustainable mobility, gender & inclusion, and climate action across emerging markets."

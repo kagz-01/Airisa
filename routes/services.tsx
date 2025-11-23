@@ -5,24 +5,18 @@ export default function Services() {
   return (
     <div class="container mx-auto px-6 py-12">
       <Head>
-        <title>Services — Consulting & Advisory | Airisa Green</title>
+        <title>Services | Airisa Green Consulting</title>
         <meta
           name="description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
-        <meta
-          property="og:title"
-          content="Services — Consulting & Advisory | Airisa Green"
-        />
+        <meta property="og:title" content="Services | Airisa Green Consulting" />
         <meta
           property="og:description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta
-          name="twitter:title"
-          content="Services — Consulting & Advisory | Airisa Green"
-        />
+        <meta name="twitter:title" content="Services | Airisa Green Consulting" />
         <meta
           name="twitter:description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."

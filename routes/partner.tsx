@@ -5,18 +5,18 @@ export default function Partner() {
   return (
     <div class="bg-gradient-to-br from-green-50 to-emerald-100 animate-fade-in">
       <Head>
-        <title>Partner With Us — Airisa Green</title>
+        <title>Partner With Us | Airisa Green Consulting</title>
         <meta
           name="description"
           content="Partner with Airisa Green to co-create transformative mobility and environmental programs across Africa. Contact details and enquiry form."
         />
-        <meta property="og:title" content="Partner With Us — Airisa Green" />
+        <meta property="og:title" content="Partner With Us | Airisa Green Consulting" />
         <meta
           property="og:description"
           content="Collaborate on inclusive mobility, climate resilience, and ESG programs. Reach our team directly or send an enquiry."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta name="twitter:title" content="Partner With Us — Airisa Green" />
+        <meta name="twitter:title" content="Partner With Us | Airisa Green Consulting" />
         <meta
           name="twitter:description"
           content="Collaborate on inclusive mobility, climate resilience, and ESG programs. Reach our team directly or send an enquiry."

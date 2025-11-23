@@ -91,18 +91,18 @@ export default function Insights() {
   return (
     <div class="container mx-auto px-6 py-12">
       <Head>
-        <title>Insights Hub | Airisa Green</title>
+        <title>Insights Hub | Airisa Green Consulting</title>
         <meta
           name="description"
           content="Insights Hub – Articles, research snapshots, and methodologies advancing inclusive, sustainable mobility and climate programs."
         />
-        <meta property="og:title" content="Insights Hub | Airisa Green" />
+        <meta property="og:title" content="Insights Hub | Airisa Green Consulting" />
         <meta
           property="og:description"
           content="Articles, research snapshots, and methodologies advancing inclusive, sustainable mobility and climate programs."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta name="twitter:title" content="Insights Hub | Airisa Green" />
+        <meta name="twitter:title" content="Insights Hub | Airisa Green Consulting" />
         <meta
           name="twitter:description"
           content="Articles, research snapshots, and methodologies for inclusive & sustainable mobility."

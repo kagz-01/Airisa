@@ -54,27 +54,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Airisa Green — Consulting & Advisory Services</title>
+        <title>Home | Airisa Green Consulting</title>
         <meta
           name="description"
-          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
+          content="Airisa Green Consulting advances inclusive mobility, climate resilience, and environmental sustainability through Insight, Strategy, and Sustainability focused consulting and impact programs."
         />
-        <meta
-          property="og:title"
-          content="Airisa Green — Consulting & Advisory Services"
-        />
+        <meta property="og:title" content="Home | Airisa Green Consulting" />
         <meta
           property="og:description"
-          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
+          content="Inclusive mobility, climate resilience, and sustainability consulting plus impact programs powered by Insight, Strategy, Sustainability pillars."
         />
         <meta property="og:image" content="/images/agc-logo.png" />
-        <meta
-          name="twitter:title"
-          content="Airisa Green — Consulting & Advisory Services"
-        />
+        <meta name="twitter:title" content="Home | Airisa Green Consulting" />
         <meta
           name="twitter:description"
-          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
+          content="Consulting & programs advancing inclusive mobility and climate resilience across Africa."
         />
         <meta name="twitter:image" content="/images/agc-logo.png" />
       </Head>

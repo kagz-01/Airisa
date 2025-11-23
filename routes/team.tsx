@@ -46,7 +46,7 @@ const team: Bio[] = [
       "Panelist: MIT Africa Innovate Conference",
       "Digital Africa 1000 Winner (Africa‑France Summit)",
     ],
-    pillarFocus: ["Strategy", "Insight", "Sustainability"],
+    pillarFocus: ["Insight", "Strategy", "Sustainability"],
   },
 ];
 
