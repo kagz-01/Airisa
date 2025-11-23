@@ -109,10 +109,10 @@ export default function Partner() {
                 <li class="flex items-center gap-2">
                   <span>✉️</span>
                   <a
-                    href="mailto:a.ndolo@airisagreenconsulting.com"
+                    href="mailto:bondolo90@gmail.com"
                     class="underline decoration-emerald-300 underline-offset-2 hover:decoration-emerald-500"
                   >
-                    a.ndolo@airisagreenconsulting.com
+                    bondolo90@gmail.com
                   </a>
                 </li>
                 <li class="flex items-center gap-2">
@@ -125,27 +125,21 @@ export default function Partner() {
               <div class="mt-5 flex flex-wrap gap-3">
                 <a
                   href="mailto:e.gathua@airisagreenconsulting.com"
-                  class="inline-flex items-center rounded-md bg-emerald-600 px-4 py-2 text-white shadow-sm hover:bg-emerald-700"
+                  class="inline-flex items-center rounded-md bg-white border border-emerald-300 px-4 py-2 text-emerald-700 shadow-sm hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-colors duration-200"
                 >
                   Email Evelyn
                 </a>
                 <a
-                  href="mailto:a.ndolo@airisagreenconsulting.com"
-                  class="inline-flex items-center rounded-md bg-white border border-emerald-300 px-4 py-2 text-emerald-700 hover:bg-emerald-50"
+                  href="mailto:bondolo90@gmail.com"
+                  class="inline-flex items-center rounded-md bg-white border border-emerald-300 px-4 py-2 text-emerald-700 shadow-sm hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-colors duration-200"
                 >
                   Email Anthony
                 </a>
                 <a
                   href="/ecard"
-                  class="inline-flex items-center rounded-md bg-white border border-emerald-300 px-4 py-2 text-emerald-700 hover:bg-emerald-50"
+                  class="inline-flex items-center rounded-md bg-white border border-emerald-300 px-4 py-2 text-emerald-700 shadow-sm hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-colors duration-200"
                 >
                   E‑Card
-                </a>
-                <a
-                  href="/insights"
-                  class="inline-flex items-center rounded-md bg-white border border-emerald-300 px-4 py-2 text-emerald-700 hover:bg-emerald-50"
-                >
-                  Insights
                 </a>
               </div>
               <div class="mt-6 text-xs text-slate-500">

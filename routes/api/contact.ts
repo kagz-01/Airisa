@@ -3,22 +3,26 @@ import { Handlers } from "$fresh/server.ts";
 interface ContactPayload {
   name?: string;
   email?: string;
-  company?: string;
+  country?: string;
+  subject?: string;
   message?: string;
   website?: string; // honeypot
 }
 
 // Simple HTML template for the inbound email
 function renderEmail(data: Required<Omit<ContactPayload, "website">>) {
-  const { name, email, company, message } = data;
+  const { name, email, country, subject, message } = data;
   return `<!DOCTYPE html><html><head><meta charset="utf-8" /></head><body style="font-family:system-ui,Segoe UI,Arial,sans-serif;line-height:1.5;color:#0f172a;">
   <h2 style="color:#065f46;margin:0 0 12px;">New Contact Form Submission</h2>
   <table style="border-collapse:collapse;width:100%;max-width:600px;">
     <tbody>
       <tr><td style="padding:4px 8px;font-weight:600;">Name</td><td style="padding:4px 8px;">${name}</td></tr>
       <tr><td style="padding:4px 8px;font-weight:600;">Email</td><td style="padding:4px 8px;">${email}</td></tr>
-      <tr><td style="padding:4px 8px;font-weight:600;">Company</td><td style="padding:4px 8px;">${
-    company || "—"
+      <tr><td style="padding:4px 8px;font-weight:600;">Country</td><td style="padding:4px 8px;">${
+    country || "—"
+  }</td></tr>
+      <tr><td style="padding:4px 8px;font-weight:600;">Subject</td><td style="padding:4px 8px;">${
+    subject || "—"
   }</td></tr>
       <tr><td style="padding:4px 8px;font-weight:600;">Message</td><td style="padding:4px 8px;white-space:pre-wrap;">${message}</td></tr>
     </tbody>
@@ -39,7 +43,8 @@ export const handler: Handlers = {
       });
     }
 
-    const { name, email, company = "", message, website } = payload;
+    const { name, email, country = "", subject = "", message, website } =
+      payload;
 
     // Honeypot: if filled, treat as spam
     if (website) {
@@ -79,13 +84,15 @@ export const handler: Handlers = {
 
     const toAddress = "e.gathua@airisagreenconsulting.com"; // destination
     const fromAddress = "site@airisagreenconsulting.com"; // must be verified in provider
-    const subject = `New inquiry from ${name}`;
+    const emailSubject = subject
+      ? `New inquiry: ${subject}`
+      : `New inquiry from ${name}`;
 
     // Attempt email send if key present
     let emailSent = false;
     if (resendKey) {
       try {
-        const html = renderEmail({ name, email, company, message });
+        const html = renderEmail({ name, email, country, subject, message });
         const sendRes = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
@@ -96,7 +103,7 @@ export const handler: Handlers = {
             from: fromAddress,
             to: [toAddress],
             reply_to: email,
-            subject,
+            subject: emailSubject,
             html,
           }),
         });
@@ -123,7 +130,7 @@ export const handler: Handlers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
           },
-          body: JSON.stringify({ name, email, company, message }),
+          body: JSON.stringify({ name, email, country, subject, message }),
         });
         if (!fsRes.ok) {
           console.error("Formspree error", fsRes.status, await fsRes.text());
@@ -139,7 +146,8 @@ export const handler: Handlers = {
     console.log("[contact] submission", {
       name,
       email,
-      company,
+      country,
+      subject,
       message,
       emailSent,
     });

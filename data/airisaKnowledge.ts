@@ -220,7 +220,7 @@ const contact: Fact[] = [
     category: "contact",
     keywords: ["contact", "email", "reach"],
     text:
-      "Primary emails: e.gathua@airisagreenconsulting.com, a.ndolo@airisagreenconsulting.com",
+      "Primary emails: e.gathua@airisagreenconsulting.com, bondolo90@gmail.com",
   },
   {
     id: "contact_location",

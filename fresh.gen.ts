@@ -19,6 +19,8 @@ import * as $services from "./routes/services.tsx";
 import * as $team from "./routes/team.tsx";
 import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
+import * as $HeroSlideshow from "./islands/HeroSlideshow.tsx";
+import * as $TeamGrid from "./islands/TeamGrid.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -42,6 +44,8 @@ const manifest = {
   islands: {
     "./islands/AIChatAssistant.tsx": $AIChatAssistant,
     "./islands/ContactForm.tsx": $ContactForm,
+    "./islands/HeroSlideshow.tsx": $HeroSlideshow,
+    "./islands/TeamGrid.tsx": $TeamGrid,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

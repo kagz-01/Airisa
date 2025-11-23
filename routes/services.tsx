@@ -55,38 +55,47 @@ export default function Services() {
         <ServiceCard
           title="Research"
           desc="Baseline & feasibility studies, market surveys, diagnostics, and best practice analysis."
+          image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="Project Management"
           desc="End-to-end delivery oversight from design to implementation with quality and safeguards."
+          image="https://images.unsplash.com/photo-1507208773393-40d9fc9f5958?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="MEAL Systems"
           desc="Monitoring, Evaluation, Accountability & Learning frameworks and tool deployment."
+          image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="ESIA & Audits"
           desc="Environmental & Social Impact Assessments and Environmental Audits aligned to regulations."
+          image="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="ESG Strategy Development"
           desc="Materiality, governance alignment, KPI definition, and investor-grade reporting support."
+          image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="Gender & Inclusion Advisory"
           desc="Embedding gender-responsive and inclusive approaches in mobility and climate programs."
+          image="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="Stakeholder Engagement & Capacity"
           desc="Coordinated stakeholder processes and technical capacity building for sustainable adoption."
+          image="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="Business Development & Consulting"
           desc="Bid support, partnership structuring, and resource mobilization for viable program scaling."
+          image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
         />
         <ServiceCard
           title="Implementation Blueprints"
           desc="Practical rollout plans with milestones, risk tracking, and sustainability integration."
+          image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
         />
       </div>
 
