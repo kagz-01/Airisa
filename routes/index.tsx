@@ -1,7 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import Hero from "../components/Hero.tsx";
 import ServiceCard from "../components/ServiceCard.tsx";
-import AIChatAssistant from "../islands/AIChatAssistant.tsx";
 
 export default function Home() {
   const services = [
@@ -198,72 +197,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI Assistant + Programs Section */}
+      {/* Programs Section */}
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Programs */}
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-8">Programs</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: "Community mobility education",
-                    desc:
-                      "Awareness campaigns for sustainable, inclusive transport choices.",
-                  },
-                  {
-                    title: "Youth & women green careers",
-                    desc: "Training pathways into e-mobility and climate jobs.",
-                  },
-                  {
-                    title: "Grassroots pilots",
-                    desc:
-                      "Pilots improving safe, inclusive access to mobility.",
-                  },
-                  {
-                    title: "Participatory research & co-design",
-                    desc: "Workshops that localize solutions with communities.",
-                  },
-                  {
-                    title: "Localized resilience tools",
-                    desc: "Contextualizing climate tools for urban transport.",
-                  },
-                  {
-                    title: "Policy advocacy coalitions",
-                    desc: "Coalition-building for inclusive mobility policies.",
-                  },
-                ].map((p, i) => (
-                  <div
-                    class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md"
-                    style={{ animationDelay: `${i * 60}ms` }}
-                  >
-                    <div class="font-semibold text-gray-900">{p.title}</div>
-                    <p class="text-gray-600 mt-2 text-sm">{p.desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div class="mt-8">
-                <a
-                  href="/programs"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold"
+          <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">
+              Programs
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Community mobility education",
+                  desc:
+                    "Awareness campaigns for sustainable, inclusive transport choices.",
+                },
+                {
+                  title: "Youth & women green careers",
+                  desc: "Training pathways into e-mobility and climate jobs.",
+                },
+                {
+                  title: "Grassroots pilots",
+                  desc: "Pilots improving safe, inclusive access to mobility.",
+                },
+                {
+                  title: "Participatory research & co-design",
+                  desc: "Workshops that localize solutions with communities.",
+                },
+                {
+                  title: "Localized resilience tools",
+                  desc: "Contextualizing climate tools for urban transport.",
+                },
+                {
+                  title: "Policy advocacy coalitions",
+                  desc: "Coalition-building for inclusive mobility policies.",
+                },
+              ].map((p, i) => (
+                <div
+                  class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md"
+                  style={{ animationDelay: `${i * 60}ms` }}
                 >
-                  Explore all programs →
-                </a>
-              </div>
+                  <div class="font-semibold text-gray-900">{p.title}</div>
+                  <p class="text-gray-600 mt-2 text-sm">{p.desc}</p>
+                </div>
+              ))}
             </div>
 
-            {/* AI Assistant - Now properly positioned */}
-            <div class="sticky top-24">
-              <div class="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-1 shadow-xl">
-                <div class="bg-white rounded-xl p-6">
-                  <AIChatAssistant />
-                </div>
-              </div>
-              <p class="text-center text-sm text-gray-500 mt-3">
-                Ask ARIA about ESG, carbon markets, or book a consultation
-              </p>
+            <div class="mt-8 text-center">
+              <a
+                href="/programs"
+                class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold"
+              >
+                Explore all programs →
+              </a>
             </div>
           </div>
         </div>

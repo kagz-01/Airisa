@@ -1,6 +1,7 @@
 import { type PageProps } from "$fresh/server.ts";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.tsx";
+import AIChatAssistant from "../islands/AIChatAssistant.tsx";
 
 export default function App({ Component, url }: PageProps) {
   return (
@@ -47,6 +48,7 @@ export default function App({ Component, url }: PageProps) {
           <Component />
         </main>
         <Footer />
+        <AIChatAssistant />
       </body>
     </html>
   );
