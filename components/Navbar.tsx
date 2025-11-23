@@ -17,6 +17,9 @@ export default function Navbar() {
           <a href="/programs" class="hover:text-green-600 transition">
             Programs
           </a>
+          <a href="/insights" class="hover:text-green-600 transition">
+            Insights
+          </a>
           <a href="/team" class="hover:text-green-600 transition">Team</a>
           <a
             href="/partner"

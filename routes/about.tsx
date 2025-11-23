@@ -56,9 +56,6 @@ export default function About() {
       {/* Executive Summary & Model */}
       <section class="py-14 bg-gradient-to-b from-white to-emerald-50/40">
         <div class="container mx-auto px-6 max-w-4xl">
-          <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
-            Executive Summary
-          </div>
           <h2 class="mt-4 text-2xl md:text-3xl font-bold text-gray-900 animate-fade-in-up">
             Catalyzing Transformative Mobility & Climate Action
           </h2>

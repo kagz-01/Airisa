@@ -255,15 +255,81 @@ export const ALL_FACTS: Fact[] = [
 export const META = { vision, mission };
 
 // Basic retrieval: score facts by keyword occurrences in prompt.
-export function retrieveFacts(prompt: string, limit = 3): Fact[] {
-  const lower = prompt.toLowerCase();
-  const scored = ALL_FACTS.map((f) => {
-    let score = 0;
-    for (const kw of f.keywords) {
-      if (lower.includes(kw)) score += 1;
+// --- Enhanced Retrieval (TF-IDF style keyword+token similarity) ---
+// We build a lightweight corpus index the first time retrieval is called.
+interface IndexedFact {
+  fact: Fact;
+  tokenFreq: Map<string, number>; // term frequency per fact
+}
+
+let INDEX: IndexedFact[] | null = null;
+let IDF: Map<string, number> | null = null;
+
+function tokenize(text: string): string[] {
+  return text.toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((t) => t.length > 2);
+}
+
+function buildIndex() {
+  const docs: IndexedFact[] = ALL_FACTS.map((fact) => {
+    // Combine keywords and fact text for richer representation.
+    const tokens = [
+      ...fact.keywords.map((k) => k.toLowerCase()),
+      ...tokenize(fact.text),
+    ];
+    const freq = new Map<string, number>();
+    tokens.forEach((t) => freq.set(t, (freq.get(t) || 0) + 1));
+    return { fact, tokenFreq: freq };
+  });
+  const df = new Map<string, number>();
+  docs.forEach((doc) => {
+    for (const token of doc.tokenFreq.keys()) {
+      df.set(token, (df.get(token) || 0) + 1);
     }
-    return { fact: f, score };
-  }).filter((s) => s.score > 0);
+  });
+  const totalDocs = docs.length;
+  const idf = new Map<string, number>();
+  for (const [token, count] of df.entries()) {
+    idf.set(token, Math.log((totalDocs + 1) / (count + 1)) + 1); // smoothed IDF
+  }
+  INDEX = docs;
+  IDF = idf;
+}
+
+export function retrieveFacts(prompt: string, limit = 3): Fact[] {
+  if (!INDEX || !IDF) buildIndex();
+  const queryTokens = tokenize(prompt);
+  if (queryTokens.length === 0) return [];
+  // Query term frequency
+  const qFreq = new Map<string, number>();
+  queryTokens.forEach((t) => qFreq.set(t, (qFreq.get(t) || 0) + 1));
+  // Compute query vector magnitude components (TF-IDF)
+  const qWeights = new Map<string, number>();
+  for (const [token, tf] of qFreq.entries()) {
+    const idf = IDF!.get(token) || 1;
+    qWeights.set(token, tf * idf);
+  }
+
+  const scored = INDEX!.map((doc) => {
+    let dot = 0;
+    let docMagSq = 0;
+    for (const [token, tf] of doc.tokenFreq.entries()) {
+      const weight = tf * (IDF!.get(token) || 1);
+      docMagSq += weight * weight;
+      const qWeight = qWeights.get(token);
+      if (qWeight) dot += qWeight * weight;
+    }
+    const qMagSq = Array.from(qWeights.values()).reduce(
+      (acc, w) => acc + w * w,
+      0,
+    );
+    const denom = Math.sqrt(docMagSq) * Math.sqrt(qMagSq) || 1;
+    const score = dot / denom;
+    return { fact: doc.fact, score };
+  }).filter((s) => s.score > 0.05); // small threshold to cut noise
+
   scored.sort((a, b) => b.score - a.score);
   return scored.slice(0, limit).map((s) => s.fact);
 }
@@ -308,7 +374,24 @@ export function buildAnswer(prompt: string): string {
   const intro = headerEmoji[intent] + " " + intent.charAt(0).toUpperCase() +
     intent.slice(1) + ":";
   const body = facts.map((f) => `• ${f.text}`).join("\n");
+  // Low-fact fallback linking
+  let linkSuggestion = "";
+  if (facts.length < 2) {
+    const pathMap: Record<string, string> = {
+      pillars: "/about",
+      services: "/services",
+      programs: "/programs",
+      team: "/team",
+      partner: "/partner",
+      contact: "/contact",
+      values: "/about",
+      general: "/index",
+      capacity: "/programs",
+    };
+    const path = pathMap[intent] || "/";
+    linkSuggestion = `\nMore details: ${path}`;
+  }
   const suggestions =
     "Ask: 'What is your mission?', 'Programs overview', 'Partner options', or 'Tell me about Anthony'.";
-  return `${intro}\n${body}\n\n${suggestions}`;
+  return `${intro}\n${body}${linkSuggestion}\n\n${suggestions}`;
 }
