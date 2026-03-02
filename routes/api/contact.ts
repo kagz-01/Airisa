@@ -1,4 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 interface ContactPayload {
   name?: string;
@@ -9,7 +10,23 @@ interface ContactPayload {
   website?: string; // honeypot
 }
 
-// Simple HTML template for the inbound email
+function buildJsonSummary(
+  data: Required<Omit<ContactPayload, "website">>,
+): string {
+  return JSON.stringify(
+    {
+      name: data.name,
+      email: data.email,
+      country: data.country || "",
+      subject: data.subject || "",
+      message: data.message,
+      receivedAt: new Date().toISOString(),
+    },
+    null,
+    2,
+  );
+}
+
 function renderEmail(data: Required<Omit<ContactPayload, "website">>) {
   const { name, email, country, subject, message } = data;
   return `<!DOCTYPE html><html><head><meta charset="utf-8" /></head><body style="font-family:system-ui,Segoe UI,Arial,sans-serif;line-height:1.5;color:#0f172a;">
@@ -36,7 +53,7 @@ export const handler: Handlers = {
     let payload: ContactPayload;
     try {
       payload = await req.json();
-    } catch (_e) {
+    } catch {
       return new Response(JSON.stringify({ error: "Invalid JSON" }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
@@ -46,27 +63,22 @@ export const handler: Handlers = {
     const { name, email, country = "", subject = "", message, website } =
       payload;
 
-    // Honeypot: if filled, treat as spam
+    // Honeypot check
     if (website) {
-      return new Response(
-        JSON.stringify({ success: true, message: "Message received." }),
-        {
-          status: 200,
-          headers: { "Content-Type": "application/json" },
-        },
-      );
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    // Basic validation
+    // Validation
     if (!name || !email || !message) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),
-        {
-          status: 422,
-          headers: { "Content-Type": "application/json" },
-        },
+        { status: 422, headers: { "Content-Type": "application/json" } },
       );
     }
+
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       return new Response(JSON.stringify({ error: "Invalid email format" }), {
         status: 422,
@@ -74,94 +86,112 @@ export const handler: Handlers = {
       });
     }
 
-    const resendKey = Deno.env.get("DENO_RESEND_API_KEY");
-    const formspreeEndpoint = Deno.env.get("FORMSPREE_ENDPOINT");
-    if (!resendKey) {
-      console.warn(
-        "[contact] Missing DENO_RESEND_API_KEY environment variable.",
-      );
-    }
-
-    const toAddress = "e.gathua@airisagreenconsulting.com"; // destination
-    const fromAddress = "site@airisagreenconsulting.com"; // must be verified in provider
-    const emailSubject = subject
-      ? `New inquiry: ${subject}`
-      : `New inquiry from ${name}`;
-
-    // Attempt email send if key present
-    let emailSent = false;
-    if (resendKey) {
-      try {
-        const html = renderEmail({ name, email, country, subject, message });
-        const sendRes = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${resendKey}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            from: fromAddress,
-            to: [toAddress],
-            reply_to: email,
-            subject: emailSubject,
-            html,
-          }),
-        });
-        if (!sendRes.ok) {
-          console.error(
-            "Resend API error",
-            sendRes.status,
-            await sendRes.text(),
-          );
-        } else {
-          emailSent = true;
-        }
-      } catch (err) {
-        console.error("Resend send failed", err);
-      }
-    }
-
-    // Fallback: Formspree endpoint if configured (works without domain ownership)
-    if (!emailSent && formspreeEndpoint) {
-      try {
-        const fsRes = await fetch(formspreeEndpoint, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-          },
-          body: JSON.stringify({ name, email, country, subject, message }),
-        });
-        if (!fsRes.ok) {
-          console.error("Formspree error", fsRes.status, await fsRes.text());
-        } else {
-          emailSent = true;
-        }
-      } catch (err) {
-        console.error("Formspree send failed", err);
-      }
-    }
-
-    // Optionally: persist to a database / log aggregator here
-    console.log("[contact] submission", {
+    // Prepare structured data
+    const structured = {
       name,
       email,
       country,
       subject,
       message,
-      emailSent,
-    });
+    } satisfies Required<Omit<ContactPayload, "website">>;
+
+    const html = renderEmail(structured);
+    const text = buildJsonSummary(structured);
+
+    const headers = { "Content-Type": "application/json" };
+    const requiredEnv = {
+      host: Deno.env.get("SMTP_HOST"),
+      port: Deno.env.get("SMTP_PORT"),
+      user: Deno.env.get("SMTP_USER"),
+      pass: Deno.env.get("SMTP_PASS"),
+      to: Deno.env.get("TO_EMAIL"),
+    } as const;
+
+    const missing = Object.entries(requiredEnv)
+      .filter(([, value]) => !value)
+      .map(([key]) => key);
+
+    if (missing.length) {
+      console.error("Missing SMTP environment variables:", missing.join(", "));
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: `Email delivery is not configured on the server. Missing: ${
+            missing.join(", ")
+          }`,
+        }),
+        { status: 500, headers },
+      );
+    }
+
+    const parsedPort = Number(requiredEnv.port);
+    if (!Number.isFinite(parsedPort)) {
+      console.error("Invalid SMTP_PORT value:", requiredEnv.port);
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Server email settings are invalid (SMTP_PORT)",
+        }),
+        { status: 500, headers },
+      );
+    }
+
+    const secureRaw = Deno.env.get("SMTP_SECURE");
+    const secure = secureRaw ? secureRaw.toLowerCase() === "true" : true;
+
+    // Construct "From" header: "User Name <system@email.com>"
+    // We MUST use the authenticated email (requiredEnv.user) as the sender address.
+    // Sending *as* the user's email (e.g. user@gmail.com) is spoofing and will be blocked by Gmail/Outlook.
+    // However, setting the display name to the user's name makes it look correct in the inbox.
+    const cleanName = name.replace(/["<>]/g, "");
+    const fromHeader = `"${cleanName}" <${requiredEnv.user}>`;
+
+    let emailSent = false;
+    let client: SMTPClient | null = null;
+    try {
+      client = new SMTPClient({
+        connection: {
+          hostname: requiredEnv.host!,
+          port: parsedPort,
+          tls: secure,
+          auth: { username: requiredEnv.user!, password: requiredEnv.pass! },
+        },
+      });
+
+      await client.send({
+        from: fromHeader,
+        to: requiredEnv.to!,
+        subject: subject
+          ? `New Inquiry: ${subject}`
+          : `New Inquiry from ${name}`,
+        html,
+        content: text,
+        replyTo: email,
+      });
+
+      emailSent = true;
+    } catch (err) {
+      console.error("SMTP error:", err);
+    } finally {
+      if (client) {
+        try {
+          await client.close();
+        } catch (closeErr) {
+          console.error("SMTP close error:", closeErr);
+        }
+      }
+    }
 
     return new Response(
       JSON.stringify({
         success: true,
         message: emailSent
-          ? "Message sent — we will reply within 1 business day."
-          : "Message received — delivery pending (no email gateway configured).",
+          ? "Message sent successfully."
+          : "Message received, but email delivery failed.",
       }),
       {
         status: 200,
-        headers: { "Content-Type": "application/json" },
+        headers,
       },
     );
   },

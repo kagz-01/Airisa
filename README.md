@@ -66,17 +66,65 @@ deno task preview
 
 ### Environment
 
-Set environment variables before running:
+Set environment variables before running. Example `.env` snippet for SMTP:
 
 ```sh
-export DENO_RESEND_API_KEY="your_resend_key_here"
-# Optional fallback that works without a custom domain
-export FORMSPREE_ENDPOINT="https://formspree.io/f/your_form_id"
+export SMTP_HOST="smtp.gmail.com"
+export SMTP_PORT="465"
+export SMTP_SECURE="true" # set to false for STARTTLS/25
+export SMTP_USER="site@airisagreenconsulting.com"
+export SMTP_PASS="your_app_password"
+export SMTP_FROM="Airisa Website <site@airisagreenconsulting.com>" # optional
+export TO_EMAIL="eve@airisagreenconsulting.com"
+export FORMSPREE_ENDPOINT="https://formspree.io/f/your_form_id" # optional fallback
 deno task start
 ```
 
-On Deno Deploy, configure `DENO_RESEND_API_KEY` in project settings. Optionally
-add `FORMSPREE_ENDPOINT` if you don’t have a sending domain yet.
+Legacy Resend delivery is still available—set `DENO_RESEND_API_KEY`,
+`RESEND_FROM`, and `RESEND_TO` instead of the SMTP variables above if you prefer
+that provider. On Deno Deploy (or any host), configure whichever set of secrets
+you use inside the project settings.
+
+## Deployment
+
+1. **Configure secrets**
+   - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, optional
+     `SMTP_FROM`, and `TO_EMAIL` are required for the new SMTP-based delivery
+     path.
+   - `DENO_RESEND_API_KEY`, `RESEND_FROM`, `RESEND_TO` remain supported if you
+     keep Resend as your primary provider.
+   - `FORMSPREE_ENDPOINT` (optional) continues to act as a fallback queue if
+     SMTP/Resend are unreachable.
+   - `AI_BASE_URL`, `AI_API_KEY`, `AI_MODEL` (optional) power the `/api/ai`
+     assistant island when deploying chat features.
+2. **Prepare providers**
+   - For SMTP: create an app password or service credential with your ESP, allow
+     SMTP access, and whitelist the `FROM` address so the inbox accepts replies.
+   - For Resend (optional): add/verify the sending domain and confirm the
+     `RESEND_FROM` address.
+   - In Formspree (optional): create a form, copy the secure endpoint, and
+     verify the recipient address so fallback submissions succeed without manual
+     approval.
+3. **Verify locally before shipping**
+   - Load secrets in a `.env` or shell session, then run:
+
+     ```sh
+     deno task start
+     ```
+
+   - Submit the `/contact` form twice: once with Resend credentials present,
+     once after temporarily unsetting `DENO_RESEND_API_KEY` to confirm the
+     Formspree fallback path.
+   - Monitor the terminal output for `[contact]` logs; any non-200 responses are
+     surfaced there along with the JSON payload, which you can forward manually
+     if needed.
+
+4. **Deploy**
+   - Push to `main`, then redeploy via your Fresh hosting target (Deno Deploy,
+     Supabase Edge, etc.). Make sure the environment variables above are
+     configured for the production project before triggering the build.
+   - Need a deeper ops checklist? See `docs/contact-email-runbook.md` for the
+     full SMTP/Resend/Formspree runbook.
 
 ### Security
 
