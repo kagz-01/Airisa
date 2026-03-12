@@ -1,6 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { DynamicInsight, getAllDynamicInsights } from "../utils/insights_kv.ts";
+import ARIASummarize from "../islands/ARIASummarize.tsx";
 
 interface Item {
   id?: string;
@@ -180,7 +181,7 @@ function PulseCard({ item }: { item: Item }) {
         </p>
       </div>
 
-      <div class="mt-10 pt-8 border-t border-slate-50 dark:border-emerald-800/30 flex justify-between items-center">
+      <div class="mt-10 pt-8 border-t border-slate-50 dark:border-emerald-800/30 flex justify-between items-center gap-4">
         <a
           href={item.href}
           target="_blank"
@@ -188,6 +189,11 @@ function PulseCard({ item }: { item: Item }) {
         >
           View Original on LinkedIn →
         </a>
+        <ARIASummarize
+          title={item.title}
+          summary={item.summary}
+          content={item.extendedContent}
+        />
       </div>
     </div>
   );
@@ -195,13 +201,13 @@ function PulseCard({ item }: { item: Item }) {
 
 function KnowledgeCard({ item }: { item: Item }) {
   return (
-    <a
-      href={item.href || "https://www.linkedin.com/company/airisa-green-consulting/"}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group flex flex-col md:flex-row gap-8 items-start py-10 border-b border-slate-100 dark:border-emerald-800/50 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all px-6 text-left relative overflow-hidden"
-    >
-      <div class="w-24 h-32 md:h-24 shrink-0 bg-slate-100 dark:bg-emerald-900 overflow-hidden rounded-sm saturate-[0.1] group-hover:saturate-100 transition-all duration-700 shadow-sm group-hover:scale-110 group-hover:rotate-1">
+    <div class="group flex flex-col md:flex-row gap-8 items-start py-10 border-b border-slate-100 dark:border-emerald-800/50 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all px-6 text-left relative overflow-hidden">
+      <a
+        href={item.href || "https://www.linkedin.com/company/airisa-green-consulting/"}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-24 h-32 md:h-24 shrink-0 bg-slate-100 dark:bg-emerald-900 overflow-hidden rounded-sm saturate-[0.1] group-hover:saturate-100 transition-all duration-700 shadow-sm group-hover:scale-110 group-hover:rotate-1"
+      >
         {item.image && (
           <img
             src={item.image}
@@ -209,7 +215,7 @@ function KnowledgeCard({ item }: { item: Item }) {
             class="w-full h-full object-cover"
           />
         )}
-      </div>
+      </a>
       <div class="flex-1">
         <div class="flex items-center gap-4 mb-3">
           <span class="text-[8px] font-black text-emerald-600 uppercase tracking-[0.4em]">
@@ -217,20 +223,37 @@ function KnowledgeCard({ item }: { item: Item }) {
           </span>
           <div class="h-px flex-1 bg-slate-100 dark:bg-emerald-800 group-hover:bg-emerald-400 transition-all duration-500" />
         </div>
-        <h4 class="text-xl md:text-2xl font-black text-emerald-950 dark:text-emerald-50 tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors mb-2">
-          {item.title}
-        </h4>
-        <p class="text-sm text-slate-900 dark:text-slate-300 font-bold max-w-2xl leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
-          {item.summary}
-        </p>
-        <div class="mt-4 flex items-center gap-2 text-[10px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500">
-          Read Full Narrative <span>→</span>
+        <a
+          href={item.href || "https://www.linkedin.com/company/airisa-green-consulting/"}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block"
+        >
+          <h4 class="text-xl md:text-2xl font-black text-emerald-950 dark:text-emerald-50 tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors mb-2">
+            {item.title}
+          </h4>
+          <p class="text-sm text-slate-900 dark:text-slate-300 font-bold max-w-2xl leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+            {item.summary}
+          </p>
+        </a>
+        <div class="mt-4 flex items-center justify-between gap-4">
+          <a
+            href={item.href || "https://www.linkedin.com/company/airisa-green-consulting/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-[10px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500"
+          >
+            Read Full Narrative <span>→</span>
+          </a>
+          <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ARIASummarize title={item.title} summary={item.summary} />
+          </div>
         </div>
       </div>
       <div class="text-[9px] font-black text-slate-300 dark:text-slate-600 group-hover:text-emerald-950 dark:group-hover:text-emerald-300 transition-colors pt-1 tracking-widest self-end md:self-start">
         TECH.DOSSIER
       </div>
-    </a>
+    </div>
   );
 }
 

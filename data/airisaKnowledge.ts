@@ -191,16 +191,16 @@ const team: Fact[] = [
   {
     id: "team_evelyn",
     category: "team",
-    keywords: ["evelyn", "gathua", "founder", "managing"],
+    keywords: ["evelyn", "gathua", "founder", "managing", "director", "md", "ceo", "lead"],
     text:
-      "Evelyn Gathua – Founder & Managing Director. Licensed NEMA Associate Expert; led Drive Electric Study (WRI); EV readiness methodologies (UNEP); member KEBS TC 199; collaborations with GIZ, Siemens Stiftung, Greenpeace Africa.",
+      "Evelyn Gathua is the Founder and Managing Director of Airisa Green Consulting. She is a licensed NEMA Associate Expert with deep expertise in sustainable mobility, climate resilience, and gender-inclusive transport policy. She has led projects including the Drive Electric Study (WRI), EV readiness assessments (UNEP), and is a member of the Kenya Bureau of Standards Technical Committee TC 199. She has collaborated with GIZ, Siemens Stiftung, and Greenpeace Africa. Contact Evelyn: e.gathua@airisagreenconsulting.com",
   },
   {
     id: "team_anthony",
     category: "team",
-    keywords: ["anthony", "ndolo", "co-founder", "strategy"],
+    keywords: ["anthony", "ndolo", "co-founder", "strategy", "director", "operations", "who is anthony"],
     text:
-      "Anthony Ndolo – Co‑founder & Director of Strategy. Former SMATBEBA CEO (>$100k ARR, 10k+ jobs); Westerwelle Fellow; Africa Mobility Initiative grant winner; delegate Bits & Pretzels; MIT Africa Innovate panelist; Digital Africa 1000 winner.",
+      "Anthony Ndolo is the Co-Founder and Director of Strategy & Operations at Airisa Green Consulting. He is a business systems architect with experience in health-tech, logistics-tech, programme design, and organisational scaling across emerging markets. He founded and led Smatbeba — a digital cargo transportation marketplace across East Africa — and served as Chief Operating Officer at EcoWorld Recycling, managing a USAID-supported plastic circular economy initiative. He has worked as a Programs Manager at an Entrepreneurial Support Organisation (ESO). Anthony is a 2025 Dream VC Fellow and focuses on building markets by aligning incentives, systems, and execution. Contact Anthony: a.ndolo@airisagreenconsulting.com | LinkedIn: https://www.linkedin.com/in/anthony-ndolo-58151b87",
   },
 ];
 
@@ -218,15 +218,37 @@ const contact: Fact[] = [
   {
     id: "contact_email",
     category: "contact",
-    keywords: ["contact", "email", "reach"],
+    keywords: ["contact", "email", "reach", "write", "message"],
     text:
-      "Primary emails: e.gathua@airisagreenconsulting.com, bondolo90@gmail.com",
+      "General enquiries: info@airisagreenconsulting.com | Evelyn Gathua (Founder): e.gathua@airisagreenconsulting.com | Anthony Ndolo (Co-Founder): a.ndolo@airisagreenconsulting.com",
+  },
+  {
+    id: "contact_phone",
+    category: "contact",
+    keywords: ["phone", "call", "number", "ring", "telephone"],
+    text:
+      "Company phone: +254 738 573 190. Users can call by clicking the phone icon in the footer, or tapping tel:+254738573190.",
+  },
+  {
+    id: "contact_whatsapp",
+    category: "contact",
+    keywords: ["whatsapp", "chat", "message", "text", "wa"],
+    text:
+      "WhatsApp: Chat with us directly on WhatsApp at +254 738 573 190. Use the WhatsApp button in the footer or visit https://wa.me/254738573190",
   },
   {
     id: "contact_location",
     category: "contact",
-    keywords: ["location", "address", "where"],
-    text: "Location: Nairobi, Kenya.",
+    keywords: ["location", "address", "where", "nairobi", "office", "kenya", "directions"],
+    text:
+      "Airisa Green Consulting is based in Nairobi, Kenya, East Africa. For directions or to arrange an in-person meeting, please reach out via email or phone first.",
+  },
+  {
+    id: "contact_linkedin",
+    category: "contact",
+    keywords: ["linkedin", "social", "follow", "connect"],
+    text:
+      "Follow Airisa Green Consulting on LinkedIn: https://www.linkedin.com/company/airisa-green-consulting/ | Anthony Ndolo on LinkedIn: https://www.linkedin.com/in/anthony-ndolo-58151b87",
   },
 ];
 

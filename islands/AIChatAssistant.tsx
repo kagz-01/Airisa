@@ -91,6 +91,33 @@ export default function AIChatAssistant() {
     }
   }, []);
 
+  // Listen for summarize requests from ARIASummarize island buttons
+  useEffect(() => {
+    const handleSummarize = async (e: Event) => {
+      const custom = e as CustomEvent<{ prompt: string }>;
+      const prompt = custom.detail?.prompt;
+      if (!prompt) return;
+      setIsOpen(true);
+      setMessages((m) => [...m, { from: "user", text: "📄 Summarize this article for me" }]);
+      setLoading(true);
+      try {
+        const res = await fetch("/api/ai", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt }),
+        });
+        const data = await res.json();
+        setMessages((m) => [...m, { from: "bot", text: data.reply ?? "Sorry, I couldn't summarize that." }]);
+      } catch {
+        setMessages((m) => [...m, { from: "bot", text: "Connection issue. Please try again." }]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    globalThis.addEventListener("aria:summarize", handleSummarize as EventListener);
+    return () => globalThis.removeEventListener("aria:summarize", handleSummarize as EventListener);
+  }, []);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };

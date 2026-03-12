@@ -19,6 +19,7 @@ import * as $programs from "./routes/programs.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $team from "./routes/team.tsx";
 import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
+import * as $ARIASummarize from "./islands/ARIASummarize.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $HeroSlideshow from "./islands/HeroSlideshow.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
@@ -46,6 +47,7 @@ const manifest = {
   },
   islands: {
     "./islands/AIChatAssistant.tsx": $AIChatAssistant,
+    "./islands/ARIASummarize.tsx": $ARIASummarize,
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/HeroSlideshow.tsx": $HeroSlideshow,
     "./islands/Navbar.tsx": $Navbar,
