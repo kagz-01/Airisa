@@ -1,14 +1,71 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 
-const SUGGESTIONS = [
+const DEFAULT_SUGGESTIONS = [
   "What is your vision?",
   "Tell me about Insight pillar",
   "List your services",
   "Programs overview",
-  "Tell me about Mama Mwendo",
-  "Team Evelyn",
   "Partner options",
 ];
+
+const PAGE_CONFIGS: Record<string, { greeting: string; suggestions: string[] }> = {
+  "/": {
+    greeting: "👋 Hi! Discover how we transform mobility in Africa.",
+    suggestions: ["What is your vision?", "How do you work?", "Tell me about ARIA"],
+  },
+  "/services": {
+    greeting: "👋 Need help finding the right service? Ask me!",
+    suggestions: ["What is your MEAL framework?", "ESIA capabilities", "Gender advisory"],
+  },
+  "/programs": {
+    greeting: "👋 Curious about Mama Mwendo or Sauti za Barabarani?",
+    suggestions: ["Tell me about Mama Mwendo", "What is SMLAP?", "Capacity building"],
+  },
+  "/team": {
+    greeting: "👋 Want to know more about Evelyn or Anthony?",
+    suggestions: ["Evelyn's background", "Anthony's experience", "Company history"],
+  },
+  "/partner": {
+    greeting: "👋 Ready to co-design the future? I can answer partnership FAQs!",
+    suggestions: ["How do I partner?", "What areas do you fund?", "Contact info"],
+  },
+  "/about": {
+    greeting: "👋 Learn about our mission, vision, and core values.",
+    suggestions: ["What are your values?", "Your mission?", "The Airisa Story"],
+  },
+};
+
+// Simple Markdown Link Parser: converts [text](url) to HTML links
+function parseMarkdownLinks(text: string) {
+  // Regex looks for [Link Text](URL)
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    parts.push(
+      <a
+        href={match[2]}
+        target={match[2].startsWith("/") ? "_self" : "_blank"}
+        rel="noopener noreferrer"
+        class="underline decoration-emerald-400 hover:text-emerald-200 transition-colors font-semibold"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = linkRegex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+}
 
 export default function AIChatAssistant() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +75,21 @@ export default function AIChatAssistant() {
   >([]);
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Dynamic Context State
+  const [greeting, setGreeting] = useState("👋 Hi! Curious? Ask ARIA!");
+  const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS);
+
+  useEffect(() => {
+    // Determine context based on current path
+    const path = globalThis.location?.pathname || "/";
+    const config = PAGE_CONFIGS[path] || PAGE_CONFIGS["/"];
+    
+    if (config) {
+      setGreeting(config.greeting);
+      setSuggestions(config.suggestions);
+    }
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -61,10 +133,10 @@ export default function AIChatAssistant() {
 
   if (!isOpen) {
     return (
-      <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 group">
+      <div class="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex flex-col items-end gap-2 group">
         {/* Curiosity Callout - Bounces to attract attention */}
         <div class="bg-white text-slate-800 text-xs font-bold px-3 py-2 rounded-xl shadow-lg border border-emerald-100 animate-bounce mb-1 mr-1 relative origin-bottom-right">
-          👋 Hi! Curious? Ask ARIA!
+          {greeting}
           <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-b border-r border-emerald-100 transform rotate-45">
           </div>
         </div>
@@ -93,7 +165,7 @@ export default function AIChatAssistant() {
   }
 
   return (
-    <div class="fixed bottom-6 right-6 z-50 w-[90vw] md:w-80 bg-white rounded-xl shadow-2xl border border-emerald-100 flex flex-col max-h-[500px] animate-fade-in-up">
+    <div class="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 w-[90vw] md:w-80 bg-white rounded-xl shadow-2xl border border-emerald-100 flex flex-col max-h-[500px] animate-fade-in-up">
       {/* Header */}
       <div class="flex items-center justify-between p-3 border-b bg-emerald-50 rounded-t-xl">
         <div class="text-sm font-semibold flex items-center gap-2 text-emerald-900">
@@ -134,7 +206,7 @@ export default function AIChatAssistant() {
                   : "bg-white text-slate-800 border border-slate-200 rounded-bl-none shadow-sm"
               }`}
             >
-              {m.text}
+              {m.from === "bot" ? parseMarkdownLinks(m.text) : m.text}
             </div>
           </div>
         ))}
@@ -151,7 +223,7 @@ export default function AIChatAssistant() {
       {/* Suggestions & Input */}
       <div class="p-3 border-t bg-white rounded-b-xl">
         <div class="flex overflow-x-auto gap-2 mb-2 pb-1 no-scrollbar">
-          {SUGGESTIONS.map((s) => (
+          {suggestions.map((s) => (
             <button
               type="button"
               class="whitespace-nowrap text-[10px] px-2 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-100 text-emerald-700 transition-colors"

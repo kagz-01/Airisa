@@ -1,5 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
-import Navbar from "../components/Navbar.tsx";
+import Navbar from "../islands/Navbar.tsx";
 import Footer from "../components/Footer.tsx";
 import AIChatAssistant from "../islands/AIChatAssistant.tsx";
 
@@ -11,6 +11,20 @@ export default function App({ Component, url }: PageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Airisa Green — ESG & Carbon Markets</title>
         <link rel="stylesheet" href="/styles.css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+                  if (!theme && supportDarkMode) theme = 'dark';
+                  if (theme === 'dark') document.documentElement.classList.add('dark');
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <link rel="canonical" href={url?.href ?? "/"} />
         <meta
           name="description"
@@ -42,7 +56,7 @@ export default function App({ Component, url }: PageProps) {
         />
         <meta name="twitter:image" content="/images/agc-logo.png" />
       </head>
-      <body class="min-h-full flex flex-col bg-white text-slate-900">
+      <body class="min-h-full flex flex-col bg-white dark:bg-emerald-950 text-slate-900 dark:text-emerald-50 transition-colors duration-500">
         <Navbar />
         <main class="flex-1">
           <Component />

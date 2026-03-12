@@ -64,14 +64,14 @@ export default function ECard() {
 
               <div class="grid grid-cols-2 gap-2 text-sm mt-4">
                 <a
-                  href="tel:+254723227150"
+                  href="tel:+254738573190"
                   class="flex items-center justify-center gap-2 rounded-md bg-white border border-green-200 px-3 py-2 text-green-700 hover:bg-green-50"
                   aria-label="Call Evelyn"
                 >
                   📞 Call
                 </a>
                 <a
-                  href="https://wa.me/254723227150"
+                  href="https://wa.me/254738573190"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="flex items-center justify-center gap-2 rounded-md bg-white border border-green-200 px-3 py-2 text-green-700 hover:bg-green-50"
@@ -80,10 +80,10 @@ export default function ECard() {
                   💬 WhatsApp
                 </a>
                 <a
-                  href="mailto:e.gathua@airisagreenconsulting.com"
+                  href="mailto:info@airisagreenconsulting.com"
                   class="flex items-center justify-center gap-2 rounded-md bg-white border border-green-200 px-3 py-2 text-green-700 hover:bg-green-50 col-span-2"
                 >
-                  📧 e.gathua@airisagreenconsulting.com
+                  📧 info@airisagreenconsulting.com
                 </a>
                 <a
                   href="https://www.linkedin.com/in/evelyn-gathua-a40887112"

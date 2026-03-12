@@ -8,6 +8,7 @@ import * as $about from "./routes/about.tsx";
 import * as $api_ai from "./routes/api/ai.ts";
 import * as $api_contact from "./routes/api/contact.ts";
 import * as $api_qr from "./routes/api/qr.ts";
+import * as $api_sync_insights from "./routes/api/sync_insights.ts";
 import * as $api_vcard from "./routes/api/vcard.ts";
 import * as $contact from "./routes/contact.tsx";
 import * as $ecard from "./routes/ecard.tsx";
@@ -20,7 +21,8 @@ import * as $team from "./routes/team.tsx";
 import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $HeroSlideshow from "./islands/HeroSlideshow.tsx";
-import * as $TeamGrid from "./islands/TeamGrid.tsx";
+import * as $Navbar from "./islands/Navbar.tsx";
+import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -31,6 +33,7 @@ const manifest = {
     "./routes/api/ai.ts": $api_ai,
     "./routes/api/contact.ts": $api_contact,
     "./routes/api/qr.ts": $api_qr,
+    "./routes/api/sync_insights.ts": $api_sync_insights,
     "./routes/api/vcard.ts": $api_vcard,
     "./routes/contact.tsx": $contact,
     "./routes/ecard.tsx": $ecard,
@@ -45,7 +48,8 @@ const manifest = {
     "./islands/AIChatAssistant.tsx": $AIChatAssistant,
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/HeroSlideshow.tsx": $HeroSlideshow,
-    "./islands/TeamGrid.tsx": $TeamGrid,
+    "./islands/Navbar.tsx": $Navbar,
+    "./islands/ThemeToggle.tsx": $ThemeToggle,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

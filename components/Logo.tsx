@@ -11,26 +11,27 @@ export default function Logo(
   const sizeClasses = {
     sm: "w-8 h-8 text-sm",
     md: "w-12 h-12 text-lg",
-    lg: "w-16 h-16 text-xl",
+    lg: "w-28 h-28 text-3xl",
   };
 
   const textSizes = {
     sm: "text-sm",
     md: "text-lg",
-    lg: "text-xl",
+    lg: "text-4xl",
   };
 
   const renderLogo = () => {
     if (src) {
       const sizeMap = {
-        sm: "w-8 h-8",
-        md: "w-12 h-12",
-        lg: "w-16 h-16",
+        sm: "h-12 w-auto object-contain",
+        md: "h-20 md:h-24 w-auto object-contain",
+        lg: "h-24 md:h-28 w-auto object-contain",
       } as const;
+      // When using a custom image the text is already embedded in the logo — skip the text
       return (
         <img
           src={src}
-          alt="Airisa logo"
+          alt="Airisa Green Consulting logo"
           class={`${sizeMap[size]} rounded ${
             variant === "circular" ? "rounded-full" : ""
           }`}
@@ -133,6 +134,11 @@ export default function Logo(
     }
   };
 
+  // When a custom image is used, the name is embedded in the image — skip the text label
+  if (src) {
+    return renderLogo();
+  }
+
   if (!showText) {
     return renderLogo();
   }
@@ -140,19 +146,19 @@ export default function Logo(
   return (
     <div class="flex items-center gap-3">
       {renderLogo()}
-      <div>
-        <div class={`font-bold text-gray-900 ${textSizes[size]}`}>
-          {variant === "monogram" ? "Airisa Green" : "Airisa"}
-        </div>
-        <div
-          class={`text-${
-            size === "sm" ? "xs" : "xs"
-          } text-green-600 font-medium -mt-1`}
+      <div class="flex flex-col leading-tight">
+        <span
+          class={`font-black uppercase text-emerald-600 dark:text-emerald-400 tracking-tight ${textSizes[size]}`}
         >
-          {variant === "monogram"
-            ? "Sustainability Consulting"
-            : "Green Consulting"}
-        </div>
+          AIRISA
+        </span>
+        <span
+          class={`font-black uppercase text-emerald-600 dark:text-emerald-400 tracking-widest ${
+            size === "lg" ? "text-sm" : "text-[9px]"
+          }`}
+        >
+          GREEN CONSULTING
+        </span>
       </div>
     </div>
   );

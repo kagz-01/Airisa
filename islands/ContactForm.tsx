@@ -273,72 +273,112 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <form onSubmit={onSubmit} class="grid gap-4 max-w-xl">
-      <div>
-        <label class="block text-sm font-medium text-slate-700">Name</label>
-        <input
-          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-          type="text"
-          value={name}
-          onInput={(e) => setName((e.target as HTMLInputElement).value)}
-          required
-        />
+    <form onSubmit={onSubmit} class="grid gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-1">
+            Name
+          </label>
+          <input
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+            type="text"
+            placeholder="Walter James"
+            value={name}
+            onInput={(e) => setName((e.target as HTMLInputElement).value)}
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-1">
+            Email
+          </label>
+          <input
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+            type="email"
+            placeholder="james@gmail.com"
+            value={email}
+            onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
+            required
+          />
+        </div>
       </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700">Email</label>
-        <input
-          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-          type="email"
-          value={email}
-          onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
-          required
-        />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-1">
+            Country
+          </label>
+          <select
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm appearance-none"
+            value={country}
+            onInput={(e) => setCountry((e.target as HTMLSelectElement).value)}
+            required
+          >
+            <option value="" disabled>Select a country</option>
+            {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-1">
+            Subject
+          </label>
+          <input
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+            type="text"
+            placeholder="General Inquiry"
+            value={subject}
+            onInput={(e) => setSubject((e.target as HTMLInputElement).value)}
+            required
+          />
+        </div>
       </div>
+
       <div>
-        <label class="block text-sm font-medium text-slate-700">Country</label>
-        <select
-          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
-          value={country}
-          onInput={(e) => setCountry((e.target as HTMLSelectElement).value)}
-          required
-        >
-          <option value="" disabled>Select a country</option>
-          {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
-        </select>
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700">Subject</label>
-        <input
-          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-          type="text"
-          value={subject}
-          onInput={(e) => setSubject((e.target as HTMLInputElement).value)}
-          required
-        />
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-slate-700">Message</label>
+        <label class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-1">
+          Message
+        </label>
         <textarea
-          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
           rows={5}
+          placeholder="Tell us about your mission..."
           value={message}
           onInput={(e) => setMessage((e.target as HTMLTextAreaElement).value)}
           required
         />
       </div>
-      <div class="flex items-center gap-3">
+
+      <div class="flex flex-col sm:flex-row items-center gap-6">
         <button
           type="submit"
           disabled={loading}
-          class="inline-flex items-center rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 disabled:opacity-50"
+          class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-emerald-600 rounded-[2px] hover:bg-emerald-700 hover:shadow-saffron disabled:opacity-50 overflow-hidden w-full sm:w-auto"
         >
-          {loading ? "Sending…" : "Send Message"}
+          <span class="relative z-10 flex items-center gap-2">
+            {loading ? "Aligning Gears..." : "Initialize Partnership"}
+            {!loading && (
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="arrow-right"
+                />
+              </svg>
+            )}
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
+          </div>
         </button>
         {status && (
           <p
             role="status"
             aria-live="polite"
-            class={`text-sm text-slate-600 transition-opacity duration-500 ${
+            class={`text-sm font-semibold text-emerald-800 transition-opacity duration-500 ${
               statusVisible ? "opacity-100" : "opacity-0"
             }`}
           >

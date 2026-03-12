@@ -107,6 +107,8 @@ export const handler: Handlers = {
       to: Deno.env.get("TO_EMAIL"),
     } as const;
 
+    console.log("DEBUG: Email Recipient (TO_EMAIL):", requiredEnv.to);
+
     const missing = Object.entries(requiredEnv)
       .filter(([, value]) => !value)
       .map(([key]) => key);

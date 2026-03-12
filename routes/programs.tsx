@@ -1,194 +1,90 @@
 import { Head } from "$fresh/runtime.ts";
-
-const namedPrograms = [
-  {
-    title: "Mama Mwendo",
-    pillar: "Gender & Inclusion",
-    desc:
-      "Strengthens women’s participation and leadership in mobility and climate sectors through curated learning, mentorship, and professional growth — building a community shaping inclusive transport futures.",
-    image:
-      "https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80",
-    animation: "zoom-in",
-  },
-  {
-    title: "Sauti za Barabarani",
-    pillar: "Inclusive Mobility",
-    desc:
-      "Brings communities and decision-makers together to reimagine mobility systems. Surfaces lived experiences, amplifies marginalized voices, and embeds equity & safety in transport planning.",
-    image:
-      "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80",
-    animation: "pan",
-  },
-  {
-    title: "Sustainable Mobility Literacy & Adoption (SMLAP)",
-    pillar: "Sustainable Mobility",
-    desc:
-      "Promotes awareness and adoption of electric, active, and low‑carbon transport options — equipping communities with foundational knowledge for informed choices and safer practices.",
-    image:
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80",
-    animation: "zoom-out",
-  },
-  {
-    title: "Resilient Transport Labs",
-    pillar: "Climate Action",
-    desc:
-      "Enables counties and cities to explore climate risks affecting mobility and identify adaptation pathways — fostering resilience mindset and long-term planning for climate‑smart systems.",
-    image:
-      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
-    animation: "blur",
-  },
-  {
-    title: "Community Climate Champions (C3)",
-    pillar: "Climate Action",
-    desc:
-      "Nurtures local leadership in climate action through awareness, engagement, and community-driven initiatives that inspire environmental stewardship.",
-    image:
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
-    animation: "zoom-in",
-  },
-];
-
-const capacityBuilding = [
-  {
-    title: "Curriculum Co-creation",
-    desc:
-      "Collaborating with academic & industry partners to design relevant educational frameworks.",
-    image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
-    animation: "zoom-in",
-  },
-  {
-    title: "Workshops & Trainings",
-    desc:
-      "Hands-on sessions designed to build practical skills and foster collaborative learning.",
-    image:
-      "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=800&q=80",
-    animation: "pan",
-  },
-  {
-    title: "Mentorship Programs",
-    desc:
-      "Guiding the next generation of leaders through structured mentorship and support.",
-    image:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
-    animation: "zoom-out",
-  },
-  {
-    title: "Speaking & Moderation",
-    desc:
-      "Thought leadership and facilitation at key industry conferences and events.",
-    image:
-      "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80",
-    animation: "blur",
-  },
-];
+import { capacityBuilding, namedPrograms } from "../data/programs.ts";
 
 export default function Programs() {
   return (
-    <div class="bg-white">
+    <div class="bg-white dark:bg-emerald-950 min-h-screen transition-colors duration-500">
       <Head>
         <title>Programs | Airisa Green Consulting</title>
         <meta
           name="description"
-          content="Social Impact Programs and Capacity Building — community pilots, advocacy, trainings, and knowledge leadership translating policy into practice."
+          content="Social Impact Programs and Capacity Building — Translating policy into practice through direct community intervention and knowledge leadership."
         />
-        <meta
-          property="og:title"
-          content="Programs | Airisa Green Consulting"
-        />
-        <meta
-          property="og:description"
-          content="Community-level pilots, advocacy, and capacity building that translate policy into practice with measurable benefits."
-        />
-        <meta property="og:image" content="/images/agc-logo.png" />
-        <meta
-          name="twitter:title"
-          content="Programs | Airisa Green Consulting"
-        />
-        <meta
-          name="twitter:description"
-          content="Community-level pilots, advocacy, and capacity building that translate policy into practice with measurable benefits."
-        />
-        <meta name="twitter:image" content="/images/agc-logo.png" />
       </Head>
 
-      <section class="relative overflow-hidden py-14 md:py-20">
-        <div class="absolute inset-0 -z-10 animated-gradient" />
-        <div class="container mx-auto px-6 text-center">
-          <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-900 animate-fade-in-up">
-            Programs
-          </h1>
-          <p
-            class="mt-3 text-slate-700 max-w-3xl mx-auto animate-fade-in-up"
-            style={{ animationDelay: "80ms" }}
-          >
-            Community‑level pilots, advocacy, and knowledge leadership that turn
-            policy into practice and deliver measurable benefits.
-          </p>
+      {/* Hero Section */}
+      <section class="relative overflow-hidden py-16 md:py-24 bg-emerald-950 flex items-center">
+        {/* Animated Ornaments */}
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-400/10 rounded-full blur-[100px] animate-pulse" />
+        <div
+          class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+          <div class="max-w-4xl">
+            <h1 class="text-6xl md:text-9xl font-black text-white leading-[0.85] tracking-tighter animate-fade-in-up mb-8">
+              Our Programs
+            </h1>
+          </div>
         </div>
       </section>
 
-      <section class="py-10">
-        <div class="container mx-auto px-6">
-          <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
-            Core Programs
+      {/* Section 1: Social Impact Programs */}
+      <section class="py-16 md:py-24 bg-[#021f16] relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div class="max-w-2xl">
+              <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6">
+                Social <span class="text-emerald-400">Impact</span>
+              </h2>
+              <div class="w-24 h-2 bg-amber-400 mb-8" />
+              <p class="text-lg text-emerald-100/60 font-medium italic">
+                Translating policy into practice through on-the-ground
+                implementation and community co-creation.
+              </p>
+            </div>
           </div>
-          <p
-            class="mt-2 text-slate-600 animate-fade-in-up"
-            style={{ animationDelay: "40ms" }}
-          >
-            Named initiatives built around Sustainable Mobility, Gender &
-            Inclusion, and Climate Action.
-          </p>
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <div class="space-y-16 lg:space-y-24">
             {namedPrograms.map((p, i) => (
               <div
-                class="bg-white rounded-xl overflow-hidden shadow-sm border border-emerald-100 animate-fade-in-up transition hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
-                style={{ animationDelay: `${i * 70}ms` }}
+                key={i}
+                class={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 animate-fade-in-up ${
+                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
+                style={{ animationDelay: `${i * 150}ms` }}
               >
-                <div class="h-48 overflow-hidden relative">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    class={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
-                      p.animation === "zoom-out"
-                        ? "scale-110 hover:scale-100"
-                        : p.animation === "pan"
-                        ? "scale-110 hover:translate-x-4"
-                        : p.animation === "blur"
-                        ? "blur-[2px] scale-105 hover:blur-none hover:scale-100"
-                        : "hover:scale-110"
-                    }`}
-                  />
-                  <div class="absolute top-3 right-3">
-                    <span class="px-2 py-1 rounded-md bg-white/90 backdrop-blur border border-emerald-100 text-emerald-700 text-[11px] font-medium shadow-sm">
-                      {p.pillar}
-                    </span>
+                {/* Image Container with Glow */}
+                <div class="w-full lg:w-1/2 relative group">
+                  <div class="absolute -inset-4 bg-emerald-400/20 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div class="relative aspect-video overflow-hidden rounded-[40px] shadow-2xl border border-white/5">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2000ms]"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 to-transparent" />
                   </div>
                 </div>
-                <div class="p-5 flex-1 flex flex-col">
-                  <div class="font-semibold text-emerald-900 text-lg mb-2">
-                    {p.title}
+
+                {/* Content Container */}
+                <div class="w-full lg:w-1/2">
+                  <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest mb-6">
+                    {p.tag}
                   </div>
-                  <p class="text-slate-700 text-sm leading-relaxed flex-1">
+                  <h3 class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-tight">
+                    {p.title}
+                  </h3>
+                  <p class="text-lg md:text-xl text-emerald-50/70 leading-relaxed font-medium mb-10">
                     {p.desc}
                   </p>
-                  <div class="mt-4 pt-3 border-t border-emerald-50 text-xs flex flex-wrap gap-3">
-                    <a
-                      href={`/partner?topic=${encodeURIComponent(p.title)}`}
-                      class="text-emerald-700 hover:text-emerald-800 font-medium"
-                    >
-                      Partner →
-                    </a>
-                    <a
-                      href={`/partner?topic=${
-                        encodeURIComponent(p.title + " enquiry")
-                      }`}
-                      class="text-emerald-700 hover:text-emerald-800 font-medium"
-                    >
-                      Enquire →
-                    </a>
-                  </div>
+                  <a
+                    href={`/partner?topic=${encodeURIComponent(p.title)}`}
+                    class="inline-flex items-center gap-4 text-amber-400 font-black uppercase tracking-widest text-sm hover:gap-6 transition-all"
+                  >
+                    Partner on this initiative <span>→</span>
+                  </a>
                 </div>
               </div>
             ))}
@@ -196,50 +92,75 @@ export default function Programs() {
         </div>
       </section>
 
-      <section class="py-8">
-        <div class="container mx-auto px-6">
-          <div class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold animate-fade-in">
-            Capacity Building & Knowledge Leadership
+      {/* Section 2: Capacity Building & Knowledge Leadership */}
+      <section class="py-16 md:py-24 bg-[#FDFCF8] dark:bg-emerald-950 transition-colors duration-500 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#021f16] to-transparent opacity-10" />
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-6xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-6 transition-colors">
+              Capacity Building & <br />
+              <span class="text-emerald-600 dark:text-emerald-400">Knowledge Leadership</span>
+            </h2>
+            <div class="w-20 h-2 bg-amber-400 mx-auto mb-8" />
+            <p class="text-lg text-slate-600 dark:text-emerald-50/70 font-bold transition-colors">
+              We equip individuals and organizations with the knowledge and
+              skills to advance sustainable mobility and environmental
+              sustainability.
+            </p>
           </div>
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {capacityBuilding.map((item, i) => (
               <div
-                class="bg-white rounded-xl overflow-hidden shadow-sm border border-emerald-100 animate-fade-in-up transition hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
-                style={{ animationDelay: `${i * 60}ms` }}
+                key={i}
+                class="bg-white dark:bg-emerald-900/10 p-8 md:p-10 rounded-[40px] shadow-sm border border-emerald-100/50 dark:border-emerald-800/40 hover:shadow-[0_30px_60px_-15px_rgba(5,150,105,0.1)] dark:hover:border-emerald-700/50 hover:-translate-y-2 transition-all duration-500 animate-fade-in-up group"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div class="h-40 overflow-hidden relative">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    class={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
-                      item.animation === "zoom-out"
-                        ? "scale-110 hover:scale-100"
-                        : item.animation === "pan"
-                        ? "scale-110 hover:translate-x-4"
-                        : item.animation === "blur"
-                        ? "blur-[2px] scale-105 hover:blur-none hover:scale-100"
-                        : "hover:scale-110"
-                    }`}
-                  />
-                </div>
-                <div class="p-5 flex-1 flex flex-col">
-                  <div class="font-semibold text-emerald-900 mb-2">
-                    {item.title}
+                <div class="flex justify-between items-start mb-8">
+                  <div class="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 transform group-hover:rotate-6">
+                    <span class="text-2xl font-bold">{i + 1}</span>
                   </div>
-                  <p class="text-slate-700 text-sm leading-relaxed flex-1">
-                    {item.desc}
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-emerald-50 text-sm">
-                    <a
-                      href={`/partner?topic=${encodeURIComponent(item.title)}`}
-                      class="text-emerald-700 hover:text-emerald-800 font-medium text-xs"
-                    >
-                      Enquire →
-                    </a>
+                  <div class="text-[10px] font-black uppercase tracking-widest text-amber-500 py-1.5 px-3 bg-amber-50 rounded-full">
+                    {item.tag}
                   </div>
                 </div>
+                <h4 class="text-2xl font-black text-emerald-950 dark:text-emerald-50 mb-6 tracking-tight leading-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                  {item.title}
+                </h4>
+                <p class="text-slate-600 dark:text-emerald-50/70 leading-relaxed font-medium opacity-80 mb-10 min-h-[60px] transition-colors">
+                  {item.desc}
+                </p>
+                <a
+                  href={`/partner?topic=${encodeURIComponent(item.title)}`}
+                  class="inline-flex items-center gap-3 text-emerald-700 dark:text-emerald-400 hover:text-emerald-950 dark:hover:text-emerald-200 font-black uppercase tracking-widest text-xs border-b-2 border-emerald-100 dark:border-emerald-800 hover:border-emerald-600 dark:hover:border-emerald-500 pb-1 transition-all"
+                >
+                  Request Collaboration <span>→</span>
+                </a>
               </div>
             ))}
+          </div>
+
+          {/* Insights Hub Teaser */}
+          <div class="mt-16 p-8 md:p-12 bg-emerald-950 rounded-[60px] relative overflow-hidden group">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
+            <div class="relative flex flex-col md:flex-row items-center justify-between gap-8">
+              <div class="max-w-xl text-center md:text-left">
+                <h3 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
+                  Visit the <span class="text-amber-400">Insights Hub</span>
+                </h3>
+                <p class="text-emerald-50/60 font-medium text-lg">
+                  Explore our latest articles, whitepapers, and diagnostic
+                  studies shared across our LinkedIn community.
+                </p>
+              </div>
+              <a
+                href="/insights"
+                class="px-10 py-5 bg-emerald-400 text-emerald-950 font-black uppercase tracking-widest text-xs rounded-tr-3xl rounded-bl-3xl hover:bg-amber-400 transition-all shadow-xl"
+              >
+                Explore Insights
+              </a>
+            </div>
           </div>
         </div>
       </section>

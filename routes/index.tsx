@@ -1,55 +1,9 @@
 import { Head } from "$fresh/runtime.ts";
 import Hero from "../components/Hero.tsx";
-import ServiceCard from "../components/ServiceCard.tsx";
+import { services } from "../data/services.ts";
+import { namedPrograms } from "../data/programs.ts";
 
 export default function Home() {
-  const services = [
-    {
-      title: "Research",
-      desc: "Feasibility & baseline studies, market research & surveys.",
-      icon: "📑",
-    },
-    {
-      title: "Project Management",
-      desc:
-        "Support from design through implementation for mobility & environment projects.",
-      icon: "🧭",
-    },
-    {
-      title: "MEAL",
-      desc:
-        "Monitoring, Evaluation, Accountability & Learning systems and delivery.",
-      icon: "📈",
-    },
-    {
-      title: "ESIA & Audits",
-      desc:
-        "Environmental and Social Impact Assessments (ESIA) & Environmental Audits (EA).",
-      icon: "📝",
-    },
-    {
-      title: "ESG Strategy",
-      desc:
-        "Materiality, governance, and investor-grade ESG strategy development.",
-      icon: "🧩",
-    },
-    {
-      title: "Gender & Inclusion",
-      desc: "Advisory for gender-responsive and inclusive mobility planning.",
-      icon: "♀️",
-    },
-    {
-      title: "Stakeholder & Capacity",
-      desc: "Stakeholder engagement and technical capacity building.",
-      icon: "🤝",
-    },
-    {
-      title: "Business Development",
-      desc: "Bid development and consulting support for program delivery.",
-      icon: "💼",
-    },
-  ];
-
   return (
     <>
       <Head>
@@ -73,183 +27,175 @@ export default function Home() {
       </Head>
       <Hero />
 
-      {/* Our Approach Section (Flow pillars) */}
-      <section class="py-16 bg-gradient-to-b from-emerald-50/60 to-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 animate-fade-in">
-              Our Approach
+      {/* Our Approach Section (Organic Overlapping Pillars) */}
+      <section class="py-16 md:py-20 bg-white dark:bg-emerald-950 relative overflow-hidden transition-colors duration-500">
+        {/* Background Decorative Element */}
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-50/50 dark:bg-emerald-900/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 animate-pulse transition-colors" />
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-amber-50/50 dark:bg-amber-900/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl opacity-40 animate-pulse transition-colors"
+          style={{ animationDelay: "1.5s" }}
+        />
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-3xl mb-10">
+            <h2 class="text-4xl md:text-5xl font-black text-emerald-950 tracking-tighter">
+              Our <span class="text-emerald-600">Approach</span>
             </h2>
-            <p
-              class="mt-3 text-lg text-gray-600 animate-fade-in-up"
-              style={{ animationDelay: "60ms" }}
-            >
-              Our work is guided by three pillars that shape how we deliver
-              value and impact.
+            <div class="w-16 h-1.5 bg-amber-400 mt-4" />
+            <p class="mt-6 text-xl text-slate-600 font-medium leading-relaxed">
+              We move beyond linear consulting. Our pillars overlap and
+              reinforce each other to create sustainable momentum.
             </p>
           </div>
 
-          <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md">
-              <div class="text-sm font-semibold text-emerald-700">INSIGHT</div>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+          <div class="relative flex flex-col gap-8 md:gap-0">
+            {/* Pillar 1: Insight */}
+            <div class="md:w-[45%] bg-white rounded-tr-[40px] rounded-bl-[40px] p-6 md:p-10 shadow-[0_30px_60px_-15px_rgba(5,150,105,0.08)] border border-emerald-50 relative z-10 transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_45px_100px_-20px_rgba(5,150,105,0.15)] group animate-fade-in-up">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="text-5xl group-hover:animate-bounce-slow">🧭</span>
+              </div>
+              <h3 class="text-5xl md:text-6xl font-black text-emerald-950 mb-8 leading-none tracking-tighter drop-shadow-sm group-hover:text-emerald-700 transition-colors">
+                Insight
+              </h3>
+              <p class="text-lg text-slate-600 leading-relaxed font-medium">
                 We generate clear, evidence-based understanding of transport and
                 environmental systems helping partners identify gaps,
                 opportunities, and emerging trends that inform better decisions.
               </p>
-              <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc list-inside">
-                <li>Baseline studies & technical assessments</li>
-                <li>Theory of Change development</li>
-                <li>Gender-disaggregated transport data</li>
-                <li>Best practice analysis</li>
-                <li>Stakeholder mapping & engagement</li>
-                <li>Transport pattern & trends analysis</li>
-              </ul>
             </div>
 
+            {/* Pillar 2: Strategy (Overlapping) */}
             <div
-              class="bg-white rounded-xl p-6 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md"
-              style={{ animationDelay: "80ms" }}
+              class="md:w-[45%] md:ml-auto md:-mt-12 bg-emerald-950 rounded-tl-[40px] rounded-br-[40px] p-6 md:p-10 shadow-2xl relative z-20 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 animate-fade-in-up group"
+              style={{ animationDelay: "200ms" }}
             >
-              <div class="text-sm font-semibold text-emerald-700">STRATEGY</div>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="text-4xl text-amber-400 group-hover:scale-125 transition-transform duration-500">
+                  ⚡
+                </span>
+              </div>
+              <h3 class="text-5xl md:text-6xl font-black text-white mb-8 leading-none tracking-tighter group-hover:text-amber-400 transition-colors">
+                Strategy
+              </h3>
+              <p class="text-lg text-emerald-50/80 leading-relaxed font-medium">
                 We translate insights into practical, inclusive strategies that
                 support sustainable mobility, climate resilience, and
-                responsible investment—solutions that are realistic,
-                policy-aligned, and ready for implementation.
+                responsible investment. Our focus is on solutions that are
+                realistic, policy-aligned, and ready for implementation.
               </p>
-              <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc list-inside">
-                <li>Investment cases & feasibility studies</li>
-                <li>Gender-responsive mobility frameworks</li>
-                <li>Climate adaptation strategies</li>
-                <li>Policy alignment & advocacy roadmaps</li>
-                <li>Institutional strengthening & coordination</li>
-                <li>Implementation blueprints with milestones</li>
-              </ul>
             </div>
 
+            {/* Pillar 3: Sustainability (Overlapping) */}
             <div
-              class="bg-white rounded-xl p-6 shadow-sm border border-emerald-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md"
-              style={{ animationDelay: "120ms" }}
+              class="md:w-[45%] md:-mt-12 bg-white rounded-tr-[40px] rounded-bl-[40px] p-6 md:p-10 shadow-[0_30px_60px_-15px_rgba(5,150,105,0.08)] border border-emerald-50 relative z-10 transition-all duration-500 hover:scale-[1.03] animate-fade-in-up group"
+              style={{ animationDelay: "400ms" }}
             >
-              <div class="text-sm font-semibold text-emerald-700">
-                SUSTAINABILITY
+              <div class="flex items-center gap-4 mb-6">
+                <span class="text-4xl text-emerald-600 group-hover:rotate-12 transition-transform duration-500">
+                  🌍
+                </span>
               </div>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              <h3 class="text-5xl md:text-6xl font-black text-emerald-950 mb-8 leading-none tracking-tighter group-hover:text-emerald-700 transition-colors">
+                Sustainability
+              </h3>
+              <p class="text-lg text-slate-600 leading-relaxed font-medium">
                 We ensure long-term results by embedding environmental, social,
-                and community-focused considerations into every
-                intervention—supporting partners to track progress, strengthen
-                resilience, and deliver measurable, lasting impact.
+                and community-focused considerations into every intervention
+                supporting partners to track progress, strengthen resilience,
+                and deliver measurable, lasting impact.
               </p>
-              <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc list-inside">
-                <li>ESIA frameworks & audits</li>
-                <li>Monitoring, evaluation, and learning (MEL)</li>
-                <li>Social inclusion metrics & tracking</li>
-                <li>Performance monitoring tools</li>
-                <li>Impact evaluation methodologies</li>
-                <li>Community-centered adaptation strategies</li>
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 animate-fade-in">
-              Consulting & Advisory Services
-            </h2>
-            <p
-              class="mt-4 text-lg text-gray-600 animate-fade-in-up"
-              style={{ animationDelay: "60ms" }}
+      {/* ── Our Services ── */}
+      <section class="py-16 bg-white dark:bg-emerald-950 transition-colors duration-500">
+        <div class="container mx-auto px-6">
+          {/* Section Label */}
+          <div class="flex flex-col md:flex-row items-end justify-between mb-10 gap-6">
+            <div class="max-w-2xl">
+              <span class="text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-[0.5em] mb-3 block">
+                What We Do
+              </span>
+              <h2 class="text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter transition-colors">
+                Our <span class="text-emerald-600 dark:text-emerald-400">Services</span>
+              </h2>
+              <div class="w-16 h-1.5 bg-amber-400 mt-3 mb-4" />
+              <p class="text-lg text-slate-600 dark:text-emerald-50/70 font-medium leading-relaxed transition-colors">
+                Practical consulting and advisory support across mobility, environment and climate designed to turn complexity into clear action.
+              </p>
+            </div>
+            <a
+              href="/services"
+              class="px-8 py-4 bg-emerald-950 dark:bg-emerald-600 text-white font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl rounded-tl-md rounded-br-md hover:bg-amber-400 hover:text-emerald-950 transition-all shadow-xl shrink-0"
             >
-              Design, policy, finance, and safeguards support across mobility
-              and environmental programs.
-            </p>
-            <p class="mt-3 text-sm">
-              <a
-                href="https://www.linkedin.com/company/airisa-green-consulting/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-green-600 hover:text-green-700 font-medium"
-              >
-                Follow Airisa on LinkedIn
-              </a>
-            </p>
+              All Services →
+            </a>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {services.map((service, i) => (
-              <div
-                class="animate-fade-in-up"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <ServiceCard
-                  title={service.title}
-                  desc={service.desc}
-                  icon={service.icon}
-                />
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {services.slice(0, 4).map((s, _i) => (
+              <div class="group p-6 bg-paper border border-emerald-50 organic-radius hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div class="w-10 h-1 bg-amber-400 mb-4 group-hover:w-full transition-all duration-500" />
+                <h4 class="text-lg font-bold text-emerald-950 mb-2">
+                  {s.title}
+                </h4>
+                <p class="text-slate-600 text-sm leading-relaxed opacity-80">
+                  {s.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Programs Section */}
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">
-              Programs
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Community mobility education",
-                  desc:
-                    "Awareness campaigns for sustainable, inclusive transport choices.",
-                },
-                {
-                  title: "Youth & women green careers",
-                  desc: "Training pathways into e-mobility and climate jobs.",
-                },
-                {
-                  title: "Grassroots pilots",
-                  desc: "Pilots improving safe, inclusive access to mobility.",
-                },
-                {
-                  title: "Participatory research & co-design",
-                  desc: "Workshops that localize solutions with communities.",
-                },
-                {
-                  title: "Localized resilience tools",
-                  desc: "Contextualizing climate tools for urban transport.",
-                },
-                {
-                  title: "Policy advocacy coalitions",
-                  desc: "Coalition-building for inclusive mobility policies.",
-                },
-              ].map((p, i) => (
-                <div
-                  class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 animate-fade-in-up transition hover:-translate-y-1 hover:shadow-md"
-                  style={{ animationDelay: `${i * 60}ms` }}
-                >
-                  <div class="font-semibold text-gray-900">{p.title}</div>
-                  <p class="text-gray-600 mt-2 text-sm">{p.desc}</p>
-                </div>
-              ))}
-            </div>
+      {/* ── Our Programs ── */}
+      <section class="py-16 md:py-24 bg-emerald-950 relative overflow-hidden">
+        {/* Decorative Saffron Wave */}
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-30" />
 
-            <div class="mt-8 text-center">
-              <a
-                href="/programs"
-                class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold"
-              >
-                Explore all programs →
-              </a>
+        <div class="container mx-auto px-6 relative z-10">
+          {/* Section Label */}
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div class="max-w-xl">
+              <span class="text-amber-400 text-[10px] font-black uppercase tracking-[0.5em] mb-3 block">
+                On the Ground
+              </span>
+              <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter">
+                Our <span class="text-amber-400">Programs</span>
+              </h2>
+              <div class="w-16 h-1.5 bg-emerald-400 mt-3 mb-4" />
+              <p class="text-lg text-emerald-50/70 font-medium leading-relaxed">
+                Strategy in motion direct community programs that bring our consulting work to life and create measurable change across Africa.
+              </p>
             </div>
+            <a
+              href="/programs"
+              class="inline-flex items-center gap-3 text-amber-400 hover:text-amber-300 font-bold group text-sm uppercase tracking-widest shrink-0"
+            >
+              Explore all programs
+              <span class="group-hover:translate-x-2 transition-transform">→</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {namedPrograms.slice(0, 3).map((p, _i) => (
+              <div
+                class="bg-emerald-900/40 backdrop-blur-sm border border-emerald-800/50 p-6 rounded-tr-3xl rounded-bl-3xl group hover:bg-emerald-900/60 transition-all duration-500 animate-fade-in-up"
+                style={{ animationDelay: `${_i * 100}ms` }}
+              >
+                <div class="text-[10px] font-black uppercase tracking-widest text-amber-400 mb-3 opacity-70">
+                  {p.pillar}
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                  {p.title}
+                </h4>
+                <p class="text-emerald-50/50 text-sm leading-relaxed">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

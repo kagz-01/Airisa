@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Subtle, professional animation utilities */
+/* 
+  AIRISA ORGANIC MOVEMENT DESIGN SYSTEM
+  ------------------------------------
+  Core Utilities for Asymmetry & Depth
+*/
+
+  header {
+    @apply dark:bg-emerald-950/90 dark:border-emerald-900/50 backdrop-blur-md;
+  }
+  
+  .dark body {
+    @apply bg-emerald-950 text-emerald-50;
+  }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -15,7 +28,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -23,63 +36,157 @@
   }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-/* Gradient background animation for hero */
-@keyframes gradientShift {
+/* Custom Ken Burns for Hero */
+@keyframes kenBurns {
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    transform: scale(1);
   }
   100% {
-    background-position: 0% 50%;
+    transform: scale(1.1);
   }
 }
 
-/* Gentle float for background orbs */
+@keyframes glowEmerald {
+  0% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.2);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes iconPop {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(52, 211, 153, 0));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(52, 211, 153, 0.4));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(52, 211, 153, 0));
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-emerald-950 transition-colors duration-500;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 600ms ease-out both;
+    animation: fadeIn 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
+
   .animate-fade-in-up {
-    animation: fadeInUp 600ms ease-out both;
+    animation: fadeInUp 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-  .animate-fade-out {
-    animation: fadeOut 500ms ease-in forwards;
+
+  /* Clean Background Utility */
+  .bg-paper {
+    background-color: #ffffff;
+    transition: background-color 500ms;
   }
-  .animated-gradient {
-    background: linear-gradient(120deg, #f0fdf4, #dcfce7, #f0fdf4);
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease-in-out infinite;
+  
+  html.dark .bg-paper {
+    background-color: #18201c; /* matches new emerald-950 */
   }
-  .animate-float-slow {
+
+  /* Soft-Sharp Hybrid Geometry */
+  .organic-radius {
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  /* Custom Stagger Delays */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Electric Saffron Glow */
+  .shadow-saffron {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+  }
+
+  .shadow-saffron-lg {
+    box-shadow: 0 0 -40px rgba(251, 191, 36, 0.3);
+  }
+
+  .text-saffron {
+    color: #fbbf24; /* Tailwind amber-400 */
+  }
+
+  .animate-glow-emerald {
+    animation: glowEmerald 3s ease-in-out infinite;
+  }
+
+  .bg-emerald-glow {
+    background-color: rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Custom Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Marquee Animation */
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  .animate-float-slower {
-    animation: float 10s ease-in-out infinite;
+
+  .animate-icon-pop {
+    animation: iconPop 3s ease-in-out infinite;
   }
-  .hover-lift {
-    transition: transform 200ms ease, box-shadow 200ms ease;
-  }
-  .hover-lift:hover {
-    transform: translateY(-2px);
+
+  .pause {
+    animation-play-state: paused;
   }
 }

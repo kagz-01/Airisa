@@ -1,133 +1,90 @@
 import { Head } from "$fresh/runtime.ts";
 import ServiceCard from "../components/ServiceCard.tsx";
+import { services } from "../data/services.ts";
 
 export default function Services() {
   return (
-    <div class="container mx-auto px-6 py-12">
+    <div class="bg-paper min-h-screen">
       <Head>
         <title>Services | Airisa Green Consulting</title>
         <meta
           name="description"
           content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
         />
-        <meta
-          property="og:title"
-          content="Services | Airisa Green Consulting"
-        />
-        <meta
-          property="og:description"
-          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
-        />
-        <meta property="og:image" content="/images/agc-logo.png" />
-        <meta
-          name="twitter:title"
-          content="Services | Airisa Green Consulting"
-        />
-        <meta
-          name="twitter:description"
-          content="Consulting & Advisory Services — Design, policy, finance, and safeguards support across mobility and environmental programs."
-        />
-        <meta name="twitter:image" content="/images/agc-logo.png" />
       </Head>
 
-      <div class="max-w-3xl">
-        <h1 class="text-3xl font-bold">Consulting & Advisory Services</h1>
-        <p class="mt-3 text-slate-600 leading-relaxed">
-          Design, policy, finance, and safeguards support across mobility and
-          environmental programs. We combine evidence generation, inclusive
-          strategy, and sustainability integration to move initiatives from
-          concept to measurable impact.
-        </p>
-        <div class="mt-4 inline-flex gap-2 text-xs font-semibold">
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
-            Insight
-          </span>
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
-            Strategy
-          </span>
-          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
-            Sustainability
-          </span>
-        </div>
-      </div>
+      <section class="py-16 md:py-24 relative overflow-hidden">
+        {/* Abstract background ornaments */}
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-100/30 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse" />
+        <div
+          class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-100/20 rounded-full blur-[100px] -ml-48 -mb-48 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        <ServiceCard
-          title="Research"
-          desc="Baseline & feasibility studies, market surveys, diagnostics, and best practice analysis."
-          image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
-          animationEffect="zoom-in"
-        />
-        <ServiceCard
-          title="Project Management"
-          desc="End-to-end delivery oversight from design to implementation with quality and safeguards."
-          image="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
-          animationEffect="pan"
-        />
-        <ServiceCard
-          title="MEAL Systems"
-          desc="Monitoring, Evaluation, Accountability & Learning frameworks and tool deployment."
-          image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-          animationEffect="zoom-out"
-        />
-        <ServiceCard
-          title="ESIA & Audits"
-          desc="Environmental & Social Impact Assessments and Environmental Audits aligned to regulations."
-          image="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=800&q=80"
-          animationEffect="blur"
-        />
-        <ServiceCard
-          title="ESG Strategy Development"
-          desc="Materiality, governance alignment, KPI definition, and investor-grade reporting support."
-          image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-          animationEffect="zoom-in"
-        />
-        <ServiceCard
-          title="Gender & Inclusion Advisory"
-          desc="Embedding gender-responsive and inclusive approaches in mobility and climate programs."
-          image="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80"
-          animationEffect="pan"
-        />
-        <ServiceCard
-          title="Stakeholder Engagement & Capacity"
-          desc="Coordinated stakeholder processes and technical capacity building for sustainable adoption."
-          image="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
-          animationEffect="zoom-out"
-        />
-        <ServiceCard
-          title="Business Development & Consulting"
-          desc="Bid support, partnership structuring, and resource mobilization for viable program scaling."
-          image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
-          animationEffect="blur"
-        />
-        <ServiceCard
-          title="Implementation Blueprints"
-          desc="Practical rollout plans with milestones, risk tracking, and sustainability integration."
-          image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
-          animationEffect="zoom-in"
-        />
-      </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-4xl mb-16">
+            <h1 class="text-6xl md:text-8xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-8 leading-[0.9] transition-colors">
+              Consulting & <br />
+              <span class="text-emerald-600 dark:text-emerald-400">Advisory</span>
+            </h1>
+            <div class="w-32 h-2.5 bg-amber-400 mb-10" />
+            <p class="text-2xl md:text-3xl text-slate-600 dark:text-emerald-50/70 leading-tight font-bold max-w-2xl transition-colors">
+              We provide professional consulting and advisory services across
+              mobility and environmental programs.
+            </p>
+          </div>
 
-      <div class="mt-12 bg-emerald-50 border border-emerald-100 rounded-xl p-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div class="text-sm text-slate-700">
-          Looking to co-create a mobility or climate initiative? Explore our
-          programs or partner directly.
+          <div class="flex flex-wrap gap-y-12 -mx-4">
+            {services.map((service, i) => (
+              <div
+                class={`px-4 w-full md:w-1/2 lg:w-1/3 animate-fade-in-up ${
+                  i % 2 === 1 ? "md:translate-y-20" : ""
+                } ${i % 3 === 1 ? "lg:translate-y-12" : ""} ${
+                  i % 3 === 2 ? "lg:translate-y-24" : ""
+                }`}
+                style={{ animationDelay: `${i * 150}ms` }}
+              >
+                <div class="group relative">
+                  {/* Magnetic Glow Effect */}
+                  <div class="absolute -inset-4 bg-emerald-400/0 rounded-[40px] blur-2xl group-hover:bg-emerald-400/10 transition-all duration-700" />
+
+                  <ServiceCard {...service} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Interactive Bottom CTA */}
+          <div class="mt-24 relative group">
+            <div class="absolute inset-0 bg-emerald-950 rounded-[40px] transform group-hover:scale-[1.02] transition-transform duration-700" />
+            <div class="relative p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
+              <div class="max-w-xl text-center lg:text-left">
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
+                  Ready to <span class="text-amber-400">Co-Create?</span>
+                </h2>
+                <div class="text-lg text-emerald-100/60 font-medium">
+                  Looking to co-create a mobility or climate initiative? Explore
+                  our programs or partner directly with our expert team.
+                </div>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-5">
+                <a
+                  href="/programs"
+                  class="px-10 py-5 bg-white dark:bg-emerald-900 text-emerald-950 dark:text-emerald-50 font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl hover:bg-amber-400 dark:hover:bg-amber-500 transition-all shadow-xl hover:-translate-y-1"
+                >
+                  View Programs
+                </a>
+                <a
+                  href="/partner"
+                  class="px-10 py-5 bg-emerald-500 text-white font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl hover:bg-amber-400 transition-all shadow-xl hover:-translate-y-1"
+                >
+                  Partner With Us
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="flex gap-3">
-          <a
-            href="/programs"
-            class="px-4 py-2 rounded-md bg-white border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-sm font-medium"
-          >
-            View Programs
-          </a>
-          <a
-            href="/partner"
-            class="px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-medium"
-          >
-            Partner With Us
-          </a>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
