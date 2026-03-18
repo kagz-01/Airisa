@@ -48,7 +48,7 @@ export default function Navbar() {
           {isBrandingCardOpen && (
             <div class="absolute top-[115%] left-0 w-[90vw] md:w-[450px] bg-white dark:bg-emerald-900 border border-emerald-100 dark:border-emerald-800 shadow-[0_40px_120px_-20px_rgba(5,150,105,0.25)] rounded-[40px] p-10 z-[100] animate-fade-in-up overflow-hidden">
               <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-50 dark:bg-emerald-800/30 rounded-full blur-3xl -z-10" />
-              <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-amber-50 dark:bg-amber-900/20 rounded-full blur-2xl -z-10" />
+              <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-lime-50 dark:bg-lime-900/20 rounded-full blur-2xl -z-10" />
 
               <div class="flex justify-between items-start mb-10">
                 <div class="space-y-4">
@@ -79,8 +79,8 @@ export default function Navbar() {
                   {
                     name: "Strategy",
                     icon: "⚡",
-                    color: "text-amber-600",
-                    bg: "bg-amber-50",
+                    color: "text-lime-600",
+                    bg: "bg-lime-50",
                   },
                   {
                     name: "Sustainability",
@@ -117,7 +117,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <nav class="hidden md:flex gap-6 items-center text-sm font-medium text-gray-700 dark:text-slate-200">
+        <nav class="hidden md:flex gap-6 items-center text-sm font-black uppercase tracking-tight text-emerald-950 dark:text-emerald-50">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -134,7 +134,7 @@ export default function Navbar() {
           <ThemeToggle />
           <a
             href="/partner"
-            class={`px-5 py-2 rounded-full transition shadow-sm hover-lift ${
+            class={`px-4 py-2 text-[10px] uppercase font-black rounded-full transition shadow-sm hover-lift whitespace-nowrap ${
               activePath === "/partner"
                 ? "bg-emerald-600 text-white animate-glow-emerald"
                 : "bg-green-600 text-white hover:bg-green-700"
@@ -161,7 +161,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div class="md:hidden border-t border-gray-100 dark:border-emerald-900 bg-white dark:bg-emerald-950 absolute w-full left-0 shadow-lg animate-fade-in-up">
-          <nav class="flex flex-col p-4 space-y-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+          <nav class="flex flex-col p-4 space-y-3 text-sm font-black tracking-tight text-emerald-950 dark:text-emerald-50">
             {navLinks.map((link) => (
                 <a
                 key={link.href}

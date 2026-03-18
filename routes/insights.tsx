@@ -2,6 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { DynamicInsight, getAllDynamicInsights } from "../utils/insights_kv.ts";
 import ARIASummarize from "../islands/ARIASummarize.tsx";
+import NewsletterSubscribe from "../islands/NewsletterSubscribe.tsx";
 
 interface Item {
   id?: string;
@@ -72,7 +73,7 @@ function PillarBadge(
     <span
       class={`px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] border-l-2 ${
         inverted
-          ? "bg-white/10 text-white border-amber-400"
+          ? "bg-white/10 text-white border-lime-400"
           : "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-600 dark:border-emerald-500"
       }`}
     >
@@ -83,7 +84,7 @@ function PillarBadge(
 
 function PartBadge({ part }: { part: string }) {
   return (
-    <span class="bg-amber-400 text-emerald-950 px-2 py-0.5 text-[9px] font-black uppercase tracking-widest rounded-sm">
+    <span class="bg-lime-400 text-emerald-950 px-2 py-0.5 text-[9px] font-black uppercase tracking-widest rounded-sm">
       Part {part}
     </span>
   );
@@ -115,7 +116,7 @@ function FeatureCard({ item }: { item: Item }) {
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
-          <p class="text-lg md:text-2xl text-emerald-50/90 font-medium leading-tight border-l-4 border-amber-400 pl-6">
+          <p class="text-lg md:text-2xl text-emerald-50/90 font-medium leading-tight border-l-4 border-lime-400 pl-6">
             {item.summary}
           </p>
           <div class="space-y-6">
@@ -125,7 +126,7 @@ function FeatureCard({ item }: { item: Item }) {
             <a
               href={item.href}
               target="_blank"
-              class="inline-flex items-center gap-4 text-amber-400 text-sm font-black uppercase tracking-[0.3em] hover:text-white transition-all group/link"
+              class="inline-flex items-center gap-4 text-lime-400 text-sm font-black uppercase tracking-[0.3em] hover:text-white transition-all group/link"
             >
               Read Full Narrative{" "}
               <span class="group-hover/link:translate-x-3 transition-transform">
@@ -147,7 +148,7 @@ function PulseCard({ item }: { item: Item }) {
           <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
           <div class="flex flex-col">
             <span class="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
-              LinkedIn Sync
+              Live Field Sync
             </span>
             {item.part && (
               <div class="mt-1">
@@ -241,7 +242,7 @@ function KnowledgeCard({ item }: { item: Item }) {
             href={item.href || "https://www.linkedin.com/company/airisa-green-consulting/"}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 text-[10px] font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500"
+            class="flex items-center gap-2 text-[10px] font-black text-lime-600 dark:text-lime-500 uppercase tracking-widest opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500"
           >
             Read Full Narrative <span>→</span>
           </a>
@@ -249,9 +250,6 @@ function KnowledgeCard({ item }: { item: Item }) {
             <ARIASummarize title={item.title} summary={item.summary} />
           </div>
         </div>
-      </div>
-      <div class="text-[9px] font-black text-slate-300 dark:text-slate-600 group-hover:text-emerald-950 dark:group-hover:text-emerald-300 transition-colors pt-1 tracking-widest self-end md:self-start">
-        TECH.DOSSIER
       </div>
     </div>
   );
@@ -346,7 +344,7 @@ export default function Insights(
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="flex flex-col md:flex-row items-start md:items-end gap-10 mb-16 text-left">
             <div class="max-w-2xl">
-              <span class="text-amber-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">
+              <span class="text-lime-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">
                 Section .02
               </span>
               <h2 class="text-4xl md:text-7xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-8 leading-none">
@@ -371,34 +369,7 @@ export default function Insights(
       </section>
 
       {/* Final Newsletter CTA */}
-      <section class="py-24 md:py-32 bg-emerald-950 overflow-hidden relative">
-        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-        <div class="container mx-auto px-6 relative z-10 text-center">
-          <div class="inline-block px-4 py-1 border border-amber-400 text-amber-400 text-[10px] font-black uppercase tracking-[0.4em] mb-12">
-            Stay Informed
-          </div>
-          <h3 class="text-4xl md:text-8xl font-black text-white tracking-tighter mb-16 leading-none">
-            Join the Next <br />
-            <span class="text-amber-400 italic">Policy Briefing.</span>
-          </h3>
-          <div class="flex flex-col md:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
-            <input
-              type="email"
-              placeholder="Professional email address"
-              class="px-8 py-6 bg-white/5 border border-white/20 text-white font-medium hover:border-white/40 focus:bg-white/10 w-full focus:outline-none focus:border-amber-400 transition-all"
-            />
-            <button
-              type="button"
-              class="px-10 py-6 bg-amber-400 text-emerald-950 font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:scale-105 active:scale-95 transition-all w-full md:w-auto shrink-0"
-            >
-              Subscribe
-            </button>
-          </div>
-          <p class="mt-12 text-emerald-400/50 text-[9px] font-black uppercase tracking-widest">
-            Rigorous Insights. Zero Spam.
-          </p>
-        </div>
-      </section>
+      <NewsletterSubscribe />
     </div>
   );
 }

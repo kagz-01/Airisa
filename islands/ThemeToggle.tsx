@@ -37,7 +37,7 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {/* Animated background focus */}
-      <div class="absolute inset-0 bg-gradient-to-tr from-amber-400/0 via-amber-400/0 to-amber-400/0 group-hover:from-amber-400/10 transition-all duration-700" />
+      <div class="absolute inset-0 bg-gradient-to-tr from-lime-400/0 via-lime-400/0 to-lime-400/0 group-hover:from-lime-400/10 transition-all duration-700" />
       
       <div class="relative z-10">
         {theme === "light" ? (

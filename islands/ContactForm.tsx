@@ -280,7 +280,7 @@ export default function ContactForm() {
             Name
           </label>
           <input
-            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all bg-white/50 backdrop-blur-sm"
             type="text"
             placeholder="Walter James"
             value={name}
@@ -293,7 +293,7 @@ export default function ContactForm() {
             Email
           </label>
           <input
-            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all bg-white/50 backdrop-blur-sm"
             type="email"
             placeholder="james@gmail.com"
             value={email}
@@ -309,7 +309,7 @@ export default function ContactForm() {
             Country
           </label>
           <select
-            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm appearance-none"
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all bg-white/50 backdrop-blur-sm appearance-none"
             value={country}
             onInput={(e) => setCountry((e.target as HTMLSelectElement).value)}
             required
@@ -323,7 +323,7 @@ export default function ContactForm() {
             Subject
           </label>
           <input
-            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+            class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all bg-white/50 backdrop-blur-sm"
             type="text"
             placeholder="General Inquiry"
             value={subject}
@@ -338,7 +338,7 @@ export default function ContactForm() {
           Message
         </label>
         <textarea
-          class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-all bg-white/50 backdrop-blur-sm"
+          class="w-full rounded-[2px] border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all bg-white/50 backdrop-blur-sm"
           rows={5}
           placeholder="Tell us about your mission..."
           value={message}
@@ -351,7 +351,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-emerald-600 rounded-[2px] hover:bg-emerald-700 hover:shadow-saffron disabled:opacity-50 overflow-hidden w-full sm:w-auto"
+          class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-emerald-600 rounded-[2px] hover:bg-emerald-700 hover:shadow-lime disabled:opacity-50 overflow-hidden w-full sm:w-auto"
         >
           <span class="relative z-10 flex items-center gap-2">
             {loading ? "Aligning Gears..." : "Initialize Partnership"}
@@ -371,7 +371,7 @@ export default function ContactForm() {
               </svg>
             )}
           </span>
-          <div class="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
+          <div class="absolute inset-0 bg-gradient-to-r from-lime-400 to-lime-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
           </div>
         </button>
         {status && (

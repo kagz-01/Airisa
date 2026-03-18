@@ -17,7 +17,7 @@ export default function Programs() {
         {/* Animated Ornaments */}
         <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-400/10 rounded-full blur-[100px] animate-pulse" />
         <div
-          class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 animate-pulse"
+          class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-lime-400/5 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 animate-pulse"
           style={{ animationDelay: "2s" }}
         />
 
@@ -38,7 +38,7 @@ export default function Programs() {
               <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6">
                 Social <span class="text-emerald-400">Impact</span>
               </h2>
-              <div class="w-24 h-2 bg-amber-400 mb-8" />
+              <div class="w-24 h-2 bg-lime-400 mb-8" />
               <p class="text-lg text-emerald-100/60 font-medium italic">
                 Translating policy into practice through on-the-ground
                 implementation and community co-creation.
@@ -70,9 +70,6 @@ export default function Programs() {
 
                 {/* Content Container */}
                 <div class="w-full lg:w-1/2">
-                  <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest mb-6">
-                    {p.tag}
-                  </div>
                   <h3 class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-tight">
                     {p.title}
                   </h3>
@@ -81,7 +78,7 @@ export default function Programs() {
                   </p>
                   <a
                     href={`/partner?topic=${encodeURIComponent(p.title)}`}
-                    class="inline-flex items-center gap-4 text-amber-400 font-black uppercase tracking-widest text-sm hover:gap-6 transition-all"
+                    class="inline-flex items-center gap-4 text-lime-400 font-black uppercase tracking-widest text-sm hover:gap-6 transition-all"
                   >
                     Partner on this initiative <span>→</span>
                   </a>
@@ -97,12 +94,12 @@ export default function Programs() {
         <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#021f16] to-transparent opacity-10" />
 
         <div class="container mx-auto px-6 relative z-10">
-          <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="text-center max-w-4xl mx-auto mb-16">
             <h2 class="text-4xl md:text-6xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-6 transition-colors">
               Capacity Building & <br />
               <span class="text-emerald-600 dark:text-emerald-400">Knowledge Leadership</span>
             </h2>
-            <div class="w-20 h-2 bg-amber-400 mx-auto mb-8" />
+            <div class="w-20 h-2 bg-lime-400 mx-auto mb-8" />
             <p class="text-lg text-slate-600 dark:text-emerald-50/70 font-bold transition-colors">
               We equip individuals and organizations with the knowledge and
               skills to advance sustainable mobility and environmental
@@ -114,29 +111,43 @@ export default function Programs() {
             {capacityBuilding.map((item, i) => (
               <div
                 key={i}
-                class="bg-white dark:bg-emerald-900/10 p-8 md:p-10 rounded-[40px] shadow-sm border border-emerald-100/50 dark:border-emerald-800/40 hover:shadow-[0_30px_60px_-15px_rgba(5,150,105,0.1)] dark:hover:border-emerald-700/50 hover:-translate-y-2 transition-all duration-500 animate-fade-in-up group"
+                class="bg-white dark:bg-emerald-900/10 rounded-[40px] shadow-sm border border-emerald-100/50 dark:border-emerald-800/40 hover:shadow-[0_45px_100px_-20px_rgba(5,150,105,0.15)] dark:hover:border-emerald-700/50 hover:-translate-y-2 transition-all duration-700 animate-fade-in-up group overflow-hidden"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div class="flex justify-between items-start mb-8">
-                  <div class="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 transform group-hover:rotate-6">
-                    <span class="text-2xl font-bold">{i + 1}</span>
-                  </div>
-                  <div class="text-[10px] font-black uppercase tracking-widest text-amber-500 py-1.5 px-3 bg-amber-50 rounded-full">
-                    {item.tag}
+                {/* Image Header with Animation */}
+                <div class="h-48 overflow-hidden relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class={`w-full h-full object-cover transition-all duration-1000 
+                      ${item.animation === "pan" ? "group-hover:translate-x-8 group-hover:scale-110" : ""}
+                      ${item.animation === "zoom-in" ? "group-hover:scale-125" : ""}
+                      ${item.animation === "zoom-out" ? "scale-125 group-hover:scale-100" : ""}
+                      ${item.animation === "blur" ? "blur-sm group-hover:blur-0 group-hover:scale-110" : "group-hover:scale-110"}
+                    `}
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent" />
+                  <div class="absolute bottom-6 left-8">
+                    <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center font-black text-xl border border-white/30">
+                      0{i + 1}
+                    </div>
                   </div>
                 </div>
-                <h4 class="text-2xl font-black text-emerald-950 dark:text-emerald-50 mb-6 tracking-tight leading-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                  {item.title}
-                </h4>
-                <p class="text-slate-600 dark:text-emerald-50/70 leading-relaxed font-medium opacity-80 mb-10 min-h-[60px] transition-colors">
-                  {item.desc}
-                </p>
-                <a
-                  href={`/partner?topic=${encodeURIComponent(item.title)}`}
-                  class="inline-flex items-center gap-3 text-emerald-700 dark:text-emerald-400 hover:text-emerald-950 dark:hover:text-emerald-200 font-black uppercase tracking-widest text-xs border-b-2 border-emerald-100 dark:border-emerald-800 hover:border-emerald-600 dark:hover:border-emerald-500 pb-1 transition-all"
-                >
-                  Request Collaboration <span>→</span>
-                </a>
+
+                <div class="p-8 md:p-10">
+                  <h4 class="text-2xl font-black text-emerald-950 dark:text-emerald-50 mb-6 tracking-tight leading-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                    {item.title}
+                  </h4>
+                  <p class="text-slate-600 dark:text-emerald-50/70 leading-relaxed font-medium opacity-80 mb-10 min-h-[60px] transition-colors">
+                    {item.desc}
+                  </p>
+                  <a
+                    href={`/partner?topic=${encodeURIComponent(item.title)}`}
+                    class="inline-flex items-center gap-3 text-emerald-700 dark:text-emerald-400 hover:text-emerald-950 dark:hover:text-emerald-200 font-black uppercase tracking-widest text-xs border-b-2 border-emerald-100 dark:border-emerald-800 hover:border-emerald-600 dark:hover:border-emerald-500 pb-1 transition-all"
+                  >
+                    Request Collaboration <span>→</span>
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -147,7 +158,7 @@ export default function Programs() {
             <div class="relative flex flex-col md:flex-row items-center justify-between gap-8">
               <div class="max-w-xl text-center md:text-left">
                 <h3 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
-                  Visit the <span class="text-amber-400">Insights Hub</span>
+                  Visit the <span class="text-lime-400">Insights Hub</span>
                 </h3>
                 <p class="text-emerald-50/60 font-medium text-lg">
                   Explore our latest articles, whitepapers, and diagnostic
@@ -156,7 +167,7 @@ export default function Programs() {
               </div>
               <a
                 href="/insights"
-                class="px-10 py-5 bg-emerald-400 text-emerald-950 font-black uppercase tracking-widest text-xs rounded-tr-3xl rounded-bl-3xl hover:bg-amber-400 transition-all shadow-xl"
+                class="px-10 py-5 bg-emerald-400 text-emerald-950 font-black uppercase tracking-widest text-xs rounded-tr-3xl rounded-bl-3xl hover:bg-lime-400 transition-all shadow-xl"
               >
                 Explore Insights
               </a>

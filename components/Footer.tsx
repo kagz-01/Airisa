@@ -3,7 +3,7 @@ import Logo from "./Logo.tsx";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer class="bg-emerald-50 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-50 py-10 relative overflow-hidden border-t border-emerald-200 dark:border-emerald-800/30 transition-colors duration-500">
+    <footer class="bg-white dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-50 py-10 relative overflow-hidden border-t border-emerald-200 dark:border-emerald-800/30 transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center gap-6">
 
         {/* Top Row: Logo left, contact right */}
@@ -20,7 +20,7 @@ export default function Footer() {
           <div class="flex flex-col items-center md:items-end gap-1 text-sm">
             <a
               href="mailto:info@airisagreenconsulting.com"
-              class="font-bold border-b border-amber-400 dark:border-amber-500 pb-0.5 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300"
+              class="font-black border-b-2 border-lime-400 dark:border-lime-500 pb-0.5 text-emerald-950 dark:text-white hover:text-lime-600 dark:hover:text-lime-400 transition-all duration-300 tracking-tight"
             >
               info@airisagreenconsulting.com
             </a>
@@ -28,12 +28,12 @@ export default function Footer() {
         </div>
 
         {/* Centre: Tagline + Copyright */}
-        <div class="text-center space-y-1">
-          <div class="text-xs md:text-sm font-medium italic text-emerald-900/70 dark:text-emerald-300/70 transition-colors">
+        <div class="text-center space-y-2">
+          <div class="text-xs md:text-sm font-bold italic text-emerald-900 dark:text-emerald-100 transition-colors tracking-wider">
             Transforming mobility and environmental sustainability in Africa
           </div>
-          <div class="text-xs font-semibold text-emerald-800/60 dark:text-emerald-400/60 transition-colors">
-            © {year} Airisa Green Consulting. All Rights Reserved.
+          <div class="text-xs font-black text-emerald-950/80 dark:text-emerald-50/80 transition-colors">
+            © {year} Airisa Green Consulting. All Rights Reserved. • <a href="/unsubscribe" class="hover:text-emerald-700 dark:hover:text-emerald-400 underline decoration-emerald-300 dark:decoration-emerald-700 transition-colors">Unsubscribe</a>
           </div>
         </div>
 

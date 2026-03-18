@@ -142,17 +142,17 @@
     animation-delay: 500ms;
   }
 
-  /* Electric Saffron Glow */
-  .shadow-saffron {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+  /* Electric Lime Glow */
+  .shadow-lime {
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.2);
   }
 
-  .shadow-saffron-lg {
-    box-shadow: 0 0 -40px rgba(251, 191, 36, 0.3);
+  .shadow-lime-lg {
+    box-shadow: 0 0 -40px rgba(163, 230, 53, 0.3);
   }
 
-  .text-saffron {
-    color: #fbbf24; /* Tailwind amber-400 */
+  .text-lime {
+    color: #a3e635; /* Tailwind lime-400 */
   }
 
   .animate-glow-emerald {

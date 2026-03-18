@@ -29,7 +29,7 @@ export default function About() {
         <div class="absolute inset-0 opacity-20">
           <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-400 rounded-full blur-[120px] animate-pulse" />
           <div
-            class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-400 rounded-full blur-[120px] animate-pulse"
+            class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-lime-400 rounded-full blur-[120px] animate-pulse"
             style={{ animationDelay: "2s" }}
           />
         </div>
@@ -77,12 +77,12 @@ export default function About() {
       {/* Vision & Mission (Parallel & Dynamic) */}
       <section class="py-20 bg-white dark:bg-emerald-950 transition-colors duration-500 relative">
         <div class="container mx-auto px-6">
-          <div class="grid lg:grid-cols-2 gap-6">
+          <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 relative">
             {/* Vision Card */}
-            <div class="relative group min-h-[350px] lg:h-[400px] overflow-hidden organic-radius bg-emerald-950 p-8 md:p-10 flex flex-col justify-end shadow-2xl transition-all duration-700 hover:-translate-y-4 animate-fade-in-up">
-              <div class="absolute top-0 right-0 p-8 transition-all duration-500 group-hover:scale-110">
+            <div class="w-full lg:w-[45%] relative group min-h-[300px] lg:h-[320px] overflow-hidden organic-radius bg-emerald-950 p-8 md:p-8 flex flex-col justify-end shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lime/20 animate-fade-in-up z-20">
+              <div class="absolute top-0 right-0 p-6 transition-all duration-500 group-hover:scale-110 opacity-40 group-hover:opacity-100">
                 <svg
-                  class="w-32 h-32 text-emerald-400 animate-icon-pop"
+                  class="w-24 h-24 text-lime-400 animate-icon-pop"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -90,10 +90,10 @@ export default function About() {
                 </svg>
               </div>
               <div class="relative z-10">
-                <h3 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tighter mb-6">
+                <h3 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-tighter mb-4">
                   Vision
                 </h3>
-                <p class="text-emerald-50/70 text-lg md:text-xl font-medium leading-relaxed">
+                <p class="text-emerald-50/70 text-base md:text-lg font-medium leading-relaxed">
                   To advance inclusive mobility, climate resilience, and
                   environmental sustainability through research, policy
                   innovation, and community‑centered implementation.
@@ -101,11 +101,14 @@ export default function About() {
               </div>
             </div>
 
+            {/* Connecting Element (Desktop Only) */}
+            <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-1 bg-gradient-to-r from-lime-400 to-transparent z-10 opacity-30" />
+
             {/* Mission Card */}
-            <div class="relative group min-h-[350px] lg:h-[400px] overflow-hidden organic-radius bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800/50 p-8 md:p-10 flex flex-col justify-end shadow-xl transition-all duration-700 hover:-translate-y-4 lg:mt-12 animate-fade-in-up delay-200">
-              <div class="absolute top-0 right-0 p-8 transition-all duration-500 group-hover:scale-110">
+            <div class="w-full lg:w-[48%] relative group min-h-[300px] lg:h-[320px] overflow-hidden organic-radius bg-white dark:bg-emerald-900 border border-emerald-100 dark:border-emerald-800/50 p-8 md:p-8 flex flex-col justify-end shadow-xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] lg:-ml-12 lg:mt-24 animate-fade-in-up delay-200 z-30">
+              <div class="absolute top-0 right-0 p-6 transition-all duration-500 group-hover:scale-110 opacity-40 group-hover:opacity-100">
                 <svg
-                  class="w-32 h-32 text-emerald-600 animate-icon-pop"
+                  class="w-24 h-24 text-emerald-600 dark:text-lime-400 animate-icon-pop"
                   style={{ animationDelay: "1s" }}
                   fill="currentColor"
                   viewBox="0 0 24 24"
@@ -114,14 +117,13 @@ export default function About() {
                 </svg>
               </div>
               <div class="relative z-10">
-                <h3 class="text-emerald-950 dark:text-emerald-50 text-4xl md:text-6xl font-black leading-tight tracking-tighter mb-6 transition-colors">
+                <h3 class="text-emerald-950 dark:text-emerald-50 text-3xl md:text-5xl font-black leading-tight tracking-tighter mb-4 transition-colors">
                   Mission
                 </h3>
-                <p class="text-slate-600 dark:text-emerald-50/70 text-lg md:text-xl font-medium leading-relaxed transition-colors">
+                <p class="text-slate-600 dark:text-emerald-50/70 text-base md:text-lg font-medium leading-relaxed transition-colors">
                   To transform mobility systems through research excellence,
                   gender-inclusive advocacy, and collaborative partnerships that
-                  bridge the gap between policy and implementation while
-                  fostering innovation in Africa’s transport systems.
+                  bridge the gap between policy and implementation across Africa.
                 </p>
               </div>
             </div>
@@ -130,12 +132,12 @@ export default function About() {
       </section>
 
       {/* Values (Sliding Infinite Marquee) */}
-      <section class="py-20 bg-paper overflow-hidden">
+      <section class="py-20 bg-paper dark:bg-emerald-950 transition-colors duration-500 overflow-hidden">
         <div class="container mx-auto px-6 mb-12 text-center">
           <h2 class="text-4xl md:text-7xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-4 transition-colors">
             Our <span class="text-emerald-600">Values</span>
           </h2>
-          <div class="w-24 h-2 bg-amber-400 mx-auto" />
+          <div class="w-24 h-2 bg-lime-400 mx-auto" />
         </div>
 
         {/* Sliding Values Container */}
@@ -180,8 +182,8 @@ export default function About() {
                   },
                 ].map((v, _i) => (
                   <div class="inline-block px-3 items-stretch">
-                    <div class="w-[300px] bg-white dark:bg-emerald-900/10 organic-radius p-8 shadow-lg border border-emerald-50 dark:border-emerald-800/30 h-full flex flex-col items-center text-center group transition-all duration-500 hover:shadow-[0_0_50px_rgba(16,185,129,0.15)] hover:border-emerald-200 dark:hover:border-emerald-600/50 hover:-translate-y-2">
-                      <div class="w-14 h-14 rounded-2xl bg-emerald-950 text-amber-400 flex items-center justify-center mb-6 rotate-3 group-hover:rotate-0 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                    <div class="w-[300px] bg-white dark:bg-emerald-900/20 organic-radius p-8 shadow-lg border border-emerald-50 dark:border-emerald-800/30 h-full flex flex-col items-center text-center group transition-all duration-500 hover:shadow-[0_0_50px_rgba(16,185,129,0.15)] hover:border-emerald-200 dark:hover:border-emerald-600/50 hover:-translate-y-2">
+                      <div class="w-14 h-14 rounded-2xl bg-emerald-950 text-lime-400 flex items-center justify-center mb-6 rotate-3 group-hover:rotate-0 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
                         <svg
                           class="w-8 h-8"
                           fill="none"
@@ -230,7 +232,7 @@ export default function About() {
             <div class="relative z-10 flex flex-col sm:flex-row gap-6">
               <a
                 href="/team"
-                class="px-12 py-6 bg-amber-400 text-emerald-950 font-black uppercase tracking-widest text-sm rounded-tr-3xl rounded-bl-3xl shadow-xl hover:bg-white hover:scale-105 transition-all inline-block active:scale-95"
+                class="px-12 py-6 bg-lime-400 text-emerald-950 font-black uppercase tracking-widest text-sm rounded-tr-3xl rounded-bl-3xl shadow-xl hover:bg-white hover:scale-105 transition-all inline-block active:scale-95"
               >
                 Meet the Team
               </a>

@@ -17,7 +17,7 @@ export default function Services() {
         {/* Abstract background ornaments */}
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-100/30 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse" />
         <div
-          class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-100/20 rounded-full blur-[100px] -ml-48 -mb-48 animate-pulse"
+          class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-lime-100/20 rounded-full blur-[100px] -ml-48 -mb-48 animate-pulse"
           style={{ animationDelay: "2s" }}
         />
 
@@ -27,7 +27,7 @@ export default function Services() {
               Consulting & <br />
               <span class="text-emerald-600 dark:text-emerald-400">Advisory</span>
             </h1>
-            <div class="w-32 h-2.5 bg-amber-400 mb-10" />
+            <div class="w-32 h-2.5 bg-lime-400 mb-10" />
             <p class="text-2xl md:text-3xl text-slate-600 dark:text-emerald-50/70 leading-tight font-bold max-w-2xl transition-colors">
               We provide professional consulting and advisory services across
               mobility and environmental programs.
@@ -60,7 +60,7 @@ export default function Services() {
             <div class="relative p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
               <div class="max-w-xl text-center lg:text-left">
                 <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
-                  Ready to <span class="text-amber-400">Co-Create?</span>
+                  Ready to <span class="text-lime-400">Co-Create?</span>
                 </h2>
                 <div class="text-lg text-emerald-100/60 font-medium">
                   Looking to co-create a mobility or climate initiative? Explore
@@ -70,13 +70,13 @@ export default function Services() {
               <div class="flex flex-col sm:flex-row gap-5">
                 <a
                   href="/programs"
-                  class="px-10 py-5 bg-white dark:bg-emerald-900 text-emerald-950 dark:text-emerald-50 font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl hover:bg-amber-400 dark:hover:bg-amber-500 transition-all shadow-xl hover:-translate-y-1"
+                  class="px-10 py-5 bg-white dark:bg-emerald-900 text-emerald-950 dark:text-emerald-50 font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl hover:bg-lime-400 dark:hover:bg-lime-500 transition-all shadow-xl hover:-translate-y-1"
                 >
                   View Programs
                 </a>
                 <a
                   href="/partner"
-                  class="px-10 py-5 bg-emerald-500 text-white font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl hover:bg-amber-400 transition-all shadow-xl hover:-translate-y-1"
+                  class="px-10 py-5 bg-emerald-500 text-white font-black uppercase tracking-widest text-xs rounded-tr-2xl rounded-bl-2xl hover:bg-lime-400 transition-all shadow-xl hover:-translate-y-1"
                 >
                   Partner With Us
                 </a>

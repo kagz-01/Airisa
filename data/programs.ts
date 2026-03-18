@@ -14,7 +14,7 @@ export const namedPrograms: Program[] = [
     desc:
       "Mama Mwendo strengthens women’s participation and leadership in the mobility and climate sectors by offering curated learning, mentorship, and professional growth opportunities. The program builds a community of women committed to shaping sustainable and inclusive transport futures in Africa.",
     image:
-      "https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
     animation: "zoom-in",
     tag: "Women in Mobility",
   },
@@ -24,7 +24,7 @@ export const namedPrograms: Program[] = [
     desc:
       "Sauti za Barabarani brings communities and decision-makers together to reimagine mobility systems through an inclusion-focused lens. The program surfaces lived experiences, amplifies marginalized voices, and supports counties in embedding equity and safety in transport planning.",
     image:
-      "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1566454825481-67011d0e9cc0?auto=format&fit=crop&w=800&q=80",
     animation: "pan",
     tag: "Community-led",
   },
@@ -34,7 +34,7 @@ export const namedPrograms: Program[] = [
     desc:
       "SMLAP promotes awareness and adoption of sustainable mobility solutions by enhancing public understanding of electric mobility, active mobility, and low-carbon transport options. The program equips communities and counties with foundational knowledge that supports informed choices, safer practices, and broader acceptance of modern mobility innovations.",
     image:
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80",
     animation: "zoom-out",
     tag: "Public Awareness",
   },
@@ -44,7 +44,7 @@ export const namedPrograms: Program[] = [
     desc:
       "Resilient Transport Labs help counties and cities explore how climate risks affect mobility and what opportunities exist for adaptation. The program equips stakeholders with a resilience mindset and supports long-term planning for climate-smart mobility.",
     image:
-      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=800&q=80",
     animation: "blur",
     tag: "Technical Adaptation",
   },
@@ -54,7 +54,7 @@ export const namedPrograms: Program[] = [
     desc:
       "The Community Climate Champions Program nurtures local leadership in climate action through awareness, engagement, and community-driven initiatives. It inspires meaningful participation in environmental stewardship.",
     image:
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80",
     animation: "zoom-in",
     tag: "Local Leadership",
   },
@@ -67,7 +67,7 @@ export const capacityBuilding = [
     desc:
       "Co-creating curricula with academic and industry partners to address real-world challenges",
     image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540339832862-4745998078ef?auto=format&fit=crop&w=800&q=80",
     animation: "zoom-in",
     tag: "Foundational",
   },
@@ -77,7 +77,7 @@ export const capacityBuilding = [
     desc:
       "Designing and delivering interactive workshops and training programs",
     image:
-      "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544928147-79723ec42ba1?auto=format&fit=crop&w=800&q=80",
     animation: "pan",
     tag: "Interactive",
   },
@@ -86,7 +86,7 @@ export const capacityBuilding = [
     pillar: "Capacity Building",
     desc: "Providing mentorship to nurture emerging talent in the sector",
     image:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80",
     animation: "zoom-out",
     tag: "Professional",
   },

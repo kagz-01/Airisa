@@ -2,72 +2,62 @@ import { useEffect, useState } from "preact/hooks";
 
 const SLIDES = [
   {
-    // Nairobi/City - Zoom In
-    url:
-      "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=1920&q=80",
+    // Nairobi Urban (Aerial)
+    url: "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=1920&q=80",
     base: "scale-100",
     active: "scale-110",
   },
   {
-    // Bus/Transport - Pan Right
-    url:
-      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1920&q=80",
+    // Electric Bus (Nairobi vibe)
+    url: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1920&q=80",
     base: "scale-110 translate-x-0",
     active: "scale-110 translate-x-10",
   },
   {
-    // Solar/Energy - Zoom Out
-    url:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1920&q=80",
+    // Solar Farm (Rural landscape)
+    url: "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=1920&q=80",
     base: "scale-110",
     active: "scale-100",
   },
   {
-    // Team/Collaboration - Blur In
-    url:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+    // Bicycle (Rural Uganda)
+    url: "https://images.unsplash.com/photo-1594913785162-e67860bc216d?auto=format&fit=crop&w=1920&q=80",
     base: "scale-105 blur-sm",
     active: "scale-105 blur-none",
   },
   {
-    // Woman Professional - Zoom In
-    url:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=80",
+    // Camels (Desert Caravan)
+    url: "https://images.unsplash.com/photo-1542401886-65d6c60db27b?auto=format&fit=crop&w=1920&q=80",
     base: "scale-100",
     active: "scale-110",
   },
   {
-    // Community - Pan Left
-    url:
-      "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1920&q=80",
+    // Three-Wheeler (TukTuk)
+    url: "https://images.unsplash.com/photo-1565553636730-67f13b194511?auto=format&fit=crop&w=1920&q=80",
     base: "scale-110 -translate-x-0",
     active: "scale-110 -translate-x-10",
   },
   {
-    // Electric Bikes - Zoom Out
-    url:
-      "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=1920&q=80",
+    // Logistics (Modern Truck Kenya)
+    url: "https://images.unsplash.com/photo-1566454825481-67011d0e9cc0?auto=format&fit=crop&w=1920&q=80",
     base: "scale-110",
     active: "scale-100",
   },
   {
-    // Nature - Blur In
-    url:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80",
+    // Professional African Woman (Tech)
+    url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=80",
     base: "scale-105 blur-sm",
     active: "scale-105 blur-none",
   },
   {
-    // Tech (New) - Zoom In
-    url:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80",
+    // African Tech/Collaboration
+    url: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1920&q=80",
     base: "scale-100",
     active: "scale-110",
   },
   {
-    // Education (New) - Pan Right
-    url:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80",
+    // Nature/Forest (African context)
+    url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80",
     base: "scale-110 translate-x-0",
     active: "scale-110 translate-x-10",
   },

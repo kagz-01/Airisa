@@ -8,7 +8,9 @@ import * as $about from "./routes/about.tsx";
 import * as $api_ai from "./routes/api/ai.ts";
 import * as $api_contact from "./routes/api/contact.ts";
 import * as $api_qr from "./routes/api/qr.ts";
+import * as $api_subscribe from "./routes/api/subscribe.ts";
 import * as $api_sync_insights from "./routes/api/sync_insights.ts";
+import * as $api_unsubscribe from "./routes/api/unsubscribe.ts";
 import * as $api_vcard from "./routes/api/vcard.ts";
 import * as $contact from "./routes/contact.tsx";
 import * as $ecard from "./routes/ecard.tsx";
@@ -18,12 +20,15 @@ import * as $partner from "./routes/partner.tsx";
 import * as $programs from "./routes/programs.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $team from "./routes/team.tsx";
+import * as $unsubscribe from "./routes/unsubscribe.tsx";
 import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
 import * as $ARIASummarize from "./islands/ARIASummarize.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $HeroSlideshow from "./islands/HeroSlideshow.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
+import * as $NewsletterSubscribe from "./islands/NewsletterSubscribe.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
+import * as $UnsubscribeForm from "./islands/UnsubscribeForm.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -34,7 +39,9 @@ const manifest = {
     "./routes/api/ai.ts": $api_ai,
     "./routes/api/contact.ts": $api_contact,
     "./routes/api/qr.ts": $api_qr,
+    "./routes/api/subscribe.ts": $api_subscribe,
     "./routes/api/sync_insights.ts": $api_sync_insights,
+    "./routes/api/unsubscribe.ts": $api_unsubscribe,
     "./routes/api/vcard.ts": $api_vcard,
     "./routes/contact.tsx": $contact,
     "./routes/ecard.tsx": $ecard,
@@ -44,6 +51,7 @@ const manifest = {
     "./routes/programs.tsx": $programs,
     "./routes/services.tsx": $services,
     "./routes/team.tsx": $team,
+    "./routes/unsubscribe.tsx": $unsubscribe,
   },
   islands: {
     "./islands/AIChatAssistant.tsx": $AIChatAssistant,
@@ -51,7 +59,9 @@ const manifest = {
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/HeroSlideshow.tsx": $HeroSlideshow,
     "./islands/Navbar.tsx": $Navbar,
+    "./islands/NewsletterSubscribe.tsx": $NewsletterSubscribe,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
+    "./islands/UnsubscribeForm.tsx": $UnsubscribeForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

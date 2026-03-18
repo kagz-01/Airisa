@@ -12,15 +12,15 @@ export default function Team() {
       </Head>
 
       {/* Hero Section */}
-      <section class="relative py-16 md:py-24 bg-emerald-950 flex flex-col justify-center overflow-hidden">
+      <section class="relative py-10 md:py-16 bg-emerald-950 flex flex-col justify-center overflow-hidden">
         {/* Decorative Background Elements */}
         <div class="absolute -top-32 -right-32 w-2/3 h-2/3 max-w-[800px] border-[1px] border-emerald-800 rounded-full animate-spin-slow opacity-30 blur-[1px]" />
-        <div class="absolute bottom-10 -left-10 w-96 h-96 bg-amber-400/5 rounded-full blur-[100px]" />
+        <div class="absolute bottom-10 -left-10 w-96 h-96 bg-lime-400/5 rounded-full blur-[100px]" />
         
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h1 class="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mix-blend-difference mb-8">
               Our <br />
-              <span class="text-emerald-400 italic font-medium tracking-tight">Team</span>
+              <span class="text-lime-400 italic font-black tracking-tight">Team</span>
             </h1>
         </div>
       </section>
@@ -30,7 +30,7 @@ export default function Team() {
          <div class="container mx-auto px-6 max-w-7xl">
             <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center md:items-start">
                {/* Left: Sticky Image & Quick Facts */}
-               <div class="w-full lg:w-[45%] lg:sticky lg:top-32 shrink-0">
+               <div class="w-full lg:w-[22%] lg:sticky lg:top-32 shrink-0">
                   <div class="relative group">
                      {/* Image Wrapper with Organic Radius & Shadow */}
                      <div class="aspect-[4/5] overflow-hidden organic-radius bg-slate-100 dark:bg-emerald-900/40 shadow-[0_20px_50px_rgba(2,44,34,0.15)] transition-all duration-700 group-hover:shadow-[0_40px_80px_rgba(2,44,34,0.2)]">
@@ -57,24 +57,20 @@ export default function Team() {
                </div>
                
                {/* Right: Rich Narrative Text */}
-               <div class="w-full lg:w-[55%] flex flex-col justify-center font-sans mt-8 lg:mt-0 text-left">
+               <div class="w-full lg:w-[78%] flex flex-col justify-center font-sans mt-8 lg:mt-0 text-left">
                   <h2 class="text-5xl md:text-7xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-12 leading-none transition-colors">
                      Evelyn <br />
-                     <span class="text-slate-300 dark:text-emerald-800/80">Gathua</span>
+                     <span class="text-slate-300 dark:text-emerald-50/20">Gathua</span>
                   </h2>
                   
                   {/* Editorial Text Blocks using client verbatim */}
                   <div class="space-y-8 text-lg font-medium text-slate-700 dark:text-emerald-50/80 leading-relaxed border-l-4 border-emerald-100 dark:border-emerald-800 pl-6 md:pl-10 relative transition-colors">
                      <p>
-                        Evelyn Gathua is an environmental and sustainable mobility professional working at the intersection of sustainable mobility, gender and social inclusion, and climate-aligned transport systems across Africa.
+                        Evelyn Gathua is an environmental and sustainable mobility specialist working at the intersection of sustainable mobility, gender and social inclusion, and climate-aligned transport systems across Africa.
                      </p>
                      
                      <p>
-                        She is the <span class="font-black text-emerald-950 dark:text-emerald-100 underline decoration-amber-400 decoration-2 underline-offset-4 transition-colors">Founder of Airisa Green Consulting</span>, and serves as Strategy and Sustainability Manager at Sustainable Transport Africa.
-                     </p>
-                     
-                     <p>
-                        Evelyn has worked with organizations including the World Resources Institute, the United Nations Environment Programme, and Bolt Operations OU, supporting research, policy development, and the implementation of sustainable transport initiatives.
+                        She is the <span class="font-black text-emerald-950 dark:text-emerald-100 underline decoration-lime-400 decoration-2 underline-offset-4 transition-colors">Founder of Airisa Green Consulting</span>, and has worked with local and international organizations supporting research, policy development, and the implementation of sustainable transport initiatives.
                      </p>
                      
                      <div class="bg-emerald-50/50 dark:bg-emerald-900/30 p-6 rounded-br-2xl border border-emerald-100/50 dark:border-emerald-700/30 my-10 transition-colors">
@@ -83,7 +79,7 @@ export default function Team() {
                         </p>
                      </div>
                      
-                     <p class="text-xl md:text-2xl font-black text-emerald-600 dark:text-emerald-400 tracking-tight leading-snug transition-colors">
+                     <p class="text-xl md:text-2xl font-black text-lime-500 dark:text-lime-400 tracking-tight leading-snug transition-colors">
                         "She was also recognized among the Most Influential Women in Mobility 2025 by Vulog."
                      </p>
                   </div>
@@ -100,7 +96,7 @@ export default function Team() {
          <div class="container mx-auto px-6 max-w-7xl">
             <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center md:items-start text-left">
                {/* Left (visually Right): Sticky Image & Quick Facts */}
-               <div class="w-full lg:w-[45%] lg:sticky lg:top-32 shrink-0">
+               <div class="w-full lg:w-[22%] lg:sticky lg:top-32 shrink-0">
                   <div class="relative group">
                      {/* Image Wrapper */}
                      <div class="aspect-[4/5] overflow-hidden organic-radius bg-slate-200 dark:bg-emerald-900/40 shadow-[0_20px_50px_rgba(39,39,42,0.15)] transition-all duration-700 group-hover:shadow-[0_40px_80px_rgba(39,39,42,0.2)]">
@@ -129,28 +125,28 @@ export default function Team() {
                </div>
                
                {/* Right (visually Left): Rich Narrative Text */}
-               <div class="w-full lg:w-[55%] flex flex-col justify-center font-sans mt-8 lg:mt-0 text-left">
+               <div class="w-full lg:w-[78%] flex flex-col justify-center font-sans mt-8 lg:mt-0 text-left">
                   <h2 class="text-5xl md:text-7xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-12 leading-none transition-colors">
                      Anthony <br />
-                     <span class="text-slate-300 dark:text-emerald-800/80">Ndolo</span>
+                     <span class="text-slate-300 dark:text-emerald-50/20">Ndolo</span>
                   </h2>
                   
                   {/* Editorial Text Blocks using client verbatim */}
-                  <div class="space-y-8 text-lg font-medium text-slate-700 dark:text-emerald-50/80 leading-relaxed border-r-4 lg:border-r-0 lg:border-l-4 border-amber-200 dark:border-amber-900/40 pr-6 lg:pr-0 lg:pl-10 relative transition-colors">
+                  <div class="space-y-8 text-lg font-medium text-slate-700 dark:text-emerald-50/80 leading-relaxed border-r-4 lg:border-r-0 lg:border-l-4 border-lime-200 dark:border-lime-900/40 pr-6 lg:pr-0 lg:pl-10 relative transition-colors">
                      <p>
                         Anthony is a business systems architect and operator with experience spanning across health-tech, logistics-tech, programme design, and organisational scaling in emerging markets. 
                      </p>
                      
                      <p>
-                        He founded and led <span class="font-black text-emerald-950 dark:text-emerald-100 border-b-2 border-amber-400 dark:border-amber-500 transition-colors">Smatbeba</span>, a digital cargo transportation marketplace operating across East Africa, and later served as Chief Operating Officer at EcoWorld Recycling, where he led strategic operations and managed a USAID-supported plastic circular-economy initiative.
+                        He founded and led <span class="font-black text-emerald-950 dark:text-emerald-100 border-b-2 border-lime-400 dark:border-lime-500 transition-colors">Smatbeba</span>, a digital cargo transportation marketplace operating across East Africa, and later served as Chief Operating Officer at EcoWorld Recycling, where he led strategic operations and managed a USAID-supported plastic circular-economy initiative.
                      </p>
                      
                      <p>
                         He has also worked as a Programs Manager at an ESO, designing and delivering capacity-building programmes for entrepreneurs. 
                      </p>
                      
-                     <div class="bg-amber-50/80 dark:bg-amber-900/20 p-6 rounded-bl-2xl lg:rounded-bl-none lg:rounded-br-2xl border border-amber-100/50 dark:border-amber-800/30 my-10 transition-colors">
-                        <p class="text-amber-950 dark:text-amber-100 leading-relaxed font-bold transition-colors">
+                     <div class="bg-lime-50/80 dark:bg-lime-900/20 p-6 rounded-bl-2xl lg:rounded-bl-none lg:rounded-br-2xl border border-lime-100/50 dark:border-lime-800/30 my-10 transition-colors">
+                        <p class="text-lime-950 dark:text-lime-100 leading-relaxed font-bold transition-colors">
                            A 2025 Dream VC Fellow, Anthony focuses on building markets by aligning incentives, systems, and execution to ensure value is created and grown sustainably.
                         </p>
                      </div>
@@ -167,7 +163,7 @@ export default function Team() {
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
         <div class="container mx-auto px-6 relative z-10 max-w-4xl">
             <h3 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 shadow-sm">
-              <span class="text-amber-400 italic">Catalyzing</span> Action.
+              <span class="text-lime-400 italic">Catalyzing</span> Action.
             </h3>
             <p class="text-emerald-50/70 text-lg md:text-xl font-medium leading-relaxed mb-12">
               Ready to explore a partnership or strategic engagement? 
@@ -175,7 +171,7 @@ export default function Team() {
             </p>
             <a
               href="/partner"
-              class="inline-block px-10 py-5 bg-amber-400 text-emerald-950 font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:scale-105 active:scale-95 transition-all shadow-xl"
+              class="inline-block px-10 py-5 bg-lime-400 text-emerald-950 font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:scale-105 active:scale-95 transition-all shadow-xl"
             >
               Start the Conversation →
             </a>
