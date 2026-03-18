@@ -12,6 +12,7 @@ export interface DynamicInsight {
   pillar: "Insight" | "Strategy" | "Sustainability";
   image?: string;
   href: string; // Original LinkedIn post URL
+  type: "Post" | "Article" | "Narrative" | "Image" | "Video" | "Document";
   timestamp: number;
   part?: string; // e.g. "Part 1"
   seriesTitle?: string; // e.g. "Policy Roadmap for Africa"

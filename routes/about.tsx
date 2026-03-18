@@ -77,9 +77,9 @@ export default function About() {
       {/* Vision & Mission (Parallel & Dynamic) */}
       <section class="py-20 bg-white dark:bg-emerald-950 transition-colors duration-500 relative">
         <div class="container mx-auto px-6">
-          <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 relative">
+          <div class="flex flex-col lg:flex-row items-stretch justify-center gap-12 lg:gap-16 relative">
             {/* Vision Card */}
-            <div class="w-full lg:w-[45%] relative group min-h-[300px] lg:h-[320px] overflow-hidden organic-radius bg-emerald-950 p-8 md:p-8 flex flex-col justify-end shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lime/20 animate-fade-in-up z-20">
+            <div class="w-full lg:w-[45%] relative group min-h-[320px] overflow-hidden organic-radius bg-emerald-950 p-8 md:p-12 flex flex-col justify-end shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lime/20 animate-fade-in-up">
               <div class="absolute top-0 right-0 p-6 transition-all duration-500 group-hover:scale-110 opacity-40 group-hover:opacity-100">
                 <svg
                   class="w-24 h-24 text-lime-400 animate-icon-pop"
@@ -101,11 +101,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Connecting Element (Desktop Only) */}
-            <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-1 bg-gradient-to-r from-lime-400 to-transparent z-10 opacity-30" />
-
-            {/* Mission Card */}
-            <div class="w-full lg:w-[48%] relative group min-h-[300px] lg:h-[320px] overflow-hidden organic-radius bg-white dark:bg-emerald-900 border border-emerald-100 dark:border-emerald-800/50 p-8 md:p-8 flex flex-col justify-end shadow-xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] lg:-ml-12 lg:mt-24 animate-fade-in-up delay-200 z-30">
+            {/* Mission Card - Subtly Staggered */}
+            <div class="w-full lg:w-[48%] relative group min-h-[320px] overflow-hidden organic-radius bg-white dark:bg-emerald-900 border border-emerald-100 dark:border-emerald-800/50 p-8 md:p-12 flex flex-col justify-end shadow-xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] lg:translate-y-16 animate-fade-in-up delay-200">
               <div class="absolute top-0 right-0 p-6 transition-all duration-500 group-hover:scale-110 opacity-40 group-hover:opacity-100">
                 <svg
                   class="w-24 h-24 text-emerald-600 dark:text-lime-400 animate-icon-pop"

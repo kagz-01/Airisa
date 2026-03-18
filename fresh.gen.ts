@@ -25,6 +25,7 @@ import * as $AIChatAssistant from "./islands/AIChatAssistant.tsx";
 import * as $ARIASummarize from "./islands/ARIASummarize.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $HeroSlideshow from "./islands/HeroSlideshow.tsx";
+import * as $InsightTabs from "./islands/InsightTabs.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
 import * as $NewsletterSubscribe from "./islands/NewsletterSubscribe.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
@@ -58,6 +59,7 @@ const manifest = {
     "./islands/ARIASummarize.tsx": $ARIASummarize,
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/HeroSlideshow.tsx": $HeroSlideshow,
+    "./islands/InsightTabs.tsx": $InsightTabs,
     "./islands/Navbar.tsx": $Navbar,
     "./islands/NewsletterSubscribe.tsx": $NewsletterSubscribe,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
