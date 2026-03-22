@@ -11,22 +11,19 @@ export default function Team() {
         />
       </Head>
 
-      {/* Hero Section */}
-      <section class="relative py-10 md:py-16 bg-emerald-950 flex flex-col justify-center overflow-hidden">
-        {/* Decorative Background Elements */}
-        <div class="absolute -top-32 -right-32 w-2/3 h-2/3 max-w-[800px] border-[1px] border-emerald-800 rounded-full animate-spin-slow opacity-30 blur-[1px]" />
-        <div class="absolute bottom-10 -left-10 w-96 h-96 bg-lime-400/5 rounded-full blur-[100px]" />
-        
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mix-blend-difference mb-8">
-              Our <br />
-              <span class="text-lime-400 italic font-black tracking-tight">Team</span>
+      {/* Refined Minimalist Header */}
+      <section class="py-12 md:py-16 bg-white dark:bg-emerald-950/20">
+        <div class="container mx-auto px-6 flex justify-center">
+          <div class="inline-flex items-center px-12 py-3 bg-emerald-950 dark:bg-emerald-900 rounded-full shadow-2xl transition-all hover:scale-105 group border border-emerald-800">
+            <h1 class="text-lg md:text-xl font-black text-white uppercase tracking-[0.5em] whitespace-nowrap">
+              Our Team
             </h1>
+          </div>
         </div>
       </section>
 
       {/* Evelyn Profile - Founder Spotlight */}
-      <section class="py-16 md:py-20 bg-white dark:bg-emerald-900/10 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
+      <section class="py-12 md:py-14 bg-white dark:bg-emerald-900/10 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
          <div class="container mx-auto px-6 max-w-7xl">
             <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center md:items-start">
                {/* Left: Sticky Image & Quick Facts */}
@@ -58,9 +55,8 @@ export default function Team() {
                
                {/* Right: Rich Narrative Text */}
                <div class="w-full lg:w-[78%] flex flex-col justify-center font-sans mt-8 lg:mt-0 text-left">
-                  <h2 class="text-5xl md:text-7xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-12 leading-none transition-colors">
-                     Evelyn <br />
-                     <span class="text-slate-300 dark:text-emerald-50/20">Gathua</span>
+                  <h2 class="text-4xl md:text-6xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-8 leading-none transition-colors">
+                     Evelyn <span class="text-slate-300 dark:text-emerald-50/20">Gathua</span>
                   </h2>
                   
                   {/* Editorial Text Blocks using client verbatim */}
@@ -92,7 +88,7 @@ export default function Team() {
 
 
       {/* Anthony Profile - Founder Spotlight (Flipped Layout) */}
-      <section class="py-16 md:py-20 bg-zinc-50 dark:bg-emerald-950 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
+      <section class="py-12 md:py-14 bg-zinc-50 dark:bg-emerald-950 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
          <div class="container mx-auto px-6 max-w-7xl">
             <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center md:items-start text-left">
                {/* Left (visually Right): Sticky Image & Quick Facts */}
@@ -126,9 +122,8 @@ export default function Team() {
                
                {/* Right (visually Left): Rich Narrative Text */}
                <div class="w-full lg:w-[78%] flex flex-col justify-center font-sans mt-8 lg:mt-0 text-left">
-                  <h2 class="text-5xl md:text-7xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-12 leading-none transition-colors">
-                     Anthony <br />
-                     <span class="text-slate-300 dark:text-emerald-50/20">Ndolo</span>
+                  <h2 class="text-4xl md:text-6xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-8 leading-none transition-colors">
+                     Anthony <span class="text-slate-300 dark:text-emerald-50/20">Ndolo</span>
                   </h2>
                   
                   {/* Editorial Text Blocks using client verbatim */}
