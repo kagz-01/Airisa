@@ -16,6 +16,7 @@ export interface DynamicInsight {
   timestamp: number;
   part?: string; // e.g. "Part 1"
   seriesTitle?: string; // e.g. "Policy Roadmap for Africa"
+  fileUrl?: string; // Local PDF path for downloads
 }
 
 let kvInstance: Deno.Kv | null = null;
@@ -56,5 +57,5 @@ export async function clearAllInsights() {
   const iter = kv.list({ prefix: ["insights"] });
   for await (const res of iter) {
     await kv.delete(res.key);
-  }
+ }
 }

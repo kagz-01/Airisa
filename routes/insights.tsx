@@ -108,17 +108,10 @@ export default function Insights(
       <section class="py-24 bg-[#FAFAFA] dark:bg-emerald-900/10">
         <div class="container mx-auto px-6 max-w-7xl">
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24 text-left">
-            <div class="max-w-xl">
-              <h2 class="text-5xl md:text-8xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter leading-[0.9] mb-8 font-['Poppins']">
-                The Field <span class="text-emerald-600">Pulse.</span>
-              </h2>
-              <p class="text-slate-500 dark:text-slate-400 font-bold text-xl leading-relaxed border-l-4 border-emerald-100 dark:border-emerald-800 pl-8 italic">
-                A high-fidelity teaser of our active engagements and technical intelligence, synchronized directly from LinkedIn.
+            <div class="max-w-4xl">
+              <p class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-bold leading-relaxed border-l-4 border-emerald-600 dark:border-emerald-500 pl-8 italic">
+               A High-level overview of our technical intelligence and sector narratives, bridging the gap between field research and implementable policy.
               </p>
-            </div>
-            <div class="flex items-center gap-4 bg-white dark:bg-emerald-900/40 border border-slate-200 dark:border-emerald-800 px-8 py-4 shadow-xl">
-               <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping" />
-               <span class="text-[10px] font-black text-emerald-950 dark:text-emerald-100 uppercase tracking-[0.5em]">LIVE FEED</span>
             </div>
           </div>
 

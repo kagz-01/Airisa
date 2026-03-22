@@ -262,6 +262,30 @@ const general: Fact[] = [
   },
 ];
 
+const insights: Fact[] = [
+  {
+    id: "insights_sync",
+    category: "insights",
+    keywords: ["insights", "sync", "linkedin", "broadcast", "news", "updates"],
+    text:
+      "Airisa's Insights Hub features a 'Live Field Sync' engine that broadcasts real-time updates and technical narratives directly from our active LinkedIn field intelligence.",
+  },
+  {
+    id: "insights_policy_kenya",
+    category: "insights",
+    keywords: ["policy", "kenya", "electric", "mobility", "ev", "adoption", "document"],
+    text:
+      "Kenya's National Electric Mobility Policy is a defining benchmark for cleaner transport. It establishes a comprehensive framework for EV adoption, charging infrastructure, and #PolicyStatement12 specifically commits to gender equality and social inclusion.",
+  },
+  {
+    id: "insights_masterclass",
+    category: "insights",
+    keywords: ["masterclass", "training", "march", "2026", "project", "design"],
+    text:
+      "Airisa is hosting a Sustainable Mobility Project Management Masterclass on March 27, 2026, focusing on designing e-mobility projects from idea to impact.",
+  },
+];
+
 const visionFact: Fact = {
   id: "meta_vision",
   category: "vision",
@@ -288,6 +312,7 @@ export const ALL_FACTS: Fact[] = [
   ...partnerAreas,
   ...contact,
   ...general,
+  ...insights,
 ];
 
 export const META = { vision, mission };
