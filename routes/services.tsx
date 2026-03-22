@@ -13,7 +13,18 @@ export default function Services() {
         />
       </Head>
 
-      <section class="py-16 md:py-24 relative overflow-hidden">
+      {/* Refined Minimalist Header */}
+      <section class="py-6 md:py-8 bg-transparent dark:bg-emerald-950/20 transition-colors">
+        <div class="container mx-auto px-6 flex justify-center">
+          <div class="inline-flex items-center px-12 py-3 bg-emerald-950 dark:bg-emerald-900 rounded-full shadow-2xl transition-all hover:scale-105 group border border-emerald-800">
+            <h1 class="text-lg md:text-xl font-black text-white uppercase tracking-[0.5em] whitespace-nowrap">
+              Our Services
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12 md:py-16 relative overflow-hidden">
         {/* Abstract background ornaments */}
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-100/30 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse" />
         <div
@@ -22,13 +33,12 @@ export default function Services() {
         />
 
         <div class="container mx-auto px-6 relative z-10">
-          <div class="max-w-4xl mb-16">
-            <h1 class="text-6xl md:text-8xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-8 leading-[0.9] transition-colors">
-              Consulting & <br />
-              <span class="text-emerald-600 dark:text-emerald-400">Advisory</span>
-            </h1>
-            <div class="w-32 h-2.5 bg-lime-400 mb-10" />
-            <p class="text-2xl md:text-3xl text-slate-600 dark:text-emerald-50/70 leading-tight font-bold max-w-2xl transition-colors">
+          <div class="max-w-4xl mb-16 text-center md:text-left">
+            <h2 class="text-3xl md:text-4xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-6 transition-colors">
+              Consulting & <span class="text-emerald-600 dark:text-emerald-400">Advisory</span>
+            </h2>
+            <div class="w-24 h-2 bg-lime-400 mb-8 mx-auto md:mx-0" />
+            <p class="text-base md:text-lg text-slate-600 dark:text-emerald-50/70 leading-relaxed font-bold max-w-2xl transition-colors">
               We provide professional consulting and advisory services across
               mobility and environmental programs.
             </p>
@@ -59,10 +69,10 @@ export default function Services() {
             <div class="absolute inset-0 bg-emerald-950 rounded-[40px] transform group-hover:scale-[1.02] transition-transform duration-700" />
             <div class="relative p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
               <div class="max-w-xl text-center lg:text-left">
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
+                <h2 class="text-2xl md:text-3xl font-black text-white mb-6 tracking-tighter">
                   Ready to <span class="text-lime-400">Co-Create?</span>
                 </h2>
-                <div class="text-lg text-emerald-100/60 font-medium">
+                <div class="text-base text-emerald-100/60 font-medium">
                   Looking to co-create a mobility or climate initiative? Explore
                   our programs or partner directly with our expert team.
                 </div>

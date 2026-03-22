@@ -2,7 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 
 export default function About() {
   return (
-    <div class="bg-white dark:bg-emerald-950 transition-colors duration-500">
+    <div class="bg-paper min-h-screen transition-colors duration-500">
       <Head>
         <title>About | Airisa Green Consulting</title>
         <meta
@@ -75,7 +75,7 @@ export default function About() {
       </section>
 
       {/* Vision & Mission (Parallel & Dynamic) */}
-      <section class="py-20 bg-white dark:bg-emerald-950 transition-colors duration-500 relative">
+      <section class="py-20 bg-transparent dark:bg-emerald-950 transition-colors duration-500 relative">
         <div class="container mx-auto px-6">
           <div class="flex flex-col lg:flex-row items-stretch justify-center gap-12 lg:gap-16 relative">
             {/* Vision Card */}
@@ -213,7 +213,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-white dark:bg-emerald-950 transition-colors duration-500">
+      <section class="py-16 bg-transparent dark:bg-emerald-950 transition-colors duration-500">
         <div class="container mx-auto px-6">
           <div class="bg-emerald-950 organic-radius p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative group">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-400/10 rounded-full blur-[120px] -mr-64 -mt-64 group-hover:bg-emerald-400/20 transition-all duration-700" />

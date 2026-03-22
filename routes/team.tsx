@@ -12,7 +12,7 @@ export default function Team() {
       </Head>
 
       {/* Refined Minimalist Header */}
-      <section class="py-6 md:py-8 bg-white dark:bg-emerald-950/20">
+      <section class="py-6 md:py-8 bg-transparent dark:bg-emerald-950/20 transition-colors">
         <div class="container mx-auto px-6 flex justify-center">
           <div class="inline-flex items-center px-12 py-3 bg-emerald-950 dark:bg-emerald-900 rounded-full shadow-2xl transition-all hover:scale-105 group border border-emerald-800">
             <h1 class="text-lg md:text-xl font-black text-white uppercase tracking-[0.5em] whitespace-nowrap">
@@ -23,7 +23,7 @@ export default function Team() {
       </section>
 
       {/* Evelyn Profile - Founder Spotlight */}
-      <section class="py-12 md:py-14 bg-white dark:bg-emerald-900/10 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
+      <section class="py-12 md:py-14 bg-emerald-50 dark:bg-emerald-900/10 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
          <div class="container mx-auto px-6 max-w-7xl">
             <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center md:items-start">
                {/* Left: Sticky Image & Quick Facts */}
@@ -88,7 +88,7 @@ export default function Team() {
 
 
       {/* Anthony Profile - Founder Spotlight (Flipped Layout) */}
-      <section class="py-12 md:py-14 bg-zinc-50 dark:bg-emerald-950 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
+      <section class="py-12 md:py-14 bg-emerald-50 dark:bg-emerald-950 border-b border-emerald-50 dark:border-emerald-900/50 transition-colors duration-500">
          <div class="container mx-auto px-6 max-w-7xl">
             <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center md:items-start text-left">
                {/* Left (visually Right): Sticky Image & Quick Facts */}
@@ -154,13 +154,13 @@ export default function Team() {
       </section>
 
       {/* CTA Footer Section */}
-      <section class="py-16 md:py-20 bg-emerald-950 text-center relative overflow-hidden">
+      <section class="py-12 md:py-14 bg-emerald-950 text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
         <div class="container mx-auto px-6 relative z-10 max-w-4xl">
-            <h3 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 shadow-sm">
+            <h3 class="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4 shadow-sm">
               <span class="text-lime-400 italic">Catalyzing</span> Action.
             </h3>
-            <p class="text-emerald-50/70 text-lg md:text-xl font-medium leading-relaxed mb-12">
+            <p class="text-emerald-50/70 text-base md:text-lg font-medium leading-relaxed mb-8">
               Ready to explore a partnership or strategic engagement? 
               Get in touch with the leadership team to discuss your next big mobility or sustainability initiative.
             </p>

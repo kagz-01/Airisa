@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 import { type PageProps } from "$fresh/server.ts";
 import Navbar from "../islands/Navbar.tsx";
 import Footer from "../components/Footer.tsx";
