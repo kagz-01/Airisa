@@ -12,7 +12,7 @@ export default function Team() {
       </Head>
 
       {/* Refined Minimalist Header */}
-      <section class="py-12 md:py-16 bg-white dark:bg-emerald-950/20">
+      <section class="py-6 md:py-8 bg-white dark:bg-emerald-950/20">
         <div class="container mx-auto px-6 flex justify-center">
           <div class="inline-flex items-center px-12 py-3 bg-emerald-950 dark:bg-emerald-900 rounded-full shadow-2xl transition-all hover:scale-105 group border border-emerald-800">
             <h1 class="text-lg md:text-xl font-black text-white uppercase tracking-[0.5em] whitespace-nowrap">

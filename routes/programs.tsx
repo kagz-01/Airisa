@@ -12,18 +12,11 @@ export default function Programs() {
         />
       </Head>
 
-      {/* Hero Section */}
-      <section class="relative overflow-hidden py-16 md:py-24 bg-emerald-950 flex items-center">
-        {/* Animated Ornaments */}
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-400/10 rounded-full blur-[100px] animate-pulse" />
-        <div
-          class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-lime-400/5 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 animate-pulse"
-          style={{ animationDelay: "2s" }}
-        />
-
-        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
-          <div class="max-w-4xl">
-            <h1 class="text-6xl md:text-9xl font-black text-white leading-[0.85] tracking-tighter animate-fade-in-up mb-8">
+      {/* Refined Minimalist Header */}
+      <section class="py-6 md:py-8 bg-white dark:bg-emerald-950/20">
+        <div class="container mx-auto px-6 flex justify-center">
+          <div class="inline-flex items-center px-12 py-3 bg-emerald-950 dark:bg-emerald-900 rounded-full shadow-2xl transition-all hover:scale-105 group border border-emerald-800">
+            <h1 class="text-lg md:text-xl font-black text-white uppercase tracking-[0.5em] whitespace-nowrap">
               Our Programs
             </h1>
           </div>
@@ -31,15 +24,15 @@ export default function Programs() {
       </section>
 
       {/* Section 1: Social Impact Programs */}
-      <section class="py-16 md:py-24 bg-[#021f16] relative overflow-hidden">
+      <section class="py-12 md:py-16 bg-emerald-50 dark:bg-[#021f16] relative transition-colors duration-500 overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
           <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div class="max-w-2xl">
-              <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6">
-                Social <span class="text-emerald-400">Impact</span>
+              <h2 class="text-3xl md:text-4xl font-black text-emerald-950 dark:text-white tracking-tighter mb-6 transition-colors">
+                Social <span class="text-emerald-600 dark:text-emerald-400">Impact</span>
               </h2>
               <div class="w-24 h-2 bg-lime-400 mb-8" />
-              <p class="text-lg text-emerald-100/60 font-medium italic">
+              <p class="text-base text-slate-600 dark:text-emerald-100/60 font-medium italic transition-colors">
                 Translating policy into practice through on-the-ground
                 implementation and community co-creation.
               </p>
@@ -70,10 +63,10 @@ export default function Programs() {
 
                 {/* Content Container */}
                 <div class="w-full lg:w-1/2">
-                  <h3 class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-tight">
+                  <h3 class="text-2xl md:text-3xl font-black text-emerald-950 dark:text-white mb-6 tracking-tighter leading-tight transition-colors">
                     {p.title}
                   </h3>
-                  <p class="text-lg md:text-xl text-emerald-50/70 leading-relaxed font-medium mb-10">
+                  <p class="text-base md:text-lg text-slate-700 dark:text-emerald-50/70 leading-relaxed font-medium mb-10 transition-colors">
                     {p.desc}
                   </p>
                   <a
@@ -90,17 +83,16 @@ export default function Programs() {
       </section>
 
       {/* Section 2: Capacity Building & Knowledge Leadership */}
-      <section class="py-16 md:py-24 bg-[#FDFCF8] dark:bg-emerald-950 transition-colors duration-500 relative overflow-hidden">
+      <section class="py-12 md:py-16 bg-[#FDFCF8] dark:bg-emerald-950 transition-colors duration-500 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#021f16] to-transparent opacity-10" />
 
         <div class="container mx-auto px-6 relative z-10">
           <div class="text-center max-w-4xl mx-auto mb-16">
-            <h2 class="text-4xl md:text-6xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-6 transition-colors">
-              Capacity Building & <br />
-              <span class="text-emerald-600 dark:text-emerald-400">Knowledge Leadership</span>
+            <h2 class="text-3xl md:text-4xl font-black text-emerald-950 dark:text-emerald-50 tracking-tighter mb-6 transition-colors">
+              Capacity Building & <span class="text-emerald-600 dark:text-emerald-400">Knowledge Leadership</span>
             </h2>
             <div class="w-20 h-2 bg-lime-400 mx-auto mb-8" />
-            <p class="text-lg text-slate-600 dark:text-emerald-50/70 font-bold transition-colors">
+            <p class="text-base text-slate-600 dark:text-emerald-50/70 font-bold transition-colors">
               We equip individuals and organizations with the knowledge and
               skills to advance sustainable mobility and environmental
               sustainability.
@@ -135,10 +127,10 @@ export default function Programs() {
                 </div>
 
                 <div class="p-8 md:p-10">
-                  <h4 class="text-2xl font-black text-emerald-950 dark:text-emerald-50 mb-6 tracking-tight leading-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                  <h4 class="text-xl font-black text-emerald-950 dark:text-emerald-50 mb-6 tracking-tight leading-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                     {item.title}
                   </h4>
-                  <p class="text-slate-600 dark:text-emerald-50/70 leading-relaxed font-medium opacity-80 mb-10 min-h-[60px] transition-colors">
+                  <p class="text-sm md:text-base text-slate-600 dark:text-emerald-50/70 leading-relaxed font-medium opacity-80 mb-10 min-h-[60px] transition-colors">
                     {item.desc}
                   </p>
                   <a
@@ -153,21 +145,21 @@ export default function Programs() {
           </div>
 
           {/* Insights Hub Teaser */}
-          <div class="mt-16 p-8 md:p-12 bg-emerald-950 rounded-[60px] relative overflow-hidden group">
+          <div class="mt-16 p-8 md:p-12 bg-emerald-50 dark:bg-emerald-950 rounded-[60px] relative overflow-hidden group border border-emerald-100 dark:border-emerald-800 transition-colors duration-500">
             <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
             <div class="relative flex flex-col md:flex-row items-center justify-between gap-8">
               <div class="max-w-xl text-center md:text-left">
-                <h3 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
-                  Visit the <span class="text-lime-400">Insights Hub</span>
+                <h3 class="text-2xl md:text-3xl font-black text-emerald-950 dark:text-white mb-6 tracking-tighter transition-colors">
+                  Visit the <span class="text-emerald-600 dark:text-lime-400">Insights Hub</span>
                 </h3>
-                <p class="text-emerald-50/60 font-medium text-lg">
+                <p class="text-slate-600 dark:text-emerald-50/60 font-medium text-base transition-colors">
                   Explore our latest articles, whitepapers, and diagnostic
                   studies shared across our LinkedIn community.
                 </p>
               </div>
               <a
                 href="/insights"
-                class="px-10 py-5 bg-emerald-400 text-emerald-950 font-black uppercase tracking-widest text-xs rounded-tr-3xl rounded-bl-3xl hover:bg-lime-400 transition-all shadow-xl"
+                class="px-10 py-5 bg-emerald-950 dark:bg-emerald-400 text-white dark:text-emerald-950 font-black uppercase tracking-widest text-xs rounded-tr-3xl rounded-bl-3xl hover:bg-emerald-800 dark:hover:bg-lime-400 transition-all shadow-xl"
               >
                 Explore Insights
               </a>
